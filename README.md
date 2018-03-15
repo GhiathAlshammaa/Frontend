@@ -1,4 +1,4 @@
 # Frontend
 
-My training projects in Backend field
+My training projects in a Frontend field
 
