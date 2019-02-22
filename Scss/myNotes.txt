@@ -8,6 +8,7 @@ What is preprocessor (SCSS) ?
     - Nesting
     - Automatic Vendor Prefixing
 * Better Code    
+* Powerfull Framework (Bootstrap) & Libraries 
 
 * There're two files, they don't compiling
     - One for the Varibles, it calls (partials/_varibles) . But it import without underscore.
