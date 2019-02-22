@@ -1,5 +1,4 @@
 # General Info #
-
 # What is preprocessor (SCSS) ?
 * Language on top of CSS
 * Powerfull Capapility
@@ -11,7 +10,6 @@
 * Powerfull Framework (Bootstrap) & Libraries 
 
 # Sass Vs Scss ::
-
 *****************
 SASS : Syntacticliy Awsome Style Sheet 
 *****************
