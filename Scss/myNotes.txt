@@ -10,6 +10,18 @@
 * Better Code    
 * Powerfull Framework (Bootstrap) & Libraries 
 
+# Sass Vs Scss ::
+
+*****************
+SASS : Syntacticliy Awsome Style Sheet 
+*****************
+Orginal Language, Shorter Syntax
+
+*****************
+SCSS : Sassy CSS
+*****************
+Newer Syntax, Closer to CSS, Defactor Standard
+
 # There're two files, they don't compiling
     - One for the Varibles, it calls (partials/_varibles) . But it import without underscore.
     - One for the Functions, it calls (partials/_mixins) . But it import without underscore as well.
