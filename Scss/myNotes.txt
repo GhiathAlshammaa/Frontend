@@ -1,4 +1,13 @@
 # General Info #
+
+What is preprocessor (SCSS) ?
+* Language on top of CSS
+* Powerfull Capapility
+    - Varibles
+    - Mixins
+    - Nesting
+    - Automatic Vendor Prefixing
+
 * There're two files, they don't compiling
     - One for the Varibles, it calls (partials/_varibles) . But it import without underscore.
     - One for the Functions, it calls (partials/_mixins) . But it import without underscore as well.
