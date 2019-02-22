@@ -1,4 +1,7 @@
-# General Info 
+# General Info #
 * There're two files, they don't compiling
-    - One for the Varibles, it calls (_varibles) . But it import without underscore.
-    - One for the Functions, it calls (_mixins) . But it import without underscore as well.
+    - One for the Varibles, it calls (partials/_varibles) . But it import without underscore.
+    - One for the Functions, it calls (partials/_mixins) . But it import without underscore as well.
+    - We can import both of them at one line as the following : 
+        import "partials/_mixins", "partials/_varibles";
+
