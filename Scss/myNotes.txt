@@ -1,6 +1,6 @@
 # General Info #
 
-What is preprocessor (SCSS) ?
+# What is preprocessor (SCSS) ?
 * Language on top of CSS
 * Powerfull Capapility
     - Varibles
@@ -10,13 +10,12 @@ What is preprocessor (SCSS) ?
 * Better Code    
 * Powerfull Framework (Bootstrap) & Libraries 
 
-* There're two files, they don't compiling
+# There're two files, they don't compiling
     - One for the Varibles, it calls (partials/_varibles) . But it import without underscore.
     - One for the Functions, it calls (partials/_mixins) . But it import without underscore as well.
     - We can import both of them at one line as the following : 
         import "partials/_mixins", "partials/_varibles";
 
 # Fonts #
-
 We can call a function of (_mixins) and five it a parmeter as fontfamily to the font, which we would to have it from google library
 and also don't forget identify a varibles to the (_varibles) $font-text and $font-title. 
