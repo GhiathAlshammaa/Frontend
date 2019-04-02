@@ -8,7 +8,7 @@ const budgetController = (() => {
         this.percentage = -1;
     };
 
-    Expense.prototype.calculateBudget = function(totalIncome){
+    Expense.prototype.calculatePercentage = function(totalIncome){
         if (totalIncome > 0) {
             this.percentage = Math.round((this.value / totalIncome) * 100);
         } else {
@@ -104,8 +104,8 @@ const budgetController = (() => {
         },
 
         calculatePercentages: function() {
-            data.allItems.exp.forEach(function(cur){
-                cur.calculatePercentages(data.totals.inc);
+            data.allItems.exp.forEach((cur) => {
+                cur.calculatePercentage(data.totals.inc);
             });
         },
 
