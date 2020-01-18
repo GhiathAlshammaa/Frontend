@@ -1,0 +1,28 @@
+
+/* Global classes */
+
+* {
+    box-sizing: border-box;
+  }
+  
+.title-text{
+    font: normal bold 50px/72px var(--roboto);
+}
+
+.title-h2{
+    font: normal bold 21px/40px var(--font);
+    color: var(--text-color);
+}
+
+.text-uppercase{
+    text-transform: uppercase;
+}
+
+p.para{
+    color: var(--text-color);
+    font: normal 500 16px/25px var(--font);
+}
+
+.font-website{
+    font-family: var(--font);
+}

@@ -1,0 +1,137 @@
+
+
+/* general class for navbar-troggler (Phones & Tablets) */
+  .header_area .navbar-toggler{
+    display: flex;
+    align-items: center;
+    padding-top: 12px;
+    height: 57px;
+    width: 23px;
+    float: right;
+  }
+  
+.header_area .navbar-toggler #nav, .navbar-toggler #nav ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+/* .header_area .navbar-toggler #nav a {
+	display: block;
+} */
+.header_area .navbar-toggler #nav a .menu-img {
+	display: block;
+    background : url('../img/menu.png') no-repeat ;
+    height: 19px;
+    width: 23px; 
+}  
+/* changing the icon after a clicking on the Navbar-troggler */
+.header_area .navbar-toggler #nav a:hover .menu-img {
+	display: block;
+    background : url(../img/menu-hover.png) no-repeat;
+    height: 19px;
+    width: 23px; 
+}  
+.header_area .navbar-toggler #nav li {
+	float: right;
+}  
+
+.header_area .navbar-toggler #nav li:hover ul {
+    left: auto;
+    background-color: white;
+    padding-bottom: 19px;
+} 
+
+.header_area .navbar-toggler #nav li:hover ul li {
+    padding-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: var(--font);
+}
+
+.header_area .navbar-toggler #nav li ul li a {
+    color: var(--title-color);
+    text-decoration: none;
+}
+
+.header_area .navbar-toggler #nav li ul li a:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.header_area .navbar-toggler #nav li ul {
+    position: absolute;
+    left: -999em;
+}
+.header_area .navbar-toggler #nav li:hover ul, #nav li.sfhover ul {
+    right:0;
+    text-align: right;
+}
+
+/* Desktop Navbar */
+.header_area .navbar-desktop {
+    display: none; 
+}
+
+.header_area .navbar-desktop ul {
+    padding-top: 20px; 
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+  }
+  
+  .header_area .navbar-desktop ul li {
+    float: right;
+  }
+  
+  .header_area .navbar-desktop ul li a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: var(--font);
+    color: var(--title-color);
+}
+  
+  .header_area .navbar-desktop ul li a:hover:not(.active) {
+    color: var(--primary-color);
+  }
+  
+  .header_area .navbar-desktop ul li a.active {
+    color: white;
+    color: var(--primary-color);
+  }
+
+/* Responsive Desgin for the submenu  */
+/* Phones */
+@media only screen and (min-width: 320px) {
+    .header_area .navbar-toggler #nav li:hover ul, #nav li.sfhover ul {
+        padding-right: 15px;
+        margin-right: 15px;
+    }
+    .header_area .navbar-toggler #nav li ul {
+        width: 13.438em; /* 190px */  
+    }
+}
+/* Tablets */
+@media only screen and (min-width: 768px) {
+    .header_area .navbar-toggler #nav li:hover ul, #nav li.sfhover ul {
+        padding-right: 30px;
+        margin-right: 57px;
+    }
+    .header_area .navbar-toggler #nav li ul {
+        width: 13.688em;/* 219 px */
+    }
+}
+/* Desktop */
+@media only screen and (min-width: 1280px) {
+    .header_area .navbar-toggler {
+        display: none;    
+    }
+    .header_area .navbar-desktop {
+        display: block; 
+    }
+}
