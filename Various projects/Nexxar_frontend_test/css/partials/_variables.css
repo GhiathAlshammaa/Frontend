@@ -17,10 +17,4 @@ html, body {
 
     /* font family variables. */ 
     --font: 'Arial', sans-serif;
-
-    /* responsive desgin variables */ 
-    --min-width: 320px;
-    --xs: 320px;
-    --s: 768px;
-    --lg: 1280px;
 }

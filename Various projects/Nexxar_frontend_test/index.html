@@ -27,7 +27,7 @@
         <div class="d-flex-header">
             <div class="navbar-brand"></div>
             <div class="navbar-toggler">
-                <ul id="nav">
+                <ul id="nav" onclick="on()">
                     <li><a href="#"><div class="menu-img"></div></a>
                         <ul class="text-uppercase">
                             <li><a href="#" >Home</a></li>
@@ -40,7 +40,7 @@
                 </ul>
             </div>
             <div class="navbar-desktop">
-                <ul id="nav">
+                <ul id="nav" onclick="on()">
                     <li class="text-uppercase"><a href="#">Home</a></li>
                     <li class="text-uppercase"><a href="#">Über diesen Bericht</a></li>
                     <li><a href="#"><span class="text-uppercase">Konzernlagebericht</span></a>
@@ -57,45 +57,54 @@
                 </ul>
             </div>
         </div>
-<!--         <div class="row">
-            <div class="col-3 col-s-6 col-xs-6">
-                <a href="#">
-                    <div class="navbar-brand"></div>
-                </a>
-            </div>
-            <div class="col-9 col-s-6 col-xs-6">    
-                <div class="navbar-toggler">
-                    <ul id="nav">
-                        <li><a href="#"><div class="menu-img"></div></a>
-                            <ul >
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Über diesen Bericht</a></li>
-                                <li><a href="#">Konzernlagebericht</a></li>
-                                <li><a href="#">Konzernabschluss</a></li>
-                                <li><a href="#">Konzernanhang</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <div class="navbar-desktop">
-                    <ul>
-                        <li><a href="#">Über diesen Bericht</a></li>
-                        <li><a href="#">Konzernanhang</a></li>
-                        <li><a href="#">Konzernabschluss</a></li>
-                        <li><a href="#">Konzernlagebericht</a></li>
-                        <li><a href="#">Home</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div> -->
     </header>
-
     <!--  ============================== End Header Area ================================ -->
 
     <!--  ============================== Start Main Area ================================ -->
+    <div id="overlay" onclick="off()"></div>
+    <main class="site-main">
+        <div class="d-flex-site-main">
+            <div class="left-arrow"></div>
+            <div class="main-block">
+                <article>
+                    <section class="article-header">
+                        <div class="article-title">Bilanz</div>
+                        <div class="article-nav">
+                            <div class="left-arrow"></div>
+                            <div class="right-arrow"></div>        
+                        </div>
+                    </section>
+                    <section class="article-main">
+                        <p class="para">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.Ssed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est. Lorem ipsum dolor sit amet.
+                                <br><br>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                        </p>
+                        <div class="article-img"></div>
+                        <h2 class="article-subtitle">Headerline 2</h2>
+                        <p class="para">
+                            Lorem ipsum dolor sit amet, consetetursadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+                        </p>
+                    </section>
+                </article>
+                <aside>
+                    <div class="aside-header">
+                        Lorem ipsum
+                    </div>
+                    <div class="aside-img"></div>
+                    <div class="aside-content">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet.<br><br> 
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                    </div>
+                </aside>
+            </div>
+            <div class="right-arrow"></div>
+        </div>
+    </main>
+    
     <!--  ============================== End Main Area ================================== -->
 
     <!--  ============================== Start Footer Area ============================== -->
+    <footer class="footer-area">© nexxar GmbH </footer>
     <!--  ============================== End Footer Area ================================ -->
 
 

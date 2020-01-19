@@ -26,3 +26,24 @@ p.para{
 .font-website{
     font-family: var(--font);
 }
+
+#overlay {
+    position: fixed;
+    display: none;
+    height: 88%;
+    top: 12%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+    #overlay {
+        height: 83.5%;
+        top: 16.5%;
+    }
+}

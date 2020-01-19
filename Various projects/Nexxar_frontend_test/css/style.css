@@ -5,9 +5,10 @@
 @import url(./partials/_global.css);
 
 
+/* header area */
 .header_area {
     display: block;
-    border-bottom: 1px solid #00c6ff;
+    /* border-bottom: 1px solid #00c6ff; */
     width: 100%;
 }
 
@@ -51,3 +52,12 @@
 .header_area .d-flex-header .navbar-desktop ul li #nav{
     display: none;
 }
+/* end header area */
+
+/* site main area */
+.site-main{
+    display: block;
+    min-height: 100%;
+    background-color: #eeeeee;
+}
+/* end site main area */

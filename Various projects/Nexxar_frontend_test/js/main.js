@@ -1,3 +1,4 @@
+
 /* suckefisch Menu for navbar */
 sfHover = function() {
 	var sfEls = document.getElementById("nav").getElementsByTagName("LI");
@@ -7,7 +8,22 @@ sfHover = function() {
 		}
 		sfEls[i].onmouseout=function() {
 			this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
+			off();
 		}
 	}
 }
 if (window.attachEvent) window.attachEvent("onload", sfHover);
+
+/* Overlay */
+
+function on() {
+	document.getElementById("overlay").style.display = "block";
+}
+  
+function off() {
+	document.getElementById("overlay").style.display = "none";
+}
+
+
+
+
