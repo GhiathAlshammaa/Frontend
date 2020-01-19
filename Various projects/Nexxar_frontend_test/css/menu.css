@@ -93,7 +93,7 @@
   
    .header_area .d-flex-header .navbar-desktop ul li a {
     text-decoration: none;
-    font: normal bold 16px var(--font);
+    font: normal bold 14px var(--font);
     color: var(--title-color);
     }
   
@@ -104,67 +104,3 @@
   .header_area .d-flex-header .navbar-desktop ul li a.active {
     color: var(--primary-color);
   }
-
-  /* Desktop Navbar Submenu */
-
-  .header_area .d-flex-header .navbar-desktop #nav li ul {
-
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      flex: 1 1 auto;
-
-      padding: 0;      
-      margin: 0;
-      list-style-type: none;
-      overflow: hidden;
-      width: 11.250em;
-  }
-  
-  .header_area .d-flex-header .navbar-desktop #nav li {
-    float: right;
-  }  
-  .header_area .d-flex-header .navbar-desktop #nav li ul li{
-    padding-left: 0;
-    padding-right: 0;
-    /* padding-left: 0.625em;
-    padding-right: 0.625em; */
-    padding-bottom: 0.625em !important;
-  }
-
-  .header_area .d-flex-header .navbar-desktop #nav li:hover ul {
-      left: initial;
-      background-color: white;
-      padding-top: 1.563em;
-      width: 11.250em;
-      position: absolute;
-      right:auto;
-      left: auto;
-  }
-
-  .header_area .d-flex-header .navbar-desktop #nav li:hover ul li {
-    padding-bottom: 1.875em;
-}
-
-.header_area .d-flex-header .navbar-desktop #nav li ul li a {
-    font: normal 500 12px var(--font);
-    color: var(--title-color);
-    text-decoration: none;
-}
-
-.header_area .d-flex-header .navbar-desktop #nav li ul li a:hover {
-    color: var(--primary-color);
-    text-decoration: underline;
-}
-
-.header_area .d-flex-header .navbar-desktop #nav li ul {
-    position: absolute;
-    left: -999em;
-}
-
-.header_area .d-flex-heade .navbar-toggler #nav li:hover ul, 
-.header_area .d-flex-heade .navbar-toggler #nav li.sfhover ul {
-    left: auto;
-    right: 0;
-    text-align: right;
-}
