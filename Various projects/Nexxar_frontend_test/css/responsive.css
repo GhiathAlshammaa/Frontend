@@ -1,6 +1,35 @@
 /* import global styling */
 @import url(./partials/_global.css);
 
+
+.d-flex-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex: 1 1 auto;
+    justify-content: space-between;
+    padding: 1.875em;
+}
+
+@media only screen and (min-width: 768px) {
+    .d-flex-header {
+        padding-bottom: 3.125em;
+        padding-right: 5.625em;
+        padding-left: 5.625em;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+
+    .header_area .d-flex-header .navbar-toggler {
+        display: none;
+    }
+    .header_area .d-flex-header .navbar-desktop {
+        display: flex;
+        margin-top: auto;
+    }
+}
+/* 
 .row::after {
     content: "";
     clear: both;
@@ -15,7 +44,6 @@
     [class*="col-"] {
         padding: 30px;
       }
-    /* For Phones: */
     .col-xs-1 {width: 8.33%;}
     .col-xs-2 {width: 16.66%;}
     .col-xs-3 {width: 25%;}
@@ -32,9 +60,8 @@
 
   @media only screen and (min-width: 768px) {
     [class*="col-"] {
-        padding: 70px 90px;
+        padding: 30px 90px 50px 90px;
       }
-    /* For tablets: */
     .col-s-1 {width: 8.33%;}
     .col-s-2 {width: 16.66%;}
     .col-s-3 {width: 25%;}
@@ -52,7 +79,6 @@
     [class*="col-"] {
         padding: 30px 80px 50px 90px;
       }
-    /* For desktop: */
     .col-1 {width: 8.33%;}
     .col-2 {width: 16.66%;}
     .col-3 {width: 25%;}
@@ -66,3 +92,5 @@
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
   }
+
+  */

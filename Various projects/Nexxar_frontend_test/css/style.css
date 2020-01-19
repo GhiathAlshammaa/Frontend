@@ -5,17 +5,49 @@
 @import url(./partials/_global.css);
 
 
-.header_area{
+.header_area {
+    display: block;
     border-bottom: 1px solid #00c6ff;
     width: 100%;
 }
-.header_area a {
-    text-decoration: none;
-}
-.header_area a .navbar-brand{
+
+.header_area .d-flex-header .navbar-brand {
     display: block;
     background : url('../img/logo.png') no-repeat center/cover  ;
+    background-size: 100% 100%;
     width: 147px;
     height: 57px;
 }
+/* Tablet & Desktop */
+@media only screen and (min-width: 768px) {
+    .header_area .d-flex-header .navbar-brand{
+        width: 194px;
+        height: 81px;
+    }
+}
 
+.header_area .d-flex-header .navbar-toggler{
+    margin-top: auto;
+    margin-bottom: 1em;
+}
+
+.header_area .d-flex-header .navbar-toggler #nav li .menu-img{
+    display: block;
+    background : url('../img/menu.png') no-repeat ;
+    background-size: 100% 100%;
+    height: 19px;
+    width: 23px; 
+}
+
+.header_area .d-flex-header .navbar-toggler #nav li:hover .menu-img{
+    background : url('../img/menu-hover.png') no-repeat ;
+}
+
+.header_area .d-flex-header .navbar-desktop {
+    display: none;
+}
+
+/* Disable the Navbar Desktop's submenu */
+.header_area .d-flex-header .navbar-desktop ul li #nav{
+    display: none;
+}
