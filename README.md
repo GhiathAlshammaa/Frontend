@@ -2,14 +2,15 @@
 
 My training projects & some test for (IBM, Styria and naxxar) in a Frontend field
 
-* Demo version of my next portfolio
+- Demo version of my next portfolio
+
 https://demo.ghiath.net/
 
-* budget project
+- budget project
 
 http://budget.ghiath.net/
 
-* Companies tests
+- Companies tests
 
 http://nexxar.ghiath.net/
 
