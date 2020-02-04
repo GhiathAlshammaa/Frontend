@@ -6,4 +6,4 @@ Test for Styria company, in order filter some json formatting and display it aga
 
 Project Link's:
 
-styria.ghiath.net
+http://styria.ghiath.net/
