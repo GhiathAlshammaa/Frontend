@@ -1,3 +1,9 @@
+Test for IBM company:
+Here is the User Story of them :
+
+http://ibm.ghiath.net/userstory.pdf
+
+Some details, I've wrote to explain my code 
 The Project consist of three Arrays, five Functions and a Module (readline) of Node.js for (Input/Output) 
 
 # The Arrays :
