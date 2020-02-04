@@ -61,6 +61,18 @@ p.para{
     font: normal 500 16px/25px var(--roboto);
 }
 
+.isDisabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.isDisabled > a {
+  color: currentColor;
+  display: inline-block;  /* For IE11/ MS Edge bug */
+  pointer-events: none;
+  text-decoration: none;
+}
+
 .font-roboto{
     font-family: var(--roboto);
 }
@@ -76,6 +88,11 @@ button:hover
 
 .title-h1{
     font: normal bold 39px/40px var(--roboto);
+}
+
+.title-h1-uc{
+    font: normal bold 19px/20px var(--roboto);
+    color: red;
 }
 
 .navbar_fixed{

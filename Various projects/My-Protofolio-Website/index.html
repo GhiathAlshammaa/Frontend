@@ -9,7 +9,7 @@
 
     <!-- Bootstrap css file -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-
+    
     <!-- font awesome icons -->
     <link rel="stylesheet" href="./css/all.min.css">
     
@@ -47,22 +47,22 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">about</a>
+                    <a class="nav-link" href="#about">about</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">services</a>
+                    <a class="nav-link" href="#experience">experience</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">portfolio</a>
+                    <a class="nav-link" href="#service">services</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">pages</a>
+                    <a class="nav-link" href="#portfolio">portfolio</a>
                   </li>
+                  <!-- <li class="nav-item">
+                    <a class="nav-link" href="#"">blog</a>
+                  </li> -->
                   <li class="nav-item">
-                    <a class="nav-link" href="#">blog</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">contact</a>
+                    <a class="nav-link" href="#contact">contact</a>
                   </li>
                 </ul>
               </div>
@@ -81,7 +81,7 @@
                     <div class="col-lg-6 col-md-12 site-title">
                         <h3 class="title-text">Hey</h3>
                         <h1 class="title-text text-uppercase">I am Ghiath</h1>
-                        <h4 class="title-text text-uppercase">Web Frontend Developer</h1>
+                        <h4 class="title-text text-uppercase">Web Developer</h1>
                         <div class="d-flex flex-row flex-wrap">
                             <div class="site-buttons">
                                 <button type="button" class="btn button primary-button mr-4 text-uppercase">Hire me</button>
@@ -98,8 +98,7 @@
         <!--  ============================== End Banner Area ================================== -->
 
         <!--  ============================== About Area ====================================== -->
-
-        <section class="about-area">
+        <section class="about-area" id="about">
           <div class="container-fluid">
             <div class="row">
               <div class="col-lg-6 col-md-12">
@@ -115,11 +114,11 @@
                 </h2>
                 <div class="paragraph py-4 w-75">
                   <p class="para">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis esse hic impedit laborum, sit dolorem excepturi ipsam repellat neque corporis?
+                    My name is Ghiath, I am 31 years old, I've Information Technology Bachelor, 
+                    and I've worked since 2010 as web developer, 5 years of this period with professional companies as Team member of awesome Teams. 
+                    So I can work normally as team player or independet developer.                   
                   </p>
-                  <p class="para">
-                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',
-                  </p>
+
                   <button type="button" class="btn button primary-button text-uppercase">Download Cv</button>
                 </div>
               </div>
@@ -131,34 +130,48 @@
 
         <!--  ============================== Brand Area ================================== -->
 
-        <section class="brand-area">
+        <section class="brand-area"  id="experience">
           <div class="container-fluid">
             <div class="row">
               <div class="col-xl-6 col-lg-12 col-md-12">
                 <div class="first-row row">
                   <div class="col-lg-4 col-md-6 col-sm-6">
                       <div class="single-brand">
-                        <img src="./img/brands/logo1.png" alt="Brand-1">
+                        <span class="isDisabled">
+                          <a href="#">
+                            <img src="./img/brands/logo1.png" alt="Brand-1">
+                          </a>
+                        </span>
                       </div>
                   </div>
                   <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-brand">
-                      <img src="./img/brands/logo2.png" alt="Brand-2">
+                      <a href="https://www.kapsch.net/" target="_blank" style="text-decoration: none;">
+                        <img src="./img/brands/logo2.png" alt="Brand-2">
+                      </a>
                     </div>
                   </div>
                   <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-brand">
-                      <!-- <a href="https://www.massiveart.com/" style="text-decoration: none;"> -->
+                      <a href="https://www.massiveart.com/" target="_blank" style="text-decoration: none;">
                         <img src="./img/brands/logo3.png" alt="Brand-3">
-                      <!-- </a> -->
+                      </a>
                       </div>
                   </div>
+
                 </div>
+                <!-- <div class="first-row row ">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="multi-brand">
+                        <img src="./img/brands/logo5.png" alt="Brand-5 ">
+                    </div>
+                  </div>
+                </div> -->
               </div>
               <div class="col-xl-6 col-lg-12 col-md-12">
                 <div class="experience-area">
                   <div class="d-flex flex-row years-area">
-                    <h2 class="p-3 years"> 5</h2>
+                    <h2 class="p-3 mr-3 years">5</h2>
                     <h2>
                       <span>Years</span>
                       <span>Experience</span>
@@ -166,10 +179,24 @@
                     </h2>
                   </div>
                   <div class="d-flex flex-row flex-wrap call-area">
-                    <span><i class="fas fa-phone-alt fa-3x px-3"></i></span>
+                    <!-- <span><i class="fas fa-phone-alt fa-3x px-3"></i></span> -->
                     <div class="call-now">
-                      <a href="#" class="text-uppercase h4 font-roboto">Call Me</a>
+                      <a href="https://wa.me/00436609243210" target="_blank" class="text-uppercase h4 font-roboto">
+                        <i class="fab fa-whatsapp"></i>  
+                        Call 
+                      </a>
                       <span class="font roboto py-2">(+43)-660-924-3210</span>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="d-flex flex-row flex-wrap call-area">
+                    <!-- <span><i class="fas fa-phone-alt fa-3x px-3"></i></span> -->
+                    <div class="call-now">
+                      <a href="mailto:info@ghiath.net" target="_blank" class="text-uppercase h4 font-roboto">
+                        <i class="fa fa-paper-plane"></i>
+                        Contact 
+                      </a>
+                      <span class="font roboto py-2">info@ghiath.net</span>
                     </div>
                   </div>
                   <div class="bg-panel"></div>
@@ -183,14 +210,13 @@
 
         <!--  ============================== Services Area ================================== -->
 
-        <section class="services-area">
+        <section class="services-area" id="service">
           <div class="container">
             <div class="row">
               <div class="col-lg-12 text-center services-title">
                 <h1 class="text-uppercase title-text">Services Offers</h1>
                 <p class="para">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio at et minima labore, 
-                  velit veritatis itaque qui possimus similique expedita.
+                  What I can offer for you
                 </p>
               </div>
             </div>
@@ -202,11 +228,9 @@
                       <img src="./img/services/s1.png" alt="Services-1">
                     </div>
                     <div class="card-body text-center">
-                      <h5 class="card-title text-uppercase font-roboto">web developer</h5>
+                      <h5 class="card-title text-uppercase font-roboto">web development</h5>
                       <p class="card-text text-secondary">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque nisi, voluptatibus est dolores inventore fugiat iste fuga voluptate accusamus dolor?
-                      </p>
-                    </div>
+                        I can develop for you any kind of website, by the latest technology available nowadays, in additional to great reliability, security, usability and  more else.</div>
                   </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12">
@@ -217,9 +241,7 @@
                     <div class="card-body text-center">
                       <h5 class="card-title text-uppercase font-roboto">UX/UI DESIGN</h5>
                       <p class="card-text text-secondary">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque nisi, voluptatibus est dolores inventore fugiat iste fuga voluptate accusamus dolor?
-                      </p>
-                    </div>
+                        The user experience is an important basis for any successful website or mobile app, so I can offer you the best possible UX fits  with your business by Adobe Photoshop.</div>
                   </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12">
@@ -230,7 +252,7 @@
                     <div class="card-body text-center">
                       <h5 class="card-title text-uppercase font-roboto">web design</h5>
                       <p class="card-text text-secondary">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque nisi, voluptatibus est dolores inventore fugiat iste fuga voluptate accusamus dolor?
+                        Web Design is different than media design, so that need good background about all web aspects. I can offer you, efficient Design can work with all devices samll or big, in a excelent performance.
                       </p>
                     </div>
                   </div>
@@ -243,8 +265,7 @@
                     <div class="card-body text-center">
                       <h5 class="card-title text-uppercase font-roboto">seo optimize</h5>
                       <p class="card-text text-secondary">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque nisi, voluptatibus est dolores inventore fugiat iste fuga voluptate accusamus dolor?
-                      </p>
+                      If you've a very good website, but the search engines can't archive it, that website is useless, because Users can't find it . I can improve your website's code to be more clear and Friend of search engines.                      </p>
                     </div>
                   </div>
                 </div>
@@ -258,11 +279,12 @@
 
         <!--  ======================= Project Area =============================  -->
 
-        <section class="project-area">
+        <section class="project-area" id="portfolio">
           <div class="container">
               <div class="project-title pb-5">
                   <h1 class="text-uppercase title-h1">Recently Done Project</h1>
                   <h1 class="text-uppercase title-h1">Quality Work</h1>
+                  <h1 class="text-uppercase title-h1-uc">(under constraction)</h1>
               </div>
 
               <div class="button-group">
@@ -405,9 +427,6 @@
             <div class="col12">
               <div class="about-title">
                 <h1 class="text-uppercase title-h1">Colleagues Say about me</h1>
-                <p class="para">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi optio recusandae excepturi numquam quidem quae hic fugiat reprehenderit molestias porro.
-                </p>
               </div>
             </div>
           </div>
@@ -420,9 +439,10 @@
                 <img src="./img/testimonials/t1.jpg" alt="img1" class="img-fluid">
               </div>
               <div class="col-lg-8 col-md-12 about-client">
-                <h4 class="text-uppercase">John Martin</h4>
+                <h4 class="text-uppercase">Wesal</h4>
+                <br>
                 <p class="para">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex numquam fuga, nulla accusantium vero delectus possimus labore sunt aliquam dolores!
+                  Mr.Ghiath delivered quality work, performed his duties, responsibilities efficiently and effectively.                
                 </p>
               </div>
             </div>
@@ -431,53 +451,23 @@
                 <img src="./img/testimonials/t2.jpg" alt="img2" class="img-fluid">
               </div>
               <div class="col-lg-8 col-md-12 about-client">
-                <h4 class="text-uppercase">Mac Hill</h4>
+                <h4 class="text-uppercase">Kapsch</h4>
+                <br>
                 <p class="para">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex numquam fuga, nulla accusantium vero delectus possimus labore sunt aliquam dolores!
-                </p>
+                  Mr.Ghiath is very polite, has a proactive way of working, a good self-view, high willingness to learn new tools and new methods as well as creativity in finding solutions.                </p>
               </div>
             </div>
             <div class="client row">
               <div class="col-lg-4 col-md-12 client-img">
-                <img src="./img/testimonials/t1.jpg" alt="img1" class="img-fluid">
+                <img src="./img/testimonials/t3.jpg" alt="img1" class="img-fluid">
               </div>
               <div class="col-lg-8 col-md-12 about-client">
-                <h4 class="text-uppercase">John Martin</h4>
+                <h4 class="text-uppercase">massiveart</h4>                <br>
+
                 <p class="para">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex numquam fuga, nulla accusantium vero delectus possimus labore sunt aliquam dolores!
-                </p>
-              </div>
-            </div>
-            <div class="client row">
-              <div class="col-lg-4 col-md-12 client-img">
-                <img src="./img/testimonials/t2.jpg" alt="img2" class="img-fluid">
-              </div>
-              <div class="col-lg-8 col-md-12 about-client">
-                <h4 class="text-uppercase">Mac Hill</h4>
-                <p class="para">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex numquam fuga, nulla accusantium vero delectus possimus labore sunt aliquam dolores!
-                </p>
-              </div>
-            </div>
-            <div class="client row">
-              <div class="col-lg-4 col-md-12 client-img">
-                <img src="./img/testimonials/t1.jpg" alt="img1" class="img-fluid">
-              </div>
-              <div class="col-lg-8 col-md-12 about-client">
-                <h4 class="text-uppercase">John Martin</h4>
-                <p class="para">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex numquam fuga, nulla accusantium vero delectus possimus labore sunt aliquam dolores!
-                </p>
-              </div>
-            </div>
-            <div class="client row">
-              <div class="col-lg-4 col-md-12 client-img">
-                <img src="./img/testimonials/t2.jpg" alt="img2" class="img-fluid">
-              </div>
-              <div class="col-lg-8 col-md-12 about-client">
-                <h4 class="text-uppercase">Mac Hill</h4>
-                <p class="para">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex numquam fuga, nulla accusantium vero delectus possimus labore sunt aliquam dolores!
+                  Mr.Ghiath always showed great commitment, hard work and interest. After a short familiarization period, he worked completely independently. Mr. Ghiath was an extremely reliable one
+                  Employee who is always very good because of his exemplary commitment from his superiors and colleagues
+                  was appreciated.
                 </p>
               </div>
             </div>
@@ -486,12 +476,12 @@
       </section>
 
       <!--  ======================= End About Me Area =============================  -->
-      <section class="subscribe-us-area">
+      <section class="subscribe-us-area" id="contact">
         <div class="container subscribe">
           <div class="row">
             <div class="col-lg-12 text-center subscribe-title">
               <h4 class="text-uppercas">Get Update From anywhere</h4>
-              <p class="para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, soluta?</p>
+              <p class="para">If you would like to be in my Newslist, please add your email here.</p>
             </div>
           </div>
           <div class="d-sm-flex justify-content-center">
@@ -526,15 +516,15 @@
             </div>
             <div class="social text-center">
               <h5 class="text-upper-case">Follow me</h5>
-              <a target="_blank" href="https://github.com/Ghiath2017"><i class="fab fa-github"></i></a>
-              <a target="_blank" href="https://wa.me/+436609243210"><i class="fab fa-whatsapp"></i></a>
-              <a target="_blank" href="https://www.instagram.com/ghiath_alshamaa/"><i class="fab fa-instagram"></i></a>
-              <a target="_blank" href="https://www.facebook.com/ghiath.alshamaa"><i class="fab fa-facebook"></i></a>
-              <a target="_blank" href="https://twitter.com/ghiath_alshamaa"><i class="fab fa-twitter"></i></a>
+              <a target="_blank" href="https://github.com/Ghiath2017"><i class="fab fa-github" aria-hidden="true"></i></a>
+              <a target="_blank" href="https://wa.me/+436609243210"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+              <a target="_blank" href="https://www.instagram.com/ghiath_alshamaa/"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+              <a target="_blank" href="https://www.facebook.com/ghiath.alshamaa"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+              <a target="_blank" href="https://twitter.com/ghiath_alshamaa"><i class="fab fa-twitter" aria-hidden="true"></i></a>
             </div>
             <div class="copyrights text-center">
               <p class="para">
-                Copyright ©2019 All rights reserved | This template is made with by 
+                Copyright 2020 All rights reserved | This template is made by 
                 <a href="#"><span style="color: var(--primary-color)"> Ghiath Alshammaa </span></a>
               </p>
             </div>
