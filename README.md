@@ -1,4 +1,4 @@
 # Frontend
 
-My training projects in a Frontend field
+My training projects & some test for (IBM, Styria and naxxar) in a Frontend field
 
