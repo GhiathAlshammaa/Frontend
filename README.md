@@ -6,7 +6,7 @@ My training projects & some test for (IBM, Styria and naxxar) in a Frontend fiel
 
 http://budget.ghiath.net/
 
-* Test for companies
+* Companies tests
 
 http://nexxar.ghiath.net/
 
