@@ -1,4 +1,4 @@
-Test project for nexxar company, I prefer write my style by Scss or bootstrap, but they requested plain css, 
+Test project for nexxar company, I prefer to write my style by Scss or bootstrap, but they requested plain css, 
 
 Project's link
 http://nexxar.ghiath.net/
