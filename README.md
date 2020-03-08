@@ -2,9 +2,9 @@
 
 My training projects & some test for (IBM, Styria and naxxar) in a Frontend field
 
-- Demo version of my next portfolio
+- my portfolio
 
-https://demo.ghiath.net/
+https://ghiath.net/
 
 - budget project
 
