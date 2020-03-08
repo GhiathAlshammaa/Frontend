@@ -10,11 +10,4 @@ https://ghiath.net/
 
 http://budget.ghiath.net/
 
-- Companies tests
-
-http://nexxar.ghiath.net/
-
-http://styria.ghiath.net/
-
-http://ibm.ghiath.net/
 
