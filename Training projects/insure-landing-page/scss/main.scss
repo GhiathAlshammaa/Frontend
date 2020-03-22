@@ -1,5 +1,2 @@
-$a: blue;
-
-h1 {
-    color: $a;
-}
+@import 'general/variables';
+@import 'layouts/nav';
