@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProjectModule } from './projects/project.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { ProjectModule } from './projects/project.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ProjectModule
+    ProjectModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
