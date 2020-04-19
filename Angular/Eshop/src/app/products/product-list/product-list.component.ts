@@ -8,6 +8,7 @@ import { IProduct } from '../product';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
+  displayedColumns: string[] = ['imageUrl', 'productName', 'productCode', 'description'];
   products: IProduct[] = [];
   errorMessage: string;
 
