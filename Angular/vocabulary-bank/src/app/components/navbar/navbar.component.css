@@ -1,0 +1,12 @@
+mat-toolbar button {
+  margin-left: 1rem;
+}
+
+mat-toolbar span {
+  margin: auto;
+}
+
+a, a:link, a:hover, a:visited {
+  text-decoration: none;
+  color: gray;
+}
