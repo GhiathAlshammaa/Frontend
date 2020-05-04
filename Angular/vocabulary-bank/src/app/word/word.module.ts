@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { WordListComponent } from './components/word-list/word-list.component';
-import { WordDetailComponent } from './components/word-detail/word-detail.component';
-import { CreateWordComponent } from './components/create-word/create-word.component';
-import { UpdateWordComponent } from './components/update-word/update-word.component';
-import { WordRoutingModule } from './word-routing.module';
 
+import {
+  WordListComponent,
+  WordDetailComponent,
+  CreateWordComponent,
+  UpdateWordComponent,
+  WordRoutingModule
+} from './index';
 
 
 @NgModule({
