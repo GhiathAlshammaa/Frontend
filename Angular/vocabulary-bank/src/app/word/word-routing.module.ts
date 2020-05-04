@@ -7,8 +7,8 @@ import { CreateWordComponent } from './components/create-word/create-word.compon
 import { WordListComponent } from './components/word-list/word-list.component';
 
 const routes: Routes = [
-  { path: 'add', component: CreateWordComponent },
-  { path: 'view', component: WordListComponent }
+  { path: 'words/add', component: CreateWordComponent },
+  { path: 'words', component: WordListComponent }
 ];
 
 @NgModule({

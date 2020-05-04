@@ -5,13 +5,10 @@ import { Routes, RouterModule } from '@angular/router';
 // Component import Statements
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-// import { WordListComponent } from './word/components/word-list/word-list.component';
-// import { CreateWordComponent } from './word/components/create-word/create-word.component';
 
 const routes: Routes = [
-  // { path: 'add', component: CreateWordComponent },
-  // { path: 'view', component: WordListComponent },
-  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo:'home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
 
