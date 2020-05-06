@@ -8,7 +8,7 @@ import { WordListComponent } from './components/word-list/word-list.component';
 
 const routes: Routes = [
   { path: 'words/add', component: CreateWordComponent },
-  { path: 'words', component: WordListComponent }
+  { path: 'words/view', component: WordListComponent }
 ];
 
 @NgModule({
