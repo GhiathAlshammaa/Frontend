@@ -5,6 +5,11 @@
       "title": "Jogging",
       "dateStart": "2020-06-30T17:06:56.143Z",
       "dataEnd": "2020-06-30T18:06:56.143Z"
+    }, {
+      "id": 2,
+      "title": "Learning TS",
+      "dateStart": "2020-06-30T17:06:56.143Z",
+      "dataEnd": "2020-06-30T18:06:56.143Z"
     }
   ]
 }
