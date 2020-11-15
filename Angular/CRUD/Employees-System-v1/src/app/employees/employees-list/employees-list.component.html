@@ -1,5 +1,7 @@
 <div class="container m-5">
-  <button type="button" class="btn btn-primary btn-lg">Add New Employee</button>
+  <a routerLink="/employee/add/0" class="btn btn-primary mb-3">
+    Add New Employee
+  </a>
   <table class="table">
     <thead>
       <tr>
@@ -20,7 +22,11 @@
         </td>
         <td>{{ employee.lastName }}</td>
         <td>{{ employee.job }}</td>
-        <td><a href="#">Edit</a> | <a href="#">Remove</a></td>
+        <td>
+          <a [routerLink]="['/employee/edit', employee.id]">Edit</a>
+          |
+          <!-- <a >Remove</a> -->
+        </td>
       </tr>
     </tbody>
   </table>
