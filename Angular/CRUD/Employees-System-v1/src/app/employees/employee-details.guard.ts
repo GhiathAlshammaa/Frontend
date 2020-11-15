@@ -28,9 +28,10 @@ export class EmployeeDetailsGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    this.refailEmployees()
+    this.refailEmployees();
     const id = +route.url[1].path;
     const checkId = this.employees.find((e) => e.id === id) ? true : false;
+    this.employees = [];
     if (isNaN(id) || id < 1 || checkId === false) {
       alert('Invalid product Id');
       this.router.navigate(['/employees-list']);
