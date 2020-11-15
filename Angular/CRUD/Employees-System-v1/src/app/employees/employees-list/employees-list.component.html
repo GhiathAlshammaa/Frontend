@@ -13,7 +13,11 @@
     <tbody>
       <tr *ngFor="let employee of employees">
         <th scope="row">{{ employee.id }}</th>
-        <td>{{ employee.firstName }}</td>
+        <td>
+          <a [routerLink]="['/employee-details', employee.id]">{{
+            employee.firstName
+          }}</a>
+        </td>
         <td>{{ employee.lastName }}</td>
         <td>{{ employee.job }}</td>
         <td><a href="#">Edit</a> | <a href="#">Remove</a></td>
