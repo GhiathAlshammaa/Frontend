@@ -1,1 +1,23 @@
-<p>employees-list works!</p>
+<div class="container m-5">
+  <button type="button" class="btn btn-primary btn-lg">Add New Employee</button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Job</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <th scope="row">{{ employee.id }}</th>
+        <td>{{ employee.firstName }}</td>
+        <td>{{ employee.lastName }}</td>
+        <td>{{ employee.job }}</td>
+        <td><a href="#">Edit</a> | <a href="#">Remove</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
