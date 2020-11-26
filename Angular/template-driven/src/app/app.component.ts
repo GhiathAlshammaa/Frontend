@@ -24,10 +24,12 @@ export class AppComponent implements OnInit {
 
   onClickHandler(): void {
     this.formMode = !this.formMode;
+    this.user.username = '';
+    this.user.password = '';
   }
 
   onSubmitHandler(form: NgForm): void {
-    console.log('form: ', form.value);
+    console.log('is form valid? ', form.valid);
   }
 
   onBlurHandler(field: NgModel) {

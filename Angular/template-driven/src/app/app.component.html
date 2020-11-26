@@ -21,12 +21,12 @@
             (blur)="onBlurHandler(username)"
           />
         </div>
-        <!-- <div
-          [hidden]="username.valid || username.untouched"
+        <div
+          [hidden]="!formSignIn.submitted || username.valid"
           Class="alert alert-danger"
         >
-          Enter a value to Username
-        </div> -->
+          Enter Username
+        </div>
         <div class="input-field">
           <i class="fas fa-lock"></i>
           <input
@@ -40,12 +40,12 @@
             (blur)="onBlurHandler(password)"
           />
         </div>
-        <!-- <div
-          [hidden]="password.valid || password.untouched"
+        <div
+          [hidden]="!formSignIn.submitted || password.valid"
           Class="alert alert-danger"
         >
-          Enter valid Password
-        </div> -->
+          Enter Password
+        </div>
         <input type="submit" value="Login" class="btn solid" />
         <p class="social-text">Or Sign in with social platforms</p>
         <div class="social-media">
@@ -64,7 +64,12 @@
         </div>
       </form>
 
-      <form action="#" class="sign-up-form" #formSignUp="ngForm">
+      <form
+        action="#"
+        class="sign-up-form"
+        #formSignUp="ngForm"
+        (ngSubmit)="onSubmitHandler(formSignUp)"
+      >
         <h2 class="title">Sign up</h2>
         <div class="input-field">
           <i class="fas fa-user"></i>
@@ -78,10 +83,10 @@
           />
         </div>
         <div
-          [hidden]="!formSignUp.submitted && username.invalid"
+          [hidden]="!formSignUp.submitted || username.valid"
           Class="alert alert-danger"
         >
-          Enter a value to Username
+          Enter Username
         </div>
         <div class="input-field">
           <i class="fas fa-envelope"></i>
@@ -96,10 +101,10 @@
           />
         </div>
         <div
-          [hidden]="!formSignUp.submitted && email.invalid"
+          [hidden]="!formSignUp.submitted || email.valid"
           Class="alert alert-danger"
         >
-          Enter an Email Address
+          Enter Email Address
         </div>
         <div class="input-field">
           <i class="fas fa-lock"></i>
@@ -114,10 +119,10 @@
           />
         </div>
         <div
-          [hidden]="!formSignUp.submitted && password.invalid"
+          [hidden]="!formSignUp.submitted || password.valid"
           Class="alert alert-danger"
         >
-          Enter an Password Address
+          Enter Password
         </div>
         <div class="input-field">
           <i class="fas fa-lock"></i>
@@ -132,7 +137,7 @@
           />
         </div>
         <div
-          [hidden]="!formSignUp.submitted && password_confirmation.invalid"
+          [hidden]="!formSignUp.submitted || password_confirmation.valid"
           Class="alert alert-danger"
         >
           Enter the Password again
