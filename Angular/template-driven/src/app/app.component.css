@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+.field-error {
+  border: 1px solid red ;
+}
+
 body,
 input {
   font-family: "Poppins", sans-serif;

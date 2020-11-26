@@ -1,16 +1,51 @@
 <div [ngClass]="formMode ? signInForm : signUpForm">
   <div class="forms-container">
     <div class="signin-signup">
-      <form action="#" class="sign-in-form">
+      <form
+        action="#"
+        class="sign-in-form"
+        #formSignIn="ngForm"
+        (ngSubmit)="onSubmitHandler(formSignIn)"
+      >
         <h2 class="title">Sign in</h2>
         <div class="input-field">
           <i class="fas fa-user"></i>
-          <input type="text" placeholder="Username" />
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Username"
+            [(ngModel)]="user.username"
+            #username="ngModel"
+            required
+            (blur)="onBlurHandler(username)"
+          />
         </div>
+        <!-- <div
+          [hidden]="username.valid || username.untouched"
+          Class="alert alert-danger"
+        >
+          Enter a value to Username
+        </div> -->
         <div class="input-field">
           <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Password" />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            [(ngModel)]="user.password"
+            #password="ngModel"
+            required
+            (blur)="onBlurHandler(password)"
+          />
         </div>
+        <!-- <div
+          [hidden]="password.valid || password.untouched"
+          Class="alert alert-danger"
+        >
+          Enter valid Password
+        </div> -->
         <input type="submit" value="Login" class="btn solid" />
         <p class="social-text">Or Sign in with social platforms</p>
         <div class="social-media">
@@ -28,19 +63,79 @@
           </a>
         </div>
       </form>
-      <form action="#" class="sign-up-form">
+
+      <form action="#" class="sign-up-form" #formSignUp="ngForm">
         <h2 class="title">Sign up</h2>
         <div class="input-field">
           <i class="fas fa-user"></i>
-          <input type="text" placeholder="Username" />
+          <input
+            type="text"
+            placeholder="Username"
+            name="username"
+            id="username"
+            [(ngModel)]="user.username"
+            #username="ngModel"
+          />
+        </div>
+        <div
+          [hidden]="!formSignUp.submitted && username.invalid"
+          Class="alert alert-danger"
+        >
+          Enter a value to Username
         </div>
         <div class="input-field">
-          <input class="fas fa-envelope" />
-          <input type="email" placeholder="Email" />
+          <i class="fas fa-envelope"></i>
+          <input
+            type="email"
+            placeholder="Email"
+            name="email"
+            id="email"
+            [(ngModel)]="user.email"
+            #email="ngModel"
+            required
+          />
+        </div>
+        <div
+          [hidden]="!formSignUp.submitted && email.invalid"
+          Class="alert alert-danger"
+        >
+          Enter an Email Address
         </div>
         <div class="input-field">
           <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Password" />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            id="password"
+            [(ngModel)]="user.password"
+            #password="ngModel"
+            required
+          />
+        </div>
+        <div
+          [hidden]="!formSignUp.submitted && password.invalid"
+          Class="alert alert-danger"
+        >
+          Enter an Password Address
+        </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input
+            type="password"
+            placeholder="Password Confirmation"
+            name="password_confirmation"
+            id="password_confirmation"
+            [(ngModel)]="user.password_confirmation"
+            #password_confirmation="ngModel"
+            required
+          />
+        </div>
+        <div
+          [hidden]="!formSignUp.submitted && password_confirmation.invalid"
+          Class="alert alert-danger"
+        >
+          Enter the Password again
         </div>
         <input type="submit" class="btn" value="Sign up" />
         <p class="social-text">Or Sign up with social platforms</p>
@@ -59,6 +154,13 @@
           </a>
         </div>
       </form>
+      <!-- <p class="social-text">Form value {{ user | json }}</p>
+      <p class="social-text">username: {{ username.touched }}</p>
+      <p class="social-text">email: {{ email.touched }}</p>
+      <p class="social-text">password: {{ password.touched }}</p>
+      <p class="social-text">
+        password_confirmation: {{ password_confirmation.touched }}
+      </p> -->
     </div>
   </div>
 
@@ -73,7 +175,7 @@
         <button
           class="btn transparent"
           id="sign-up-btn"
-          (click)="onClickSingUp()"
+          (click)="onClickHandler()"
         >
           Sign up
         </button>
@@ -90,7 +192,7 @@
         <button
           class="btn transparent"
           id="sign-in-btn"
-          (click)="onClickSingIn()"
+          (click)="onClickHandler()"
         >
           Sign in
         </button>

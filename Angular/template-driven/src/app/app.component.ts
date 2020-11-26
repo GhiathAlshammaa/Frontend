@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { NgForm, NgModel } from '@angular/forms';
+import { User } from './model/user';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,15 +11,26 @@ export class AppComponent implements OnInit {
   formMode = true;
   signInForm = 'container';
   signUpForm = 'container sign-up-mode';
+
+  orginalUser: User = {
+    username: '',
+    email: '',
+    password: '',
+    password_confirmation: '',
+  };
+
+  user: User = { ...this.orginalUser };
   ngOnInit(): void {}
 
-  onClickSingUp() {
+  onClickHandler(): void {
     this.formMode = !this.formMode;
-    console.log(this.formMode);
   }
 
-  onClickSingIn() {
-    this.formMode = !this.formMode;
-    console.log(this.formMode);
+  onSubmitHandler(form: NgForm): void {
+    console.log('form: ', form.value);
+  }
+
+  onBlurHandler(field: NgModel) {
+    console.log(`${field.name}: ${field.valid}`);
   }
 }
