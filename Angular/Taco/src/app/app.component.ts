@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   titleNavBar_CMS = 'Control Managment System';
   titleNavBar_Website = 'Taco';
+  showFiller = false;
 }

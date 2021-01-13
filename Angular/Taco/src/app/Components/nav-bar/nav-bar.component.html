@@ -4,12 +4,13 @@
     class="example-icon"
     aria-label="Example icon-button with menu icon"
   >
-    <mat-icon>menu</mat-icon>
+    <!-- <mat-icon>menu</mat-icon> -->
+    <mat-icon class="logo_icon">track_changes</mat-icon>
+    <span class="logo ml-2">{{ projectName }}</span>
   </button>
-  <span>{{ projectName }}</span>
   <span class="nav-bar-spacer"></span>
 
-  <span>Hello UserName!</span>
+  <div>Hello <span class="userNameStyle">UserName!</span></div>
   <button
     [matMenuTriggerFor]="menu"
     mat-icon-button
