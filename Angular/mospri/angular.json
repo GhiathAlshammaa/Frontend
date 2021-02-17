@@ -45,13 +45,13 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "optimization": true,
+            "optimization": false,
             "outputHashing": "all",
             "sourceMap": true,
             "namedChunks": false,
             "extractLicenses": true,
             "vendorChunk": false,
-            "buildOptimizer": true,
+            "buildOptimizer": false,
             "budgets": [
               {
                 "type": "initial",
@@ -65,7 +65,10 @@
               }
             ],
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -84,7 +87,9 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "sourceMap": false
+              "sourceMap": false,
+              "optimization": true,
+              "buildOptimizer": true
             }
           }
         },
@@ -117,7 +122,10 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.scss"
+            ],
             "scripts": []
           }
         },
