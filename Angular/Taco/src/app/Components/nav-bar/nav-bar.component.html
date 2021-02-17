@@ -1,0 +1,36 @@
+<mat-toolbar>
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <!-- <mat-icon>menu</mat-icon> -->
+    <mat-icon class="logo_icon">track_changes</mat-icon>
+    <span class="logo ml-2">{{ projectName }}</span>
+  </button>
+  <span class="nav-bar-spacer"></span>
+
+  <div>Hello <span class="userNameStyle">UserName!</span></div>
+  <button
+    [matMenuTriggerFor]="menu"
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with account_circle icon"
+  >
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>account_box</mat-icon>
+      <span>Profile</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>settings</mat-icon>
+      <span>Settings</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>lock_open</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>

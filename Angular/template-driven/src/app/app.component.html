@@ -1,0 +1,209 @@
+<div [ngClass]="formMode ? signInForm : signUpForm">
+  <div class="forms-container">
+    <div class="signin-signup">
+      <form
+        action="#"
+        class="sign-in-form"
+        #formSignIn="ngForm"
+        (ngSubmit)="onSubmitHandler(formSignIn)"
+      >
+        <h2 class="title">Sign in</h2>
+        <div class="input-field">
+          <i class="fas fa-user"></i>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Username"
+            [(ngModel)]="user.username"
+            #username="ngModel"
+            required
+            (blur)="onBlurHandler(username)"
+          />
+        </div>
+        <div
+          [hidden]="!formSignIn.submitted || username.valid"
+          Class="alert alert-danger"
+        >
+          Enter Username
+        </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            [(ngModel)]="user.password"
+            #password="ngModel"
+            required
+            (blur)="onBlurHandler(password)"
+          />
+        </div>
+        <div
+          [hidden]="!formSignIn.submitted || password.valid"
+          Class="alert alert-danger"
+        >
+          Enter Password
+        </div>
+        <input type="submit" value="Login" class="btn solid" />
+        <p class="social-text">Or Sign in with social platforms</p>
+        <div class="social-media">
+          <a href="#" class="social-icon">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </form>
+
+      <form
+        action="#"
+        class="sign-up-form"
+        #formSignUp="ngForm"
+        (ngSubmit)="onSubmitHandler(formSignUp)"
+      >
+        <h2 class="title">Sign up</h2>
+        <div class="input-field">
+          <i class="fas fa-user"></i>
+          <input
+            type="text"
+            placeholder="Username"
+            name="username"
+            id="username"
+            [(ngModel)]="user.username"
+            #username="ngModel"
+          />
+        </div>
+        <div
+          [hidden]="!formSignUp.submitted || username.valid"
+          Class="alert alert-danger"
+        >
+          Enter Username
+        </div>
+        <div class="input-field">
+          <i class="fas fa-envelope"></i>
+          <input
+            type="email"
+            placeholder="Email"
+            name="email"
+            id="email"
+            [(ngModel)]="user.email"
+            #email="ngModel"
+            required
+          />
+        </div>
+        <div
+          [hidden]="!formSignUp.submitted || email.valid"
+          Class="alert alert-danger"
+        >
+          Enter Email Address
+        </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            id="password"
+            [(ngModel)]="user.password"
+            #password="ngModel"
+            required
+          />
+        </div>
+        <div
+          [hidden]="!formSignUp.submitted || password.valid"
+          Class="alert alert-danger"
+        >
+          Enter Password
+        </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input
+            type="password"
+            placeholder="Password Confirmation"
+            name="password_confirmation"
+            id="password_confirmation"
+            [(ngModel)]="user.password_confirmation"
+            #password_confirmation="ngModel"
+            required
+          />
+        </div>
+        <div
+          [hidden]="!formSignUp.submitted || password_confirmation.valid"
+          Class="alert alert-danger"
+        >
+          Enter the Password again
+        </div>
+        <input type="submit" class="btn" value="Sign up" />
+        <p class="social-text">Or Sign up with social platforms</p>
+        <div class="social-media">
+          <a href="#" class="social-icon">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </form>
+      <!-- <p class="social-text">Form value {{ user | json }}</p>
+      <p class="social-text">username: {{ username.touched }}</p>
+      <p class="social-text">email: {{ email.touched }}</p>
+      <p class="social-text">password: {{ password.touched }}</p>
+      <p class="social-text">
+        password_confirmation: {{ password_confirmation.touched }}
+      </p> -->
+    </div>
+  </div>
+
+  <div class="panels-container">
+    <div class="panel left-panel">
+      <div class="content">
+        <h3>New here ?</h3>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis, ex
+          ratione. Aliquid!
+        </p>
+        <button
+          class="btn transparent"
+          id="sign-up-btn"
+          (click)="onClickHandler()"
+        >
+          Sign up
+        </button>
+      </div>
+      <img src="../assets/img/log.svg" class="image" alt="" />
+    </div>
+    <div class="panel right-panel">
+      <div class="content">
+        <h3>One of us ?</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+          laboriosam ad deleniti.
+        </p>
+        <button
+          class="btn transparent"
+          id="sign-in-btn"
+          (click)="onClickHandler()"
+        >
+          Sign in
+        </button>
+      </div>
+      <img src="../assets/img/register.svg" class="image" alt="" />
+    </div>
+  </div>
+</div>
+<!-- <div [className]="formMode">Test</div> -->
