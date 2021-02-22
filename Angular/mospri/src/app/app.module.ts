@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {
+  NgModule,
+} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,7 +13,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 
-import { environment } from 'src/environments/environment';
+import { environment } from '@src/environments/environment';
 import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
@@ -27,7 +29,9 @@ import { HeaderComponent } from './components/header/header.component';
 
     BrowserAnimationsModule,
     StoreModule.forRoot({}, {}),
+
   ],
+
   providers: [],
   bootstrap: [AppComponent],
 })
