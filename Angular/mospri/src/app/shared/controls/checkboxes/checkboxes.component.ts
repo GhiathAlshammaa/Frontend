@@ -10,7 +10,6 @@ import {
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 import { ControlItem, Value } from '@app/models/frontend';
-import { select } from '@ngrx/store';
 export { ControlItem, Value } from '@app/models/frontend';
 
 @Component({

@@ -43,6 +43,15 @@
       [items]="items"
     ></mospri-checkboxes>
   </mospri-form-field>
+
+  <mospri-form-field
+    label="Radios"
+    [required]="true"
+    [control]="form.controls.radios"
+    [isInline]="isInline"
+  >
+    <mospri-radios formControlName="radios" [items]="items"></mospri-radios>
+  </mospri-form-field>
 </form>
 <br />
 <code>
