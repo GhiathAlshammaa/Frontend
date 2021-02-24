@@ -1,1 +1,19 @@
-<mospri-button>test</mospri-button>
+<h1>Form</h1>
+<br />
+<form [formGroup]="form" novalidate autocomplete="off" (ngSubmit)="onSubmit()">
+  <mospri-button (click)="onPatchValue()">Patch Value</mospri-button>
+  <mospri-button (click)="onToggleInline()">Toggle Inline</mospri-button>
+  <br /><br />
+  <mospri-form-field
+    label="Input"
+    [required]="true"
+    [control]="form.controls.input"
+    [isInline]="isInline"
+  >
+    <mospri-input formControlName="input"></mospri-input>
+  </mospri-form-field>
+</form>
+<br />
+<code>
+  {{ form.value | json }}
+</code>

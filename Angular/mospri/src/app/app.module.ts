@@ -1,7 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {
-  NgModule,
-} from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,13 +13,13 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 
 import { environment } from '@src/environments/environment';
 import { HeaderComponent } from './components/header/header.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-
     AngularFireModule.initializeApp(environment.firebase.config),
     AngularFirestoreModule,
     AngularFireAuthModule,
@@ -29,9 +27,7 @@ import { HeaderComponent } from './components/header/header.component';
 
     BrowserAnimationsModule,
     StoreModule.forRoot({}, {}),
-
   ],
-
   providers: [],
   bootstrap: [AppComponent],
 })
