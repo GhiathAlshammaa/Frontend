@@ -22,6 +22,27 @@
   >
     <mospri-password formControlName="password"></mospri-password>
   </mospri-form-field>
+
+  <mospri-form-field
+    label="Select"
+    [required]="true"
+    [control]="form.controls.select"
+    [isInline]="isInline"
+  >
+    <mospri-select formControlName="select" [items]="items"></mospri-select>
+  </mospri-form-field>
+
+  <mospri-form-field
+    label="Checkboxes"
+    [required]="true"
+    [control]="form.controls.checkboxes"
+    [isInline]="isInline"
+  >
+    <mospri-checkboxes
+      formControlName="checkboxes"
+      [items]="items"
+    ></mospri-checkboxes>
+  </mospri-form-field>
 </form>
 <br />
 <code>
