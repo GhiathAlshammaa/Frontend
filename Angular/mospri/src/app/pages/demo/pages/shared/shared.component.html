@@ -9,8 +9,18 @@
     [required]="true"
     [control]="form.controls.input"
     [isInline]="isInline"
+    [patternError]="regexErrors.numbers"
   >
     <mospri-input formControlName="input"></mospri-input>
+  </mospri-form-field>
+
+  <mospri-form-field
+    label="Password"
+    [required]="true"
+    [control]="form.controls.password"
+    [isInline]="isInline"
+  >
+    <mospri-password formControlName="password"></mospri-password>
   </mospri-form-field>
 </form>
 <br />
