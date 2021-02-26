@@ -15,6 +15,25 @@ import { environment } from '@src/environments/environment';
 import { HeaderComponent } from './components/header/header.component';
 import { RouterModule } from '@angular/router';
 
+// Date
+import {
+  MatNativeDateModule,
+  MatDateFormats,
+  MAT_DATE_FORMATS,
+  MAT_DATE_LOCALE,
+} from '@angular/material/core';
+
+const APP_DATE_FORMATS: MatDateFormats = {
+  parse: {
+    dateInput: { day: 'numeric', month: 'numeric', year: 'numeric' },
+  },
+  display: {
+    dateInput: { day: 'numeric', month: 'short', year: 'numeric' },
+    monthYearLabel: { day: 'numeric', month: 'short' },
+    dateA11yLabel: { day: 'numeric', month: 'long', year: 'numeric' },
+    monthYearA11yLabel: { day: 'numeric', month: 'long' },
+  },
+};
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
   imports: [
@@ -24,11 +43,15 @@ import { RouterModule } from '@angular/router';
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
+    MatNativeDateModule,
 
     BrowserAnimationsModule,
     StoreModule.forRoot({}, {}),
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },
+    { provide: MAT_DATE_FORMATS, useValue: APP_DATE_FORMATS },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

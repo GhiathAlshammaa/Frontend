@@ -52,6 +52,15 @@
   >
     <mospri-radios formControlName="radios" [items]="items"></mospri-radios>
   </mospri-form-field>
+
+  <mospri-form-field
+    label="Date"
+    [required]="true"
+    [control]="form.controls.date"
+    [isInline]="isInline"
+  >
+    <mospri-date formControlName="date" placeholder="Date"> </mospri-date>
+  </mospri-form-field>
 </form>
 <br />
 <code>
