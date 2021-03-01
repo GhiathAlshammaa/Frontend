@@ -61,6 +61,16 @@
   >
     <mospri-date formControlName="date" placeholder="Date"> </mospri-date>
   </mospri-form-field>
+
+  <mospri-form-field
+    label="Date Range"
+    [required]="true"
+    [control]="form.controls.dateRange"
+    [isInline]="isInline"
+  >
+    <mospri-date-range formControlName="dateRange" placeholder="dateRange">
+    </mospri-date-range>
+  </mospri-form-field>
 </form>
 <br />
 <code>
