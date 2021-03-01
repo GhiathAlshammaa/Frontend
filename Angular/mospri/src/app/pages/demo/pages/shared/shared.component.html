@@ -24,6 +24,18 @@
   </mospri-form-field>
 
   <mospri-form-field
+    label="Autocomplete"
+    [required]="true"
+    [control]="form.controls.autocomplete"
+    [isInline]="isInline"
+  >
+    <mospri-autocomplete
+      formControlName="autocomplete"
+      [items]="items"
+    ></mospri-autocomplete>
+  </mospri-form-field>
+
+  <mospri-form-field
     label="Select"
     [required]="true"
     [control]="form.controls.select"
