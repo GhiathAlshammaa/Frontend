@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "typescript",
+      "tsconfig": "training-project-1/server/tsconfig.json",
+      "problemMatcher": [
+        "$tsc"
+      ],
+      "group": "build",
+      "label": "tsc: build - training-project-1/server/tsconfig.json"
+    },
+    {
+      "type": "typescript",
+      "tsconfig": "training-project-1/server/tsconfig.json",
+      "option": "watch",
+      "problemMatcher": [
+        "$tsc-watch"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "label": "tsc: watch - training-project-1/server/tsconfig.json"
+    }
+  ]
+}
