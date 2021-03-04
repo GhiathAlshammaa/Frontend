@@ -6,7 +6,9 @@
   "scripts": {
     "build-server": "tsc -p ./server",
     "build-client": "tsc -p ./client",
-    "serve": "node build/server/server.js"
+    "serve": "node build/server/server.js",
+    "debug": "node --inspect= 9227 build/server/server.js",
+    "lint": "eslint server/*.ts"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +18,11 @@
     "tsc": "^1.20150623.0"
   },
   "devDependencies": {
-    "@types/express": "^4.17.11"
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/express": "^4.17.11",
+    "@typescript-eslint/eslint-plugin": "^4.16.1",
+    "@typescript-eslint/parser": "^4.16.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.21.0"
   }
 }

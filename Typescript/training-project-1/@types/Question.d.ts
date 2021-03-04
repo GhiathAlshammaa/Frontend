@@ -1,5 +1,5 @@
 export interface Question {
-  title: string;
-  content: string;
+  title?: string;
+  content?: string;
   answerCount?: number;
 }

@@ -432,13 +432,18 @@
         "affectsGlobalScope": false
       },
       "../../@types/question.d.ts": {
-        "version": "533c91908f61c966a584e6715f962fd0ad6b4e9a57b614c2c22528ebeaf1fbb7",
-        "signature": "533c91908f61c966a584e6715f962fd0ad6b4e9a57b614c2c22528ebeaf1fbb7",
+        "version": "3d07ff3478290f5c3dbbc3a262293b97d28c97311ed0b48eceb416aa34ce8a28",
+        "signature": "3d07ff3478290f5c3dbbc3a262293b97d28c97311ed0b48eceb416aa34ce8a28",
         "affectsGlobalScope": false
       },
       "../../server/server.ts": {
-        "version": "62f097634b29c6013afa2e0eb68ffd1dc2184b24121cbe2b797e1181a2c5e6a8",
-        "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
+        "version": "0129b3998e86f08f8901c35e11ad66738d0ac5148399eaaa5471e7a02f59400d",
+        "signature": "1fccb2fa55fc29fc729b3080e8e46c0646a5dca3fc6a721b0dc5a09f7955d207",
+        "affectsGlobalScope": false
+      },
+      "../../node_modules/@types/json-schema/index.d.ts": {
+        "version": "3a1e165b22a1cb8df82c44c9a09502fd2b33f160cd277de2cd3a055d8e5c6b27",
+        "signature": "3a1e165b22a1cb8df82c44c9a09502fd2b33f160cd277de2cd3a055d8e5c6b27",
         "affectsGlobalScope": false
       }
     },
@@ -1019,6 +1024,7 @@
       "../../node_modules/@types/connect/index.d.ts",
       "../../node_modules/@types/express-serve-static-core/index.d.ts",
       "../../node_modules/@types/express/index.d.ts",
+      "../../node_modules/@types/json-schema/index.d.ts",
       "../../node_modules/@types/mime/index.d.ts",
       "../../node_modules/@types/node/assert.d.ts",
       "../../node_modules/@types/node/async_hooks.d.ts",
