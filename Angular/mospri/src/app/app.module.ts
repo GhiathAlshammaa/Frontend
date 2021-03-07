@@ -34,6 +34,10 @@ const APP_DATE_FORMATS: MatDateFormats = {
     monthYearA11yLabel: { day: 'numeric', month: 'long' },
   },
 };
+
+// Services
+
+import { NotificationModule } from './services';
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
   imports: [
@@ -45,6 +49,7 @@ const APP_DATE_FORMATS: MatDateFormats = {
     AngularFireStorageModule,
     MatNativeDateModule,
 
+    NotificationModule.forRoot(),
     BrowserAnimationsModule,
     StoreModule.forRoot({}, {}),
   ],
