@@ -14,7 +14,7 @@ export class Read implements Action {
 
 export class ReadSuccess implements Action {
   readonly type = Types.READ_SUCCESS;
-  constructor(private dictionaries: Dictionaries) {}
+  constructor(public dictionaries: Dictionaries) {}
 }
 
 export class ReadError implements Action {
