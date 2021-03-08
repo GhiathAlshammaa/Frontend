@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { StoreModule } from '@ngrx/store';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -38,6 +37,16 @@ const APP_DATE_FORMATS: MatDateFormats = {
 // Services
 
 import { NotificationModule } from './services';
+
+// Store
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+const StoreDevtools = !environment.production
+  ? StoreDevtoolsModule.instrument({ maxAge: 50 })
+  : [];
+import { reducers, effects } from './store';
+
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
   imports: [
@@ -52,6 +61,15 @@ import { NotificationModule } from './services';
     NotificationModule.forRoot(),
     BrowserAnimationsModule,
     StoreModule.forRoot({}, {}),
+
+    StoreModule.forRoot(reducers, {
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true,
+      },
+    }),
+    EffectsModule.forRoot(effects),
+    StoreDevtools,
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },

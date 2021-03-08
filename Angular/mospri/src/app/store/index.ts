@@ -1,7 +1,12 @@
+import { ActionReducerMap } from '@ngrx/store';
+
+import * as fromDictionaries from './dictionaries';
 export interface State {
-  dictionaries: any;
+  dictionaries: fromDictionaries.DictionaryState;
 }
 
-export const reducers: ActionReducerMap<State> = {};
+export const reducers: ActionReducerMap<State> = {
+  dictionaries: fromDictionaries.reducer,
+};
 
-export const effect = [];
+export const effects = [fromDictionaries.DictionariesEffects];
