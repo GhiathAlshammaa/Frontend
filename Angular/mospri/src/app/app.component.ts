@@ -12,11 +12,12 @@ export class AppComponent implements OnInit {
   constructor(private afs: AngularFirestore) {}
 
   ngOnInit() {
-    this.afs
-      .collection('test')
-      .snapshotChanges()
-      .subscribe((items) => {
-        console.log(items.map((item) => item.payload.doc.data()));
-      });
+    
+    // this.afs
+    //   .collection('test')
+    //   .snapshotChanges()
+    //   .subscribe((items) => {
+    //     console.log(items.map((item) => item.payload.doc.data()));
+    //   });
   }
 }
