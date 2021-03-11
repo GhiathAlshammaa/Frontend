@@ -47,6 +47,9 @@ export class UserEffects {
           .valueChanges()
           .pipe(
             take(1),
+            tap(() => {
+              this.router.navigate(['/']);
+            }),
             map(
               (user) =>
                 new fromActions.InitAuthorized(authState.uid, user || null)
