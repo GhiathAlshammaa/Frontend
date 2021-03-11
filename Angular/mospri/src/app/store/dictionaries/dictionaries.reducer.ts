@@ -1,13 +1,13 @@
 import { Dictionaries } from './dictionaries.models';
 import * as fromActions from './dictionaries.actions';
 
-export interface DictionaryState {
+export interface DictionariesState {
   entities: Dictionaries;
   loading: boolean;
   error: string;
 }
 
-const initialState: DictionaryState = {
+const initialState: DictionariesState = {
   entities: null,
   loading: null,
   error: null,
@@ -16,7 +16,7 @@ const initialState: DictionaryState = {
 export function reducer(
   state = initialState,
   action: fromActions.All
-): DictionaryState {
+): DictionariesState {
   switch (action.type) {
     case fromActions.Types.READ: {
       return { ...state, loading: true, error: null };

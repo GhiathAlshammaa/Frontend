@@ -1,0 +1,55 @@
+<div class="app-page">
+  <div class="app-page__header">
+    <h1>Registration</h1>
+  </div>
+
+  <form
+    [formGroup]="form"
+    (submit)="onSubmit()"
+    (keyup.enter)="onSubmit()"
+    novalidate
+    autocomplete="off"
+  >
+    <div class="app-page__content">
+      <mospri-form-field
+        label="Email"
+        [required]="true"
+        [control]="form.controls.email"
+        [isInline]="false"
+        [patternError]="regexErrors.email"
+      >
+        <mospri-input formControlName="email"></mospri-input>
+      </mospri-form-field>
+
+      <mospri-form-field
+        label="Password"
+        [required]="true"
+        [control]="form.controls.password"
+        [isInline]="false"
+        [patternError]="regexErrors.password"
+      >
+        <mospri-password formControlName="password"></mospri-password>
+      </mospri-form-field>
+
+      <mospri-form-field
+        label="Repeat password"
+        [required]="true"
+        [control]="form.controls.passwordRepeat"
+        [isInline]="false"
+        [patternError]="regexErrors.password"
+      >
+        <mospri-password formControlName="passwordRepeat"></mospri-password>
+      </mospri-form-field>
+
+      <div class="error" [class.error_active]="form.hasError('repeat')">
+        Entered passwords don't match
+      </div>
+    </div>
+
+    <div class="app-page__footer">
+      <mospri-button type="submit">Complete</mospri-button>
+    </div>
+  </form>
+
+  <mospri-spinner *ngIf="loading$ | async"></mospri-spinner>
+</div>
