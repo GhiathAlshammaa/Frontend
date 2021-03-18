@@ -1,67 +1,105 @@
-<h1>Form</h1>
+<h2>Actions</h2>
+
+<mospri-button (click)="onToggleSpinner()">Toggle Spinner</mospri-button>
+<mospri-button (click)="onError()">Error</mospri-button>
+<mospri-button (click)="onSuccess()">Success</mospri-button>
+
+<h2>Form</h2>
 <br />
-<form [formGroup]="form" novalidate autocomplete="off" (ngSubmit)="onSubmit()">
-  <mospri-button (click)="onPatchValue()">Patch Value</mospri-button>
-  <mospri-button (click)="onToggleInline()">Toggle Inline</mospri-button>
-  <br /><br />
-  <mospri-form-field
-    label="Input"
-    [required]="true"
-    [control]="form.controls.input"
-    [isInline]="isInline"
-    [patternError]="regexErrors.numbers"
+<div class="wrapper">
+  <mospri-spinner *ngIf="showSpinner"></mospri-spinner>
+  <form
+    [formGroup]="form"
+    novalidate
+    autocomplete="off"
+    (ngSubmit)="onSubmit()"
   >
-    <mospri-input formControlName="input"></mospri-input>
-  </mospri-form-field>
+    <mospri-button type="submit">Submit</mospri-button>
+    <mospri-button (click)="onPatchValue()">Patch Value</mospri-button>
+    <mospri-button (click)="onToggleInline()">Toggle Inline</mospri-button>
+    <mospri-button (click)="onToggleDisable()">Toggle Disable</mospri-button>
+    <br /><br />
+    <mospri-form-field
+      label="Input"
+      [required]="true"
+      [control]="form.controls.input"
+      [isInline]="isInline"
+      [patternError]="regexErrors.numbers"
+    >
+      <mospri-input formControlName="input"></mospri-input>
+    </mospri-form-field>
 
-  <mospri-form-field
-    label="Password"
-    [required]="true"
-    [control]="form.controls.password"
-    [isInline]="isInline"
-  >
-    <mospri-password formControlName="password"></mospri-password>
-  </mospri-form-field>
+    <mospri-form-field
+      label="Password"
+      [required]="true"
+      [control]="form.controls.password"
+      [isInline]="isInline"
+    >
+      <mospri-password formControlName="password"></mospri-password>
+    </mospri-form-field>
 
-  <mospri-form-field
-    label="Select"
-    [required]="true"
-    [control]="form.controls.select"
-    [isInline]="isInline"
-  >
-    <mospri-select formControlName="select" [items]="items"></mospri-select>
-  </mospri-form-field>
+    <mospri-form-field
+      label="Autocomplete"
+      [required]="true"
+      [control]="form.controls.autocomplete"
+      [isInline]="isInline"
+    >
+      <mospri-autocomplete
+        formControlName="autocomplete"
+        [items]="items"
+      ></mospri-autocomplete>
+    </mospri-form-field>
 
-  <mospri-form-field
-    label="Checkboxes"
-    [required]="true"
-    [control]="form.controls.checkboxes"
-    [isInline]="isInline"
-  >
-    <mospri-checkboxes
-      formControlName="checkboxes"
-      [items]="items"
-    ></mospri-checkboxes>
-  </mospri-form-field>
+    <mospri-form-field
+      label="Select"
+      [required]="true"
+      [control]="form.controls.select"
+      [isInline]="isInline"
+    >
+      <mospri-select formControlName="select" [items]="items"></mospri-select>
+    </mospri-form-field>
 
-  <mospri-form-field
-    label="Radios"
-    [required]="true"
-    [control]="form.controls.radios"
-    [isInline]="isInline"
-  >
-    <mospri-radios formControlName="radios" [items]="items"></mospri-radios>
-  </mospri-form-field>
+    <mospri-form-field
+      label="Checkboxes"
+      [required]="true"
+      [control]="form.controls.checkboxes"
+      [isInline]="isInline"
+    >
+      <mospri-checkboxes
+        formControlName="checkboxes"
+        [items]="items"
+      ></mospri-checkboxes>
+    </mospri-form-field>
 
-  <mospri-form-field
-    label="Date"
-    [required]="true"
-    [control]="form.controls.date"
-    [isInline]="isInline"
-  >
-    <mospri-date formControlName="date" placeholder="Date"> </mospri-date>
-  </mospri-form-field>
-</form>
+    <mospri-form-field
+      label="Radios"
+      [required]="true"
+      [control]="form.controls.radios"
+      [isInline]="isInline"
+    >
+      <mospri-radios formControlName="radios" [items]="items"></mospri-radios>
+    </mospri-form-field>
+
+    <mospri-form-field
+      label="Date"
+      [required]="true"
+      [control]="form.controls.date"
+      [isInline]="isInline"
+    >
+      <mospri-date formControlName="date" placeholder="Date"> </mospri-date>
+    </mospri-form-field>
+
+    <mospri-form-field
+      label="Date Range"
+      [required]="true"
+      [control]="form.controls.dateRange"
+      [isInline]="isInline"
+    >
+      <mospri-date-range formControlName="dateRange" placeholder="dateRange">
+      </mospri-date-range>
+    </mospri-form-field>
+  </form>
+</div>
 <br />
 <code>
   {{ form.value | json }}

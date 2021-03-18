@@ -1,0 +1,31 @@
+<div class="app-page">
+
+  <div class="app-page__header">
+      <h1>Log in</h1>
+  </div>
+
+  <form [formGroup]="form" novalidate autocomplete="off" (submit)="onSubmit()" (keyup.enter)="onSubmit()">
+
+      <div class="app-page__content">
+
+          <mospri-form-field label="Email" [required]="true" [control]="form.controls.email" [isInline]="false"
+              [patternError]="regexErrors.email">
+              <mospri-input formControlName="email"></mospri-input>
+          </mospri-form-field>
+
+          <mospri-form-field label="Password" [required]="true" [control]="form.controls.password" [isInline]="false"
+              [patternError]="regexErrors.password">
+              <mospri-password formControlName="password"></mospri-password>
+          </mospri-form-field>
+
+      </div>
+
+      <div class="app-page__footer">
+          <mospri-button type="submit">Log in</mospri-button>
+      </div>
+
+  </form>
+
+  <mospri-spinner *ngIf="loading$ | async"></mospri-spinner>
+
+</div>

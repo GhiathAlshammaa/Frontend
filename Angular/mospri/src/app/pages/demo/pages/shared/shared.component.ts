@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ValueProvider } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { regex, regexErrors } from '@app/shared/utils';
+import { regex, regexErrors, markFormGroupTouched } from '@app/shared/utils';
 
 import { ControlItem } from '@app/models/frontend';
+import { NotificationService } from '@app/services';
 @Component({
   selector: 'mospri-shared',
   templateUrl: './shared.component.html',
@@ -15,7 +16,12 @@ export class SharedComponent implements OnInit {
 
   items: ControlItem[];
 
-  constructor(private fb: FormBuilder) {
+  showSpinner = false;
+
+  constructor(
+    private fb: FormBuilder,
+    private notification: NotificationService
+  ) {
     this.isInline = true;
 
     this.items = [
@@ -54,6 +60,13 @@ export class SharedComponent implements OnInit {
           validators: [Validators.required],
         },
       ],
+      autocomplete: [
+        null,
+        {
+          updateOn: 'change',
+          validators: [Validators.required],
+        },
+      ],
       checkboxes: [
         null,
         {
@@ -75,18 +88,61 @@ export class SharedComponent implements OnInit {
           validators: [Validators.required],
         },
       ],
+      dateRange: [
+        null,
+        {
+          updateOn: 'change',
+          validators: [Validators.required],
+        },
+      ],
     });
   }
 
   onSubmit(): void {
     console.log('Submit!');
+
+    if (!this.form.valid) {
+      markFormGroupTouched(this.form);
+    }
   }
 
   onPatchValue(): void {
-    this.form.patchValue({ input: 'test' });
+    this.form.patchValue({
+      input: 123,
+      password: 'qwerty',
+      autocomplete: 1,
+      select: 2,
+      checkboxes: [3],
+      radios: 4,
+      date: new Date().getTime(),
+      dateRange: {
+        form: new Date(2019, 5, 10).getTime(),
+        to: new Date(2019, 5, 25).getTime(),
+      },
+    });
   }
 
-  onToggleInline() {
+  onToggleInline(): void {
     this.isInline = !this.isInline;
+  }
+
+  onToggleDisable(): void {
+    if (this.form.enabled) {
+      this.form.disable();
+    } else {
+      this.form.enable();
+    }
+  }
+
+  onToggleSpinner(): void {
+    this.showSpinner = !this.showSpinner;
+  }
+
+  onSuccess(): void {
+    this.notification.success('Everything is fine!');
+  }
+
+  onError(): void {
+    this.notification.error('Oops! Something is wrong');
   }
 }
