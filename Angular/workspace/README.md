@@ -1,7 +1,9 @@
 # Workspace
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.0.
 
+This project is my own Workspace, in order to use all common 3rd party dependencies, my custom components library and some configurations from one source to prevent repeating.
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.0.
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
