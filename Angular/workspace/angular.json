@@ -36,9 +36,7 @@
               "projects/ui-custom-elements/tsconfig.lib.json",
               "projects/ui-custom-elements/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -63,53 +61,64 @@
             "polyfills": "projects/preview-ui-custom-elements/src/polyfills.ts",
             "tsConfig": "projects/preview-ui-custom-elements/tsconfig.app.json",
             "aot": true,
+            "optimization": true,
+            "outputHashing": "all",
+            "sourceMap": true,
+            "namedChunks": false,
+            "extractLicenses": true,
+            "vendorChunk": false,
+            "buildOptimizer": true,
+            "budgets": [
+              {
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "5mb"
+              },
+              {
+                "type": "anyComponentStyle",
+                "maximumWarning": "6kb",
+                "maximumError": "10kb"
+              }
+            ],
             "assets": [
               "projects/preview-ui-custom-elements/src/favicon.ico",
               "projects/preview-ui-custom-elements/src/assets"
             ],
-            "styles": [
-              "projects/preview-ui-custom-elements/src/styles.scss"
-            ],
+            "styles": ["projects/preview-ui-custom-elements/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
-            "production": {
+            "dev": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/preview-ui-custom-elements/src/environments/environment.ts",
+                  "with": "projects/preview-ui-custom-elements/src/environments/environment.dev.ts"
+                }
+              ]
+            },
+            "prod": {
               "fileReplacements": [
                 {
                   "replace": "projects/preview-ui-custom-elements/src/environments/environment.ts",
                   "with": "projects/preview-ui-custom-elements/src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
+              "sourceMap": false
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "preview-ui-custom-elements:build"
+            "browserTarget": "preview-ui-custom-elements:build",
+            "port": 5200
           },
           "configurations": {
-            "production": {
-              "browserTarget": "preview-ui-custom-elements:build:production"
+            "dev": {
+              "browserTarget": "preview-ui-custom-elements:build:dev"
+            },
+            "prod": {
+              "browserTarget": "preview-ui-custom-elements:build:prod"
             }
           }
         },
@@ -130,9 +139,7 @@
               "projects/preview-ui-custom-elements/src/favicon.ico",
               "projects/preview-ui-custom-elements/src/assets"
             ],
-            "styles": [
-              "projects/preview-ui-custom-elements/src/styles.scss"
-            ],
+            "styles": ["projects/preview-ui-custom-elements/src/styles.scss"],
             "scripts": []
           }
         },
@@ -144,9 +151,7 @@
               "projects/preview-ui-custom-elements/tsconfig.spec.json",
               "projects/preview-ui-custom-elements/e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
