@@ -3,5 +3,46 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "ui-custom-elements": {
+      "projectType": "library",
+      "root": "projects/ui-custom-elements",
+      "sourceRoot": "projects/ui-custom-elements/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ui-custom-elements/tsconfig.lib.json",
+            "project": "projects/ui-custom-elements/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ui-custom-elements/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ui-custom-elements/src/test.ts",
+            "tsConfig": "projects/ui-custom-elements/tsconfig.spec.json",
+            "karmaConfig": "projects/ui-custom-elements/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ui-custom-elements/tsconfig.lib.json",
+              "projects/ui-custom-elements/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ui-custom-elements"
 }
