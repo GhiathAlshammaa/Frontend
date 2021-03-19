@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export type ButtonType = 'button' | 'submit';
 
 @Component({
-  selector: 'lib-button',
+  selector: 'ui-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
 })
