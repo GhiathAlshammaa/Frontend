@@ -61,13 +61,13 @@
             "polyfills": "projects/preview-ui-custom-elements/src/polyfills.ts",
             "tsConfig": "projects/preview-ui-custom-elements/tsconfig.app.json",
             "aot": true,
-            "optimization": true,
+            "optimization": false,
             "outputHashing": "all",
             "sourceMap": true,
             "namedChunks": false,
             "extractLicenses": true,
             "vendorChunk": false,
-            "buildOptimizer": true,
+            "buildOptimizer": false,
             "budgets": [
               {
                 "type": "initial",
@@ -103,7 +103,9 @@
                   "with": "projects/preview-ui-custom-elements/src/environments/environment.prod.ts"
                 }
               ],
-              "sourceMap": false
+              "sourceMap": false,
+              "buildOptimizer": true,
+              "optimization": true
             }
           }
         },
