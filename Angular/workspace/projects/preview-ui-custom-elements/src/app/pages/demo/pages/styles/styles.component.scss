@@ -1,6 +1,5 @@
-@import "../../../../../styles/mixins";
-// @import "@preview/styles/mixins";
-// @import "styles/mixins";
+@import "preview-ui-custom-elements/src/styles/mixins";
+
 
 .shadow {
     @include shadow;
