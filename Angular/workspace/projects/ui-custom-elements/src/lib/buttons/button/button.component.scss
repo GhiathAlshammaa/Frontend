@@ -4,13 +4,13 @@
 
   background: transparent;
   border-radius: 25px;
-  border: 2px solid $primary;
+  border: 2px solid #00bcd4;
   transition: 0.25s;
   margin: 0 4px;
 
   &:hover, &:focus {
-      background: $primary;
-      border: 2px solid  $primary;
-      color: $on-primary;
+      background: #00bcd4;
+      border: 2px solid  #00bcd4;
+      color: #ffffff;
   }
 }
