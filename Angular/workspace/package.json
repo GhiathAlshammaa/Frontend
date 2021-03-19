@@ -5,13 +5,15 @@
     "ng": "ng",
     "start": "npm run preview:start:dev",
     "build": "npm run preview:build:dev",
+    "build-ui": "npm run ui:build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "preview:start:dev": "ng serve --project preview-ui-custom-elements --c=dev",
     "preview:build:dev": "ng build --project preview-ui-custom-elements --c=dev",
     "preview:start:prod": "ng serve --project preview-ui-custom-elements --c=prod",
-    "preview:build:prod": "ng build --project preview-ui-custom-elements --c=prod"
+    "preview:build:prod": "ng build --project preview-ui-custom-elements --c=prod",
+    "ui:build": "ng build --project ui-custom-elements"
   },
   "private": true,
   "dependencies": {

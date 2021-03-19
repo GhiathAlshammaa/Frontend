@@ -13,10 +13,10 @@
     "lib": ["es2018", "dom"],
     "baseUrl": "projects",
     "paths": {
-      // "ui-custom-elements": [
-      //   "dist/ui-custom-elements/ui-custom-elements",
-      //   "dist/ui-custom-elements"
-      // ],
+      "ui-custom-elements": [
+        "dist/ui-custom-elements/ui-custom-elements",
+        "dist/ui-custom-elements"
+      ],
       "@preview/*": ["preview-ui-custom-elements/src/*"],
       "@preview-app/*": ["preview-ui-custom-elements/src/app/*"],
       "@preview-env/*": ["preview-ui-custom-elements/src/environments/*"],
