@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 export type ButtonType = 'button' | 'submit';
 
 @Component({
@@ -8,6 +8,7 @@ export type ButtonType = 'button' | 'submit';
 })
 export class ButtonComponent implements OnInit {
   @Input() type: ButtonType;
+
   constructor() {
     this.type = 'button';
   }

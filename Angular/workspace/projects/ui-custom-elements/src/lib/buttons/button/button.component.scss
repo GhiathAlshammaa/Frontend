@@ -1,16 +1,19 @@
+$primary: #00bcd4;
+$on-primary: #ffffff;
+
 .app-button {
 
   padding: 8px 20px;
 
   background: transparent;
   border-radius: 25px;
-  border: 2px solid #00bcd4;
+  border: 2px solid $primary;
   transition: 0.25s;
   margin: 0 4px;
 
   &:hover, &:focus {
-      background: #00bcd4;
-      border: 2px solid  #00bcd4;
-      color: #ffffff;
+      background: $primary;
+      border: 2px solid  $primary;
+      color: $on-primary;
   }
 }

@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { UiCustomElementsComponent } from './ui-custom-elements.component';
-import { ButtonComponent } from './buttons/button/button.component';
 
 @NgModule({
-  declarations: [UiCustomElementsComponent, ButtonComponent],
+  declarations: [UiCustomElementsComponent],
   imports: [],
-  exports: [UiCustomElementsComponent, ButtonComponent],
+  exports: [UiCustomElementsComponent],
 })
 export class UiCustomElementsModule {}
