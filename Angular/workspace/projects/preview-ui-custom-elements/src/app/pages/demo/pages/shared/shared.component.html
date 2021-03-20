@@ -12,6 +12,7 @@
     [required]="true"
     [control]="form.controls.input"
     [isInline]="isInLine"
+    [patternError]="regexErrors.email"
   >
     <ui-input formControlName="input"></ui-input>
   </ui-form-field>

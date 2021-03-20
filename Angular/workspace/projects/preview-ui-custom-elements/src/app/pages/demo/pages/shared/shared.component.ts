@@ -1,6 +1,7 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 import Color from '@preview/styles/colors';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { regex, regexErrors } from '@ui/lib/utils';
 
 @Component({
   selector: 'app-shared',
@@ -10,8 +11,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class SharedComponent implements OnInit {
   form: FormGroup;
   isInLine: boolean;
+  regexErrors = regexErrors;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) {
+    this.isInLine = true;
+  }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -22,7 +26,7 @@ export class SharedComponent implements OnInit {
           validators: [
             Validators.required,
             Validators.minLength(3),
-            // Validators.pattern(regex.numbers)
+            Validators.pattern(regex.email),
           ],
         },
       ],
