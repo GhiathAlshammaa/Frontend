@@ -1,3 +1,13 @@
 <h2>Actions</h2>
 
-<ui-button>Test Button</ui-button>
+<ui-button (click)="onPatchValue()">Test Button</ui-button>
+
+<h2>Form</h2>
+
+<form [formGroup]="form" novalidate autocomplete="off" (ngSubmit)="onSubmit()">
+  <ui-input formControlName="input"></ui-input>
+</form>
+
+<code>
+  {{ form.value | json }}
+</code>
