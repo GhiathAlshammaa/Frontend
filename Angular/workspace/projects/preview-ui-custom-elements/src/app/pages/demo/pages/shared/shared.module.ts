@@ -3,12 +3,23 @@ import { CommonModule } from '@angular/common';
 
 import { SharedRoutingModule } from './shared-routing.module';
 import { SharedComponent } from './shared.component';
-import { ButtonsModule } from '@ui/lib/buttons';
+// import { ButtonsModule } from '@ui/lib/buttons';
+// import { ButtonsModule } from './dist/ui-custom-elements';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ControlsModule } from '@ui/lib/controls';
+// import { GuiModule } from 'gui';
+// import { GuiModule } from 'gui';
+// import { ButtonsModule } from '@projects/../dist/ui-custom-elements/lib/buttons';
+// import { UiCustomElementsModule } from 'ui-custom-elements';
 
 @NgModule({
   declarations: [SharedComponent],
-  imports: [CommonModule, SharedRoutingModule, ButtonsModule, ControlsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    SharedRoutingModule,
+    ReactiveFormsModule,
+    GuiModule,
+    // ButtonsModule
+    // UiCustomElementsModule,
+  ],
 })
 export class SharedModule {}

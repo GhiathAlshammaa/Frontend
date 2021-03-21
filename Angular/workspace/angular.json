@@ -169,6 +169,46 @@
           }
         }
       }
+    },
+    "gui": {
+      "projectType": "library",
+      "root": "projects/gui",
+      "sourceRoot": "projects/gui/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/gui/tsconfig.lib.json",
+            "project": "projects/gui/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/gui/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/gui/src/test.ts",
+            "tsConfig": "projects/gui/tsconfig.spec.json",
+            "karmaConfig": "projects/gui/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/gui/tsconfig.lib.json",
+              "projects/gui/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ui-custom-elements"

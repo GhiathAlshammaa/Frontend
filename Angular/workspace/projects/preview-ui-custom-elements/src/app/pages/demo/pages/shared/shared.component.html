@@ -2,12 +2,15 @@
 
 <!-- <h2>Form</h2> -->
 
-<form [formGroup]="form" novalidate autocomplete="off" (ngSubmit)="onSubmit()">
-  <ui-button (click)="onPatchValue()">Patch Value</ui-button>
-  <ui-button (click)="onToggleInLine()">Toggle Inline</ui-button>
-  <br /><br /><br />
+<!-- <form [formGroup]="form" novalidate autocomplete="off" (ngSubmit)="onSubmit()"> -->
+<!-- <ui-button (click)="onPatchValue()">Patch Value</ui-button> -->
+<!-- <ui-button (click)="onToggleInLine()">Toggle Inline</ui-button> -->
+<!-- <lib-ui-custom-elements></lib-ui-custom-elements> -->
+<!-- <lib-gui></lib-gui> -->
 
-  <ui-form-field
+<br /><br /><br />
+
+<!-- <ui-form-field
     label="Input"
     [required]="true"
     [control]="form.controls.input"
@@ -15,9 +18,9 @@
     [patternError]="regexErrors.email"
   >
     <ui-input formControlName="input"></ui-input>
-  </ui-form-field>
-</form>
+  </ui-form-field> -->
+<!-- </form> -->
 
-<code>
+<!-- <code>
   {{ form.value | json }}
-</code>
+</code> -->

@@ -13,7 +13,7 @@
     "preview:build:dev": "ng build --project preview-ui-custom-elements --c=dev",
     "preview:start:prod": "ng serve --project preview-ui-custom-elements --c=prod",
     "preview:build:prod": "ng build --project preview-ui-custom-elements --c=prod",
-    "ui:build": "ng build --project ui-custom-elements"
+    "ui:build": "ng build gui --prod --output-path=production && cd dist/gui && npm publish "
   },
   "private": true,
   "dependencies": {
