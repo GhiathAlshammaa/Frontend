@@ -15,7 +15,10 @@
       </a>
     </div>
     <div *ngIf="isAuthorized">
-      <a href="" class="app-a" (click)="onSignOut()">Sign Out</a>
+      <a class="app-a" routerLink="profile/new"
+        >Profile</a
+      >
+      <a class="app-a" (click)="onSignOut()">Sign Out</a>
     </div>
   </div>
 </div>
