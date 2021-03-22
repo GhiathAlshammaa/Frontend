@@ -3,10 +3,12 @@
     <h1>New Profile</h1>
   </div>
   <div class="app-page__content">
-    <mospri-stepper>
+    <mospri-stepper *ngIf="dictionariesIsReady$ | async">
       <ng-container [ngSwitch]="stepper?.activeStep?.key">
         <mospri-personal *ngSwitchCase="'personal'"></mospri-personal>
-        <mospri-profesional *ngSwitchCase="'professional'"></mospri-profesional>
+        <mospri-professional
+          *ngSwitchCase="'professional'"
+        ></mospri-professional>
       </ng-container>
     </mospri-stepper>
   </div>

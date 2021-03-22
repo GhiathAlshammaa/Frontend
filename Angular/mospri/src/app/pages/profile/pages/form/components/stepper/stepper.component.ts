@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActiveStep, Step, StepperService } from './services';
+
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'mospri-stepper',
@@ -7,9 +10,20 @@ import { ActiveStep, Step, StepperService } from './services';
   styleUrls: ['./stepper.component.scss'],
 })
 export class StepperComponent implements OnInit {
+  private destroy = new Subject<any>();
+
   constructor(private stepper: StepperService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.stepper.next$.pipe(takeUntil(this.destroy)).subscribe(() => {
+      this.stepper.onNext();
+    });
+  }
+
+  ngOnDestroy() {
+    this.destroy.next();
+    this.destroy.complete();
+  }
 
   get steps(): Step[] {
     return this.stepper.steps;
@@ -36,11 +50,11 @@ export class StepperComponent implements OnInit {
   }
 
   onNext() {
-    this.stepper.onNext();
+    this.stepper.check.next('next');
   }
 
   onComplete() {
-    // this.stepper.check.next('complete');
+    this.stepper.check.next('complete');
   }
 
   onPrev() {
@@ -48,6 +62,6 @@ export class StepperComponent implements OnInit {
   }
 
   onCancel() {
-    // this.stepper.cancel.next();
+    this.stepper.cancel.next();
   }
 }

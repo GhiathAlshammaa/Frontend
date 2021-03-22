@@ -2,6 +2,7 @@ import { Component, HostBinding, OnInit } from '@angular/core';
 import Color from '@preview/styles/colors';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+
 // import { regex, regexErrors } from '@ui/lib/utils';
 
 @Component({
