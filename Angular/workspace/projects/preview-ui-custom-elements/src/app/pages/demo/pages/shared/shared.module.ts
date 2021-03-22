@@ -7,7 +7,7 @@ import { SharedComponent } from './shared.component';
 // import { ButtonsModule } from './dist/ui-custom-elements';
 import { ReactiveFormsModule } from '@angular/forms';
 // import { GuiModule } from 'gui';
-// import { GuiModule } from 'gui';
+import { GuiModule } from 'gui';
 // import { ButtonsModule } from '@projects/../dist/ui-custom-elements/lib/buttons';
 // import { UiCustomElementsModule } from 'ui-custom-elements';
 import { HelloWorldModule } from '@ihosam/hello-world';
@@ -20,7 +20,7 @@ import { HelloWorldModule } from '@ihosam/hello-world';
     ReactiveFormsModule,
     HelloWorldModule,
 
-    // GuiModule,
+    GuiModule,
     // ButtonsModule
     // UiCustomElementsModule,
   ],
