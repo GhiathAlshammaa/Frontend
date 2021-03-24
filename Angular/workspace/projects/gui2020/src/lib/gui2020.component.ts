@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'lib-gui2020',
   template: `
     <p>
-      gui2020 works!
+      gui2020 works! version 0.0.5
     </p>
   `,
   styles: [
