@@ -1,5 +1,5 @@
 {
-  "name": "ui-custom-elements",
+  "name": "ghiath_eagle/gui2020",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^11.0.9",

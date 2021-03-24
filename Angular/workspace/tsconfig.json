@@ -10,22 +10,44 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "es2020",
-    "lib": ["es2018", "dom"],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
     "baseUrl": "./",
     "paths": {
       "ui-custom-elements": [
         "dist/ui-custom-elements/ui-custom-elements",
         "dist/ui-custom-elements"
       ],
-      "@dist/*": ["dist/ui-custom-elements/src/public-api"],
-      "@preview/*": ["projects/preview-ui-custom-elements/src/*"],
-      "@preview-app/*": ["projects/preview-ui-custom-elements/src/app/*"],
-      "@preview-env/*": ["projects/preview-ui-custom-elements/src/environments/*"],
-      "@ui/*": ["ui-custom-elements/src/*"],
-      "@projects/*": ["*"],
-      "gui": ["dist/gui/gui", "dist/gui"]
+      "@dist/*": [
+        "dist/ui-custom-elements/src/public-api"
+      ],
+      "@preview/*": [
+        "projects/preview-ui-custom-elements/src/*"
+      ],
+      "@preview-app/*": [
+        "projects/preview-ui-custom-elements/src/app/*"
+      ],
+      "@preview-env/*": [
+        "projects/preview-ui-custom-elements/src/environments/*"
+      ],
+      "@ui/*": [
+        "ui-custom-elements/src/*"
+      ],
+      "@projects/*": [
+        "*"
+      ],
+      "gui": [
+        "dist/gui/gui",
+        "dist/gui"
+      ],
+      "gui2020": [
+        "dist/gui2020/gui2020",
+        "dist/gui2020"
+      ]
     },
     "resolveJsonModule": true,
-    "esModuleInterop": true,
+    "esModuleInterop": true
   }
 }
