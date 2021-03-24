@@ -1,0 +1,52 @@
+<form [formGroup]="form" novalidate autocomplete="off">
+  <mospri-form-field
+    label="Expected salary"
+    [required]="true"
+    [control]="form.controls.expectedSalary"
+  >
+    <mospri-input formControlName="expectedSalary"></mospri-input>
+  </mospri-form-field>
+
+  <mospri-form-field label="Experience" [required]="true">
+    <mospri-experiences
+      [parent]="form"
+      [values]="value?.experiences"
+      name="experiences"
+    >
+    </mospri-experiences>
+  </mospri-form-field>
+
+  <mospri-form-field
+    label="Specialization"
+    [required]="true"
+    [control]="form.controls.specialization"
+  >
+    <mospri-select
+      formControlName="specialization"
+      [items]="controls.specialization.items"
+      (changed)="controls.specialization.changed()"
+    ></mospri-select>
+  </mospri-form-field>
+
+  <mospri-form-field
+    label="Qualification"
+    [required]="true"
+    [control]="form.controls.qualification"
+  >
+    <mospri-select
+      formControlName="qualification"
+      [items]="controls.qualification.items"
+    ></mospri-select>
+  </mospri-form-field>
+
+  <mospri-form-field
+    label="Your main skills"
+    [required]="true"
+    [control]="form.controls.skills"
+  >
+    <mospri-checkboxes
+      formControlName="skills"
+      [items]="controls.skills.items"
+    ></mospri-checkboxes>
+  </mospri-form-field>
+</form>

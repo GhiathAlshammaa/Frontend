@@ -5,10 +5,19 @@
   <div class="app-page__content">
     <mospri-stepper *ngIf="dictionariesIsReady$ | async">
       <ng-container [ngSwitch]="stepper?.activeStep?.key">
-        <mospri-personal *ngSwitchCase="'personal'"></mospri-personal>
+
+        <mospri-personal
+          *ngSwitchCase="'personal'"
+          [dictionaries]="dictionaries$ | async"
+          (changed)="onChangedPersonal($event)"
+        ></mospri-personal>
+
         <mospri-professional
           *ngSwitchCase="'professional'"
+          [dictionaries]="dictionaries$ | async"
+          (changed)="onChangedProfessional($event)"
         ></mospri-professional>
+        
       </ng-container>
     </mospri-stepper>
   </div>

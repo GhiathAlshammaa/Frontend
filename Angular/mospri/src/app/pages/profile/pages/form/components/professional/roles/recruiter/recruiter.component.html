@@ -1,0 +1,17 @@
+<form [formGroup]="form" novalidate autocomplete="off">
+  <mospri-form-field
+    label="Company name"
+    [required]="true"
+    [control]="form.controls.companyName"
+  >
+    <mospri-input formControlName="companyName"></mospri-input>
+  </mospri-form-field>
+
+  <mospri-form-field
+    label="Employees count"
+    [required]="true"
+    [control]="form.controls.employeesCount"
+  >
+    <mospri-input formControlName="employeesCount"> </mospri-input>
+  </mospri-form-field>
+</form>

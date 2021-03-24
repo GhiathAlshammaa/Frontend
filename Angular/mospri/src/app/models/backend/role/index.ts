@@ -1,8 +1,8 @@
 export interface Role {
-  name: string;
+    name: string;
 }
 
 export enum Roles {
-  Employee = 'employee',
-  Recruiter = 'recruiter',
+    Employee = 'employee',
+    Recruiter = 'recruiter'
 }

@@ -35,5 +35,7 @@ export const getSkills = createSelector(
 
 export const getSpecializations = createSelector(
   getDictionaries,
-  (entities) => entities.specializations
+  (entities) => {
+    entities.specializations;
+  }
 );
