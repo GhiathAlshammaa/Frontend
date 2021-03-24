@@ -11,16 +11,16 @@
     "target": "es2015",
     "module": "es2020",
     "lib": ["es2018", "dom"],
-    "baseUrl": "projects",
+    "baseUrl": "./",
     "paths": {
       "ui-custom-elements": [
         "dist/ui-custom-elements/ui-custom-elements",
         "dist/ui-custom-elements"
       ],
       "@dist/*": ["dist/ui-custom-elements/src/public-api"],
-      "@preview/*": ["preview-ui-custom-elements/src/*"],
-      "@preview-app/*": ["preview-ui-custom-elements/src/app/*"],
-      "@preview-env/*": ["preview-ui-custom-elements/src/environments/*"],
+      "@preview/*": ["projects/preview-ui-custom-elements/src/*"],
+      "@preview-app/*": ["projects/preview-ui-custom-elements/src/app/*"],
+      "@preview-env/*": ["projects/preview-ui-custom-elements/src/environments/*"],
       "@ui/*": ["ui-custom-elements/src/*"],
       "@projects/*": ["*"],
       "gui": ["dist/gui/gui", "dist/gui"]
