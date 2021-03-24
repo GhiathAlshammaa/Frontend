@@ -14,13 +14,10 @@
     "preview:start:prod": "ng serve --project preview-ui-custom-elements --c=prod",
     "preview:build:prod": "ng build --project preview-ui-custom-elements --c=prod",
     "ui:build": "ng build @ghiath_eagle/ui-custom-elements --prod && cd dist/ui-custom-elements && npm pack",
-    "gui2020:build": "ng build ghiath_eagle/gui2020 --prod",
+    "gui2020:build": "ng build @ghiath_eagle/gui2020 --prod",
     "gui2020:packing": "cd dist/gui2020 && npm pack",
-
     "todo:start:dev": "ng serve --project todo-list --c=dev",
     "todo:start:dev": "ng build --project todo-list --c=dev"
-
-
   },
   "private": true,
   "dependencies": {
