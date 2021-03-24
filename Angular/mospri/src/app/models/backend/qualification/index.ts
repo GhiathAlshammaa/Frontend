@@ -1,3 +1,3 @@
 export interface Qualification {
-  name: string;
+    name: string;
 }

@@ -9,7 +9,11 @@
         display: inline-flex;
         align-items: center;
         cursor: pointer;
+        &-logo {
+          color: #ffd54f;
+        }
     }
+
 
     &__navigation {
         display: inline-flex;

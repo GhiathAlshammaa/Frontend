@@ -1,1 +1,42 @@
-<p>personal works!</p>
+<form [formGroup]="form" novalidate autocomplete="off" class="personal">
+  <div class="personal__photo">
+    <div class="photo">
+      <mospri-user-photo
+        class="photo__img"
+        [photoURL]="form.controls.photoURL.value"
+      ></mospri-user-photo>
+      <div
+        class="app-a"
+        mospriFilesUpload
+        [crop]="true"
+        (changed)="onPhotoChanged($event)"
+      >
+        Upload photo
+      </div>
+    </div>
+  </div>
+
+  <mospri-form-field
+    label="Name"
+    [required]="true"
+    [control]="form.controls.name"
+    [patternError]="regexErrors.latinAndSpaces"
+  >
+    <mospri-input formControlName="name"></mospri-input>
+  </mospri-form-field>
+
+  <mospri-form-field
+    label="Country"
+    [required]="true"
+    [control]="form.controls.country"
+  >
+    <mospri-autocomplete
+      formControlName="country"
+      [items]="dictionaries.countries.controlItems"
+    ></mospri-autocomplete>
+  </mospri-form-field>
+</form>
+
+<code>
+  {{ form.value | json }}
+</code>

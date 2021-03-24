@@ -1,4 +1,4 @@
 export interface Recruiter {
-  companyName: string;
-  employeesCount: number;
+    companyName: string;
+    employeesCount: number;
 }

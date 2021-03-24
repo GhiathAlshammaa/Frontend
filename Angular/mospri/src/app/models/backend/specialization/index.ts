@@ -1,3 +1,3 @@
 export interface Specialization {
-  name: string;
+    name: string;
 }

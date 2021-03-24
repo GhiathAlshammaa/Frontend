@@ -9,12 +9,15 @@ import {
   ChangeDetectorRef,
 } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { regex, regexErrors } from '@app/shared/utils';
-import { Dictionaries } from '@app/store/dictionaries';
-import { markFormGroupTouched } from '@app/shared/utils/form';
 
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+
+import { regex, regexErrors } from '@app/shared/utils';
+import { markFormGroupTouched } from '@app/shared/utils/form';
+
+import { Dictionaries } from '@app/store/dictionaries';
+
 import { StepperService } from '../stepper/services';
 
 export interface PersonalForm {
@@ -32,21 +35,68 @@ export interface PersonalForm {
 export class PersonalComponent implements OnInit, OnDestroy {
   @Input() value: PersonalForm;
   @Input() dictionaries: Dictionaries;
+
   @Output() changed = new EventEmitter<PersonalForm>();
+
+  form: FormGroup;
+  regexErrors = regexErrors;
 
   private destroy = new Subject<any>();
 
-  constructor(private stepper: StepperService) {}
+  constructor(
+    private fb: FormBuilder,
+    private cdr: ChangeDetectorRef,
+    private stepper: StepperService
+  ) {}
 
   ngOnInit(): void {
+    this.form = this.fb.group({
+      photoURL: [null],
+      name: [
+        null,
+        {
+          updateOn: 'blur',
+          validators: [
+            Validators.required,
+            Validators.maxLength(128),
+            Validators.pattern(regex.latinAndSpaces),
+          ],
+        },
+      ],
+      country: [
+        null,
+        {
+          updateOn: 'change',
+          validators: [Validators.required],
+        },
+      ],
+    });
+
+    if (this.value) {
+      this.form.patchValue(this.value);
+    }
+
     this.stepper.check$.pipe(takeUntil(this.destroy)).subscribe((type) => {
-      // type === 'next'
-      this.stepper[type].next(true);
+      if (!this.form.valid) {
+        markFormGroupTouched(this.form);
+        this.form.updateValueAndValidity();
+        this.cdr.detectChanges();
+      } else {
+        this.changed.emit(this.form.value);
+      }
+
+      this.stepper[type].next(this.form.valid);
     });
   }
 
   ngOnDestroy() {
     this.destroy.next();
     this.destroy.complete();
+  }
+
+  onPhotoChanged(url: string): void {
+    if (url) {
+      this.form.controls.photoURL.setValue(url);
+    }
   }
 }

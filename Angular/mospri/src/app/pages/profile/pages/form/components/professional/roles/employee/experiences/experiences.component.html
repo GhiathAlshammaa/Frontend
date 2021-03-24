@@ -1,0 +1,42 @@
+<form [formGroup]="parent" class="experiences">
+  <div [formArrayName]="name" *ngIf="parent.controls[name]">
+    <div
+      class="experience"
+      *ngFor="
+        let experience of parent.controls[name]['controls'];
+        let i = index;
+        let first = first
+      "
+    >
+      <div [formGroupName]="i">
+        <mospri-form-field
+          label="Company name"
+          [required]="true"
+          [control]="experience.controls.companyName"
+          [isInline]="false"
+        >
+          <mospri-input formControlName="companyName"></mospri-input>
+        </mospri-form-field>
+
+        <mospri-form-field
+          label="Period"
+          [required]="true"
+          [control]="experience.controls.period"
+          [isInline]="false"
+        >
+          <mospri-date-range formControlName="period"></mospri-date-range>
+        </mospri-form-field>
+      </div>
+
+      <div class="experience__footer">
+        <mospri-button *ngIf="!first" (click)="deleteExperience(i)"
+          >Delete</mospri-button
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="experiences__footer">
+    <mospri-button (click)="addExperience()">Add</mospri-button>
+  </div>
+</form>
