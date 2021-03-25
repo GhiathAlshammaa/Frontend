@@ -9,6 +9,6 @@ import { StaticRoutingModule } from './static-routing.module';
   imports: [
     CommonModule,
     StaticRoutingModule
-  ]
+  ],
 })
 export class StaticModule { }

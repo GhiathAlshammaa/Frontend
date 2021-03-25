@@ -1,0 +1,31 @@
+$primary: #fff;
+$primary-dark: yellow;
+.mat-toolbar.mat-primary {
+  background: #007bff;
+  color: #fff;
+  margin: 0;
+}
+.spacer {
+  flex: 1 1 auto
+}
+
+.app-logo {
+  font-weight: 700;
+  color: $primary;
+}
+
+.app-a {
+  color: $primary;
+  transition: 0.25s;
+  cursor: pointer;
+  margin-right: 1em;
+  text-decoration: none;
+
+  &:hover {
+      color: $primary-dark;
+  }
+
+  &_active {
+      color: $primary-dark;
+  }
+}
