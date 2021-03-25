@@ -43,7 +43,7 @@ export class Create implements Action {
 
 export class CreateSuccess implements Action {
   readonly type = Types.CREATE_SUCCESS;
-  constructor(public items: Task) {}
+  constructor(public item: Task) {}
 }
 
 export class CreateError implements Action {
@@ -59,7 +59,7 @@ export class Update implements Action {
 
 export class UpdateSuccess implements Action {
   readonly type = Types.UPDATE_SUCCESS;
-  constructor(public Id: string, public task: Partial<Task>) {}
+  constructor(public id: string, public changes: Partial<Task>) {}
 }
 
 export class UpdateError implements Action {

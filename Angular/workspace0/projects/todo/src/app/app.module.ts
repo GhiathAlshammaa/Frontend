@@ -16,7 +16,13 @@ import { HeaderComponent } from './components/header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { StaticModule } from './pages/static/static.module';
+
+// Store
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+const StoreDevtools = !env.production
+  ? StoreDevtoolsModule.instrument({ maxAge: 50 })
+  : [];
+
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
   imports: [
@@ -31,8 +37,7 @@ import { StaticModule } from './pages/static/static.module';
     MatIconModule,
     MatButtonModule,
 
-    // pages
-    // StaticModule
+    StoreDevtools,
   ],
   providers: [],
   bootstrap: [AppComponent],
