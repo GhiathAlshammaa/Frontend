@@ -26,6 +26,10 @@
     color: inherit;
     list-style-type: none;
     padding-left: 1rem;
+    &-icon {
+      padding-top: 3px;
+       transform: scale(1.5);
+    }
     &:hover{
       color: yellow;
       cursor: pointer;
