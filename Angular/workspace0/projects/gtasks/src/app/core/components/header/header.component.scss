@@ -23,14 +23,16 @@
 .menu {
    display: flex;
    &__item {
-    color: inherit;
-    list-style-type: none;
+    color: white;
+    text-decoration: none;
     padding-left: 1rem;
     &-icon {
       padding-top: 3px;
-       transform: scale(1.5);
+      transform: scale(1.5);
+      padding-left: 1rem;
     }
-    &:hover{
+    &:hover {
+      text-decoration: none;
       color: yellow;
       cursor: pointer;
     }

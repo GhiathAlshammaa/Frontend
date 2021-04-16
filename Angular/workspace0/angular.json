@@ -121,9 +121,7 @@
               "projects/todo/tsconfig.spec.json",
               "projects/todo/e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -144,7 +142,20 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
         }
       },
       "root": "projects/gtasks",
@@ -164,9 +175,7 @@
               "projects/gtasks/src/favicon.ico",
               "projects/gtasks/src/assets"
             ],
-            "styles": [
-              "projects/gtasks/src/styles.scss"
-            ],
+            "styles": ["projects/gtasks/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -227,9 +236,7 @@
               "projects/gtasks/src/favicon.ico",
               "projects/gtasks/src/assets"
             ],
-            "styles": [
-              "projects/gtasks/src/styles.scss"
-            ],
+            "styles": ["projects/gtasks/src/styles.scss"],
             "scripts": []
           }
         },
@@ -241,9 +248,7 @@
               "projects/gtasks/tsconfig.spec.json",
               "projects/gtasks/e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
