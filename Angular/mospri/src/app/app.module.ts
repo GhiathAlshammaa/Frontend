@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -46,11 +46,14 @@ const StoreDevtools = !environment.production
   ? StoreDevtoolsModule.instrument({ maxAge: 50 })
   : [];
 import { reducers, effects } from './store';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
   imports: [
+    CommonModule,
     BrowserModule,
+    NoopAnimationsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase.config),
     AngularFirestoreModule,

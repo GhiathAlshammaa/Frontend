@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export type ButtonType = 'button' | 'submit';
 
 @Component({
-  selector: 'mospri-button',
+  selector: 'app-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
 })

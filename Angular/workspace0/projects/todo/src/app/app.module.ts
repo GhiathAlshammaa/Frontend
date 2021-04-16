@@ -19,6 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
 
 // Store
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 const StoreDevtools = !env.production
   ? StoreDevtoolsModule.instrument({ maxAge: 50 })
   : [];
@@ -38,6 +39,8 @@ const StoreDevtools = !env.production
     MatButtonModule,
 
     StoreDevtools,
+
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

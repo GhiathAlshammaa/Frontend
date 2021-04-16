@@ -3,5 +3,16 @@
     <h1>Todo List</h1>
   </div>
 
-  <div class="app-page__content"></div>
+  <!-- <div class="app-page__content">
+    <app-task
+      *ngFor="let task of tasks$ | async"
+      [item]="task"
+      (edit)="onEdit($event)"
+      (delete)="onDelete($event)"
+    ></app-task>
+  </div> -->
+
+  <div class="app-page__footer">
+    <app-button (click)="onAdd()">Add</app-button>
+  </div>
 </div>

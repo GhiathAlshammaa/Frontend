@@ -11,7 +11,7 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 type PasswordType = 'password' | 'text';
 
 @Component({
-  selector: 'mospri-password',
+  selector: 'app-password',
   templateUrl: './password.component.html',
   styleUrls: ['./password.component.scss'],
   providers: [

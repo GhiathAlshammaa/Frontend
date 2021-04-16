@@ -46,7 +46,10 @@
               "projects/todo/src/favicon.ico",
               "projects/todo/src/assets"
             ],
-            "styles": ["projects/todo/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/todo/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -103,7 +106,10 @@
               "projects/todo/src/favicon.ico",
               "projects/todo/src/assets"
             ],
-            "styles": ["projects/todo/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/todo/src/styles.scss"
+            ],
             "scripts": []
           }
         },
@@ -115,7 +121,9 @@
               "projects/todo/tsconfig.spec.json",
               "projects/todo/e2e/tsconfig.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "e2e": {
@@ -127,6 +135,126 @@
           "configurations": {
             "production": {
               "devServerTarget": "todo:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "Gtasks": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/gtasks",
+      "sourceRoot": "projects/gtasks/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/Gtasks",
+            "index": "projects/gtasks/src/index.html",
+            "main": "projects/gtasks/src/main.ts",
+            "polyfills": "projects/gtasks/src/polyfills.ts",
+            "tsConfig": "projects/gtasks/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/gtasks/src/favicon.ico",
+              "projects/gtasks/src/assets"
+            ],
+            "styles": [
+              "projects/gtasks/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/gtasks/src/environments/environment.ts",
+                  "with": "projects/gtasks/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "Gtasks:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "Gtasks:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "Gtasks:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/gtasks/src/test.ts",
+            "polyfills": "projects/gtasks/src/polyfills.ts",
+            "tsConfig": "projects/gtasks/tsconfig.spec.json",
+            "karmaConfig": "projects/gtasks/karma.conf.js",
+            "assets": [
+              "projects/gtasks/src/favicon.ico",
+              "projects/gtasks/src/assets"
+            ],
+            "styles": [
+              "projects/gtasks/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/gtasks/tsconfig.app.json",
+              "projects/gtasks/tsconfig.spec.json",
+              "projects/gtasks/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/gtasks/e2e/protractor.conf.js",
+            "devServerTarget": "Gtasks:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "Gtasks:serve:production"
             }
           }
         }
