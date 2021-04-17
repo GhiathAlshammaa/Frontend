@@ -6,6 +6,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { TasklistsModule } from './tasklists/tasklists.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     SharedModule,
     CoreModule,
     AppRoutingModule,
+    TasklistsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
