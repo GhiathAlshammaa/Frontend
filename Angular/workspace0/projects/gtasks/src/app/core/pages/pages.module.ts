@@ -8,6 +8,7 @@ import {
   ReportComponent,
 } from './components';
 import { SharedModule } from '../../shared/shared.module';
+import { TasklistsModule } from '../../tasklists/tasklists.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { SharedModule } from '../../shared/shared.module';
     ReportComponent,
   ],
 
-  imports: [SharedModule],
+  imports: [SharedModule, TasklistsModule],
   exports: [
     HomeComponent,
     TaskListsComponent,
