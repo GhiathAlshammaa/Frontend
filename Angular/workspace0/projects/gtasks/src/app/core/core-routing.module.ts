@@ -2,25 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import {
-  HomeComponent,
-  PageNotFoundComponent,
+  ReportComponent,
   TaskListsComponent,
 } from './pages/components';
 
 const routes: Routes = [
-  {
-    path: '',
-    children: [
-      { path: '404', component: PageNotFoundComponent },
-      { path: 'home', component: HomeComponent },
-      { path: 'task', component: TaskListsComponent },
-      {
-        path: '',
-        pathMatch: 'full',
-        redirectTo: 'home',
-      },
-    ],
-  },
+    { path: 'task-lists', component: TaskListsComponent },
+    { path: 'report', component: ReportComponent },
 ];
 
 @NgModule({

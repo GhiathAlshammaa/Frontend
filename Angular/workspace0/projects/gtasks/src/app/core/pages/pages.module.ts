@@ -17,7 +17,7 @@ import { SharedModule } from '../../shared/shared.module';
     ReportComponent,
   ],
 
-  imports: [CommonModule, SharedModule],
+  imports: [SharedModule],
   exports: [
     HomeComponent,
     TaskListsComponent,
