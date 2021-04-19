@@ -17,3 +17,33 @@
   text-align: justify;
   line-height: 1.5rem;
 }
+
+
+.signin-container {
+  background-color: #22A7F0;
+  height: 900px;
+  z-index: 999;
+}
+.signin-inner{
+  display: block;
+  margin: 0 auto;
+  padding-top: 20%;
+  text-align: center;
+}
+.signin-button {
+  background: #fff;
+  padding: 10px 56px;
+  border-radius: 100px;
+  box-shadow: 2px 1px 9px 0px #00000024;
+}
+.signin-title{
+  text-transform: uppercase;
+  font-size: 26px;
+  display: block;
+  font-weight: 200;
+  margin-bottom: 15px;
+  letter-spacing: 5px;
+  margin: 0px 0 40px 0;
+  color: #fff;
+}
+

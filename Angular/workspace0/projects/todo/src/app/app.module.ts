@@ -27,6 +27,7 @@ const StoreDevtools = !env.production
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(env.firebase.config),

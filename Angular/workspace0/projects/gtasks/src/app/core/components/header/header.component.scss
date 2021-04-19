@@ -21,7 +21,7 @@
 }
 
 .menu {
-   display: flex;
+  display: flex;
    &__item {
     color: white;
     text-decoration: none;
@@ -30,6 +30,10 @@
       padding-top: 3px;
       transform: scale(1.5);
       padding-left: 1rem;
+      &:hover {
+        cursor: pointer;
+        color: yellow;
+      }
     }
     &:hover {
       text-decoration: none;

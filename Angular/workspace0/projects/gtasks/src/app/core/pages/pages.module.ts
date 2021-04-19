@@ -9,6 +9,7 @@ import {
 } from './components';
 import { SharedModule } from '../../shared/shared.module';
 import { TasklistsModule } from '../../tasklists/tasklists.module';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [

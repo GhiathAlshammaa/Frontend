@@ -12,7 +12,16 @@
       <a routerLink="home" routerLinkActive="active" class="menu__item">Home</a>
       <a routerLink="task-lists" class="menu__item">Task lists</a>
       <a routerLink="report" class="menu__item">Report</a>
-      <mat-icon class="menu__item-icon">account_circle</mat-icon>
+
+      <mat-icon
+        class="menu__item-icon"
+        (click)="authenticate()"
+        *ngIf="!isSignIn"
+        >account_circle</mat-icon
+      >
+      <mat-icon class="menu__item-icon" (click)="logOut()" *ngIf="isSignIn"
+        >logout</mat-icon
+      >
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
