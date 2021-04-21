@@ -30,6 +30,15 @@
 │ │ │ ├── serieslist.routing.module.ts
 │ │ │ ├── serieslist.module.ts
 │ │ │ ├── index.ts
+│ │ ├── pages
+│ │ │ ├── Home
+│ │ │ │ ├── home.component.ts
+│ │ │ │ ├── home.component.html
+│ │ │ ├── PageNotFound
+│ │ │ │ ├── PageNotFound.component.ts
+│ │ │ │ ├── PageNotFound.component.html
+│ │ │ ├── pages.module.ts
+│ │ │ ├── index.ts
 │ │ ├── shared
 │ │ │ ├── layout
 │ │ │ │ ├── footer
