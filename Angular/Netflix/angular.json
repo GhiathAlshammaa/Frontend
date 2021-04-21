@@ -47,13 +47,13 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "optimization": true,
             "outputHashing": "all",
             "sourceMap": true,
             "namedChunks": false,
             "extractLicenses": true,
             "vendorChunk": false,
-            "buildOptimizer": true,
+            "optimization": false,
+            "buildOptimizer": false,
             "budgets": [
               {
                 "type": "initial",
@@ -86,7 +86,9 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "sourceMap": false
+              "sourceMap": false,
+              "optimization": true,
+              "buildOptimizer": true
             }
           }
         },
