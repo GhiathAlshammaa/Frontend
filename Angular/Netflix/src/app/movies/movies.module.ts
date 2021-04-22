@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MoviesRoutingModule } from './movies-routing.module';
-import { MovieslistComponent } from '.';
+import { MovieDetailComponent, MovieListComponent } from '.';
 
 @NgModule({
-  declarations: [MovieslistComponent],
+  declarations: [MovieDetailComponent, MovieListComponent],
   imports: [CommonModule, MoviesRoutingModule],
-  exports: [MovieslistComponent],
+  exports: [MovieDetailComponent, MovieListComponent],
 })
 export class MoviesModule {}

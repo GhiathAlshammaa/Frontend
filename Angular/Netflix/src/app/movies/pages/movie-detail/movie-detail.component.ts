@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-movieslist',
+  selector: 'app-movie-detail',
   template: `
     <p>
-      movieslist works!
+      movie-detail works!
     </p>
   `,
   styles: [
   ]
 })
-export class MovieslistComponent implements OnInit {
+export class MovieDetailComponent implements OnInit {
 
   constructor() { }
 
