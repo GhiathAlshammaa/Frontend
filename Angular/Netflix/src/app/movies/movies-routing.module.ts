@@ -3,8 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { MovieListComponent, MovieDetailComponent } from './pages';
 
 const routes: Routes = [
-  { path: 'movies', component: MovieListComponent },
-  { path: 'movies/:id', component: MovieDetailComponent },
+  {
+    path: 'movies',
+    component: MovieListComponent,
+    data: { pageTitle: 'Movie List' },
+  },
+  {
+    path: 'movies/:id',
+    component: MovieDetailComponent,
+    data: { pageTitle: 'Movie' },
+  },
 ];
 
 @NgModule({

@@ -3,8 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { SerieListComponent, SerieDetailComponent } from './pages';
 
 const routes: Routes = [
-  { path: 'series', component: SerieListComponent },
-  { path: 'series/:id', component: SerieDetailComponent },
+  {
+    path: 'series',
+    component: SerieListComponent,
+    data: { pageTitle: 'Serie List' },
+  },
+  {
+    path: 'series/:id',
+    component: SerieDetailComponent,
+    data: { pageTitle: 'Serie' },
+  },
 ];
 
 @NgModule({
