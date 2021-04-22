@@ -5,13 +5,18 @@ import { SerieListComponent, SerieDetailComponent } from './pages';
 const routes: Routes = [
   {
     path: 'series',
-    component: SerieListComponent,
-    data: { pageTitle: 'Serie List' },
-  },
-  {
-    path: 'series/:id',
-    component: SerieDetailComponent,
-    data: { pageTitle: 'Serie' },
+    children: [
+      {
+        path: '',
+        component: SerieListComponent,
+        data: { pageTitle: 'Serie List' },
+      },
+      {
+        path: ':id',
+        component: SerieDetailComponent,
+        data: { pageTitle: 'Serie' },
+      },
+    ],
   },
 ];
 

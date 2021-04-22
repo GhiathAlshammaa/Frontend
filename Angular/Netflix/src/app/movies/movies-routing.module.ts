@@ -5,13 +5,18 @@ import { MovieListComponent, MovieDetailComponent } from './pages';
 const routes: Routes = [
   {
     path: 'movies',
-    component: MovieListComponent,
-    data: { pageTitle: 'Movie List' },
-  },
-  {
-    path: 'movies/:id',
-    component: MovieDetailComponent,
-    data: { pageTitle: 'Movie' },
+    children: [
+      {
+        path: '',
+        component: MovieListComponent,
+        data: { pageTitle: 'Movie List' },
+      },
+      {
+        path: ':id',
+        component: MovieDetailComponent,
+        data: { pageTitle: 'Movie' },
+      },
+    ],
   },
 ];
 
