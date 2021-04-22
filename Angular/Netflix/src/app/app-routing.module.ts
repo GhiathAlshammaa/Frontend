@@ -10,7 +10,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [HomeComponent, PageNotFoundComponent],
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { enableTracing: false })],
   exports: [RouterModule, HomeComponent, PageNotFoundComponent],
 })
 export class AppRoutingModule {}
