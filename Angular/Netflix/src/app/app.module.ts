@@ -7,8 +7,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core';
 import { SharedModule } from './shared';
 import { SeriesModule } from './series';
-import { MoviesModule } from './movies/movies.module';
-import { PagesModule } from './pages/pages.module';
+import { MoviesModule } from './movies';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +16,6 @@ import { PagesModule } from './pages/pages.module';
     HttpClientModule,
     SharedModule,
     CoreModule,
-    PagesModule,
     MoviesModule,
     SeriesModule,
     AppRoutingModule,

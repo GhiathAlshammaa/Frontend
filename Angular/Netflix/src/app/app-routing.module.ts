@@ -9,8 +9,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [HomeComponent, PageNotFoundComponent],
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule, HomeComponent, PageNotFoundComponent],
 })
 export class AppRoutingModule {}
