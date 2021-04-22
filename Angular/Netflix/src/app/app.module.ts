@@ -6,7 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core';
 import { SharedModule } from './shared';
-import { PagesModule } from './pages';
+import { SeriesModule } from './series';
+import { MoviesModule } from './movies/movies.module';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,8 +17,10 @@ import { PagesModule } from './pages';
     HttpClientModule,
     SharedModule,
     CoreModule,
-    AppRoutingModule,
     PagesModule,
+    MoviesModule,
+    SeriesModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
