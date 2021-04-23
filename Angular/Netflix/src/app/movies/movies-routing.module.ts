@@ -4,19 +4,14 @@ import { MovieListComponent, MovieDetailComponent } from './pages';
 
 const routes: Routes = [
   {
-    path: 'movies',
-    children: [
-      {
-        path: '',
-        component: MovieListComponent,
-        data: { pageTitle: 'Movie List' },
-      },
-      {
-        path: ':id',
-        component: MovieDetailComponent,
-        data: { pageTitle: 'Movie' },
-      },
-    ],
+    path: '',
+    component: MovieListComponent,
+    data: { pageTitle: 'Movie List' },
+  },
+  {
+    path: ':id',
+    component: MovieDetailComponent,
+    data: { pageTitle: 'Movie' },
   },
 ];
 

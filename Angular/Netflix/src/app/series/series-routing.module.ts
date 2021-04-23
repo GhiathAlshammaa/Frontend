@@ -4,19 +4,14 @@ import { SerieListComponent, SerieDetailComponent } from './pages';
 
 const routes: Routes = [
   {
-    path: 'series',
-    children: [
-      {
-        path: '',
-        component: SerieListComponent,
-        data: { pageTitle: 'Serie List' },
-      },
-      {
-        path: ':id',
-        component: SerieDetailComponent,
-        data: { pageTitle: 'Serie' },
-      },
-    ],
+    path: '',
+    component: SerieListComponent,
+    data: { pageTitle: 'Serie List' },
+  },
+  {
+    path: ':id',
+    component: SerieDetailComponent,
+    data: { pageTitle: 'Serie' },
   },
 ];
 

@@ -6,8 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core';
 import { SharedModule } from './shared';
-import { SeriesModule } from './series';
-import { MoviesModule } from './movies';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,8 +14,6 @@ import { MoviesModule } from './movies';
     HttpClientModule,
     SharedModule,
     CoreModule,
-    MoviesModule,
-    SeriesModule,
     AppRoutingModule,
   ],
   providers: [],
