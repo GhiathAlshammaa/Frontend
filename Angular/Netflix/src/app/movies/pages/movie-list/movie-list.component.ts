@@ -23,8 +23,8 @@ export class MovieListComponent implements OnInit {
     console.log(`pageTitle: ${pageTitle}`);
 
     this.sub = this.moviesService.getUpComingMovies().subscribe({
-      next: (products) => {
-        this.movies = products;
+      next: (movies) => {
+        this.movies = movies;
       },
       error: (err) => (this.errorMessage = err),
     });
