@@ -48,10 +48,10 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "outputHashing": "all",
-            "sourceMap": true,
             "namedChunks": false,
             "extractLicenses": true,
             "vendorChunk": false,
+            "sourceMap": true,
             "optimization": false,
             "buildOptimizer": false,
             "budgets": [
