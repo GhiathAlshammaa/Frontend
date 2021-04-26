@@ -1,5 +1,5 @@
 export const ExtractData = (res: any) => {
   let body = res;
-  console.log(body);
+  // console.log(body);
   return body.results || {};
 };

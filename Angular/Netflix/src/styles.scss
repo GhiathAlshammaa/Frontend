@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+    height: 100%;
+}
+
+// body {
+//     /* The image used */
+//     // background-image: url("./assets/bg.jpg");
+//     background-color:black ;
+//     /* Full height */
+//     height: 100%;
+//     width: 100%;;
+
+//     /* Center and scale the image nicely */
+//     background-position: center cover;
+//     background-repeat: no-repeat;
+// }
+
+body {
+    color: white;
+    /* Set the default background color */
+    background-color: white;   
+    /* Enable the positioning of the pseudo element */
+    position: relative;
+  &::after {
+      /* Set the new background color */
+      background-color: black; 
+      /* Render the pseudo element */
+      content: "";             
+      /* Cover the entire page with the pseudo element */
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      /* Render the new background color beneath the page content */
+      z-index: -1;
+      /* Toggle opacity between 0 and 1 (with styled-components) */
+    //   opacity: ${props => props.darkMode ? 1 : 0};
+    opacity: 1;
+      /* Animate opacity changes */
+      transition: opacity 300ms;
+    }
+  }

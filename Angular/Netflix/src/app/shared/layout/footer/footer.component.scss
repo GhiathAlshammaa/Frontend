@@ -1,0 +1,10 @@
+footer > * { 
+    color: #E50914;
+    position: relative;
+    width:100%;
+    margin-top: auto;
+    &:hover, &:active, &:visited{
+        text-decoration: none;
+        color: #E50914 !important;
+    }
+}

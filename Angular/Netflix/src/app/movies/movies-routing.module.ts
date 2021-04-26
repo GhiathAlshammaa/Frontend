@@ -1,6 +1,8 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MovieListComponent, MovieDetailComponent } from './pages';
+import { SharedModule } from '@app/shared';
 
 const routes: Routes = [
   {
@@ -17,7 +19,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [MovieListComponent, MovieDetailComponent],
-  imports: [RouterModule.forChild(routes)],
+  imports: [SharedModule, CommonModule, RouterModule.forChild(routes)],
   exports: [RouterModule, MovieListComponent, MovieDetailComponent],
 })
 export class MoviesRoutingModule {}

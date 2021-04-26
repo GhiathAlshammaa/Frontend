@@ -31,3 +31,13 @@
         transform: rotate(359deg);
     }
 }
+
+
+#page-container {
+    position: relative;
+    min-height: 91vh;
+  }
+
+  #content-wrap {
+    padding-bottom: 2rem;    /* Footer height */
+  }
