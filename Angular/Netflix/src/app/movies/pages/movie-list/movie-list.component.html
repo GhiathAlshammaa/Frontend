@@ -1,4 +1,4 @@
-<div *ngIf="movies" class="mr-4 ml-4 mt-4">
+<div *ngIf="movies$ | async as movies" class="mr-4 ml-4 mt-4">
   <h2 class="mb-4">Up Coming Movies</h2>
   <div class="row is-flex">
     <div

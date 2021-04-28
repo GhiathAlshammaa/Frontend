@@ -1,28 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '@src/environments/environment';
-import { catchError, map, tap } from 'rxjs/operators';
-import { Observable, throwError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { Movie } from '../models/movie';
-import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 import { ExtractData, HandleError } from '../utils';
 @Injectable({
   providedIn: 'root',
 })
 export class MoviesService {
-  url = '';
-  language = '';
+  language = 'en-US';
+  url = `${environment.apiConfig.url}api_key=${environment.apiConfig.apikey}&language=${this.language}&page=1`;
+  movies$ = this.http.get<Movie[]>(this.url).pipe(
+    map((data) => ExtractData(data)),
+    catchError(HandleError)
+  );
 
   constructor(private http: HttpClient) {
-    this.language = 'en-US';
-    this.url = `${environment.apiConfig.url}api_key=${environment.apiConfig.apikey}&language=${this.language}&page=1`;
-    // console.log(`url: ${this.url}`);
-  }
-
-  getUpComingMovies(): Observable<Movie[]> {
-    return this.http.get<any[]>(this.url).pipe(
-      map((data) => ExtractData(data)),
-      catchError(HandleError)
-    );
+    // Initialize the lang
+    // this.language = 'en-US';
+    // Check the Path
+    // console.log(`Url: ${this.url}`);
   }
 }
