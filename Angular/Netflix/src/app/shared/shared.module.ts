@@ -7,7 +7,12 @@ import { MovieComponent } from './components/movie/movie.component';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, MovieComponent],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
+  ],
   exports: [HeaderComponent, FooterComponent, MovieComponent],
 })
 export class SharedModule {}

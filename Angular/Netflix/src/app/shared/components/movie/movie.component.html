@@ -6,18 +6,23 @@
   <img src="assets/img/abstract-image.jpg" *ngIf="!movie.poster_path" />
   <div class="caption pt-3">
     <h4 class="text-ellipsis">
-      <a class="title" routerLink="/movie/{{ movie.id }}" title="{{ movie.title }}">{{
-        movie.title
-      }}</a>
+      <a
+        class="title"
+        routerLink="/movie/{{ movie.id }}"
+        title="{{ movie.title }}"
+        >{{ movie.title }}</a
+      >
     </h4>
     <div class="release-date">
       <b>Release Date: </b>{{ movie.release_date }}
     </div>
     <div>
-      <a class="view" routerLink="/movie/{{ movie.id }}">View details &raquo;</a>
+      <a class="view" routerLink="/movie/{{ movie.id }}"
+        >View details &raquo;</a
+      >
       <small class="badge badge-warning float-right" *ngIf="movie.vote_average">
         {{ movie.vote_average }}
-        <i class="fas fa-star fa-1x"></i>
+        <i class="fa fa-star fa-1x"></i>
       </small>
     </div>
   </div>
