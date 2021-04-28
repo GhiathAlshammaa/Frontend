@@ -16,14 +16,33 @@
     <div class="release-date">
       <b>Release Date: </b>{{ movie.release_date }}
     </div>
+
+    <div class="production-countries">
+      <div class="production-countries-title">Production Countries:</div>
+    </div>
+
     <div>
       <a class="view" routerLink="/movie/{{ movie.id }}"
         >View details &raquo;</a
       >
-      <small class="badge badge-warning float-right" *ngIf="movie.vote_average">
-        {{ movie.vote_average }}
-        <i class="fa fa-star fa-1x"></i>
-      </small>
+      <div class="float-right">
+        <small
+          class="badge badge-pill badge-info"
+          *ngIf="movie.sinceHowManyDays"
+          tooltip="Since How many Days?"
+        >
+          {{ movie.sinceHowManyDays }}
+          <i class="fa fa-calendar-check-o fa-1x"></i>
+        </small>
+        <small
+          class="badge badge-pill badge-warning"
+          *ngIf="movie.vote_average"
+          tooltip="IMDB Rate"
+        >
+          {{ movie.vote_average }}
+          <i class="fa fa-star fa-1x"></i>
+        </small>
+      </div>
     </div>
   </div>
 </div>

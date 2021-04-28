@@ -1,10 +1,15 @@
-footer > * { 
-    color: #E50914;
+
+footer {
+    color: black
+}
+
+footer > * {
+    font-weight: bold;
     position: relative;
     width:100%;
     margin-top: auto;
     &:hover, &:active, &:visited{
         text-decoration: none;
-        color: #E50914 !important;
+        color: black !important;
     }
 }

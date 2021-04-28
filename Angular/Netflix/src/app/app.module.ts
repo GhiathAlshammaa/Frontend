@@ -6,10 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core';
 import { SharedModule } from './shared';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    TooltipModule.forRoot(),
     BrowserModule,
     HttpClientModule,
     SharedModule,

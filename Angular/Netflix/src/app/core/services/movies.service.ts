@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '@src/environments/environment';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Observable } from 'rxjs';
 import { Movie } from '../models/movie';
 import { ExtractData, HandleError, SubtractDates } from '../utils';
 import * as moment from 'moment';
@@ -25,7 +24,6 @@ export class MoviesService {
       )
     ),
     tap((data) => console.log(data)),
-
     catchError(HandleError)
   );
 
