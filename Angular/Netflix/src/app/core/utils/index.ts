@@ -1,2 +1,2 @@
 export { HandleError } from './error';
-export { ExtractData } from './data';
+export { ExtractData, SubtractDates } from './data';
