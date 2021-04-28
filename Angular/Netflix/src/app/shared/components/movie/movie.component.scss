@@ -11,3 +11,21 @@ img {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+a {
+    color: #E50914;
+    text-decoration: none;
+}
+
+.title:hover {
+    background-color: #E50914;
+    color: white;
+}
+
+.release-date {
+    color: black;
+}
+
+.view:hover {
+    text-decoration: underline;
+}

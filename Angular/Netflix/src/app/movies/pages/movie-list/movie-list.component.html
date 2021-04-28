@@ -1,12 +1,11 @@
-<div *ngIf="movies" class="p-5">
-  <h3 class="orange-text pb-5">Up Coming Movies</h3>
+<div *ngIf="movies" class="mr-4 ml-4 mt-4">
+  <h2 class="mb-4">Up Coming Movies</h2>
   <div class="row is-flex">
     <div
-      class="col-sm-6 col-md-4 col-lg-3 col-xs-6"
+      class="col-sm-6 col-md-4 col-lg-3 col-xs-6 pb-4 mb-1"
       *ngFor="let movie of movies"
     >
-      <!-- {{ movies[19]?.poster_path }} -->
-      <app-movie [movie]="movie" [title]="movie.title"> * </app-movie>
+      <app-movie [movie]="movie" [title]="movie.title"></app-movie>
     </div>
   </div>
 </div>
