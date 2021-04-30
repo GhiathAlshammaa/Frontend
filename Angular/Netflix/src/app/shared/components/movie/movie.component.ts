@@ -19,7 +19,7 @@ export class MovieComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    this.updateCountryValue();
+    // this.updateCountryValue();
     // console.log(this.movie);
   }
 }

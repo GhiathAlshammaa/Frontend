@@ -13,57 +13,49 @@ import { Country } from '../models/country';
 export class MoviesService implements OnInit {
   language = 'en-US';
   today = moment.now();
-  urlUpcoming = `${environment.apiConfig.url}upcoming?api_key=${environment.apiConfig.apikey}&language=${this.language}&page=2`;
+  urlUpcoming = `${environment.apiConfig.url}upcoming?api_key=${environment.apiConfig.apikey}&language=${this.language}&page=1`;
   urlCountries = `${environment.apiConfig.urlConfig}countries?api_key=${environment.apiConfig.apikey}`;
   countries: Country[] = [];
-  // orgenalCountries: Country[] = [
-  //   {
-  //     iso_3166_1: '',
-  //     name: '',
-  //   },
-  // ];
 
   movies$ = this.http.get<Movie[]>(this.urlUpcoming).pipe(
     map((data) => ExtractData(data)),
     map((movies) =>
-      movies.map((movie) => {
-        this.getProductionCountriesByMovieId(movie.id).subscribe({
-          next(countries) {
-            this.countries = [...countries];
-            // console.log(this.countries);
-          },
-        });
-        return {
-          ...movie,
-          sinceHowManyDays: SubtractDates(movie.release_date),
-          production_countries: this.countries,
-        } as Movie;
-      })
+      movies.map(
+        (movie) =>
+          ({
+            ...movie,
+            sinceHowManyDays: SubtractDates(movie.release_date),
+            production_countries: this.countries,
+          } as Movie)
+      )
     ),
-    // tap((movies) =>
-    //   movies.map((movie) => console.log(movie.production_countries))
-    // ),
-    catchError(HandleError)
-  );
-
-  countries$ = this.http.get<Country[]>(this.urlCountries).pipe(
-    tap((country) => console.log(country)),
+    tap((movies) => console.log(movies)),
     catchError(HandleError)
   );
 
   getMovieById(movieId: number): Observable<Movie> {
     const urlMovieById = `${environment.apiConfig.url}${movieId}?api_key=${environment.apiConfig.apikey}&language=${this.language}`;
-    return this.http.get<Movie>(urlMovieById);
-  }
-
-  getProductionCountriesByMovieId(movieId: number): Observable<Country[]> {
-    return this.getMovieById(movieId).pipe(
-      map((movie) => {
-        this.countries = movie.production_countries;
-        return movie.production_countries;
-      })
+    return this.http.get<Movie>(urlMovieById).pipe(
+      tap((movies) => console.log(movies)),
+      catchError(HandleError)
     );
   }
+
+  // getProductionCountriesByMovieId(movieId: number): void {
+  //   console.log(`movieId: ${movieId}`);
+  // return this.getMovieById(movieId).pipe(
+  //   map((movie) => {
+  //     this.countries = movie.production_countries;
+  //     // console.log(`movie: ${movie}`);
+  //     return movie.production_countries;
+  //   })
+  // );
+  // }
+
+  countries$ = this.http.get<Country[]>(this.urlCountries).pipe(
+    tap((country) => console.log(country)),
+    catchError(HandleError)
+  );
 
   constructor(private http: HttpClient) {}
 

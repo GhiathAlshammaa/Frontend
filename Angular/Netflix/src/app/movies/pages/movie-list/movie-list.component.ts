@@ -16,31 +16,12 @@ export class MovieListComponent implements OnInit {
   errorMessage = '';
   countries: Country[] = [];
 
-  // getCountries = (movieId: number) => {
-  //   this.moviesService.getProductionCountriesByMovieId(movieId).subscribe({
-  //     next(countries) {
-  //       this.countries = countries;
-  //     },
-  //     error(err) {
-  //       this.errorMessage = err;
-  //       return EMPTY;
-  //     },
-  //   });
-  //   console.log(this.countries);
-  // };
-
   movies$ = this.moviesService.movies$.pipe(
     catchError((err) => {
       this.errorMessage = err;
       return EMPTY;
     })
   );
-  // moviesWithCountries$ = this.moviesService.movieWithCountries$.pipe(
-  //   catchError((err) => {
-  //     this.errorMessage = err;
-  //     return EMPTY;
-  //   })
-  // );
 
   constructor(
     private route: ActivatedRoute,
@@ -48,12 +29,9 @@ export class MovieListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.movies$.subscribe({
-      // this.movies$.subscribe({
-      next(movies) {
-        movies.map((movie) => {
-          // console.log(movie.production_countries);
-        });
+    this.moviesService.getMovieById(460465).subscribe({
+      next(movie) {
+        console.log(movie);
       },
     });
   }
