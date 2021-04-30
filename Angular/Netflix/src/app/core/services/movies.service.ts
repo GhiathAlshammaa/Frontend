@@ -13,7 +13,7 @@ import { Country } from '../models/country';
 export class MoviesService implements OnInit {
   language = 'en-US';
   today = moment.now();
-  urlUpcoming = `${environment.apiConfig.url}upcoming?api_key=${environment.apiConfig.apikey}&language=${this.language}&page=2`;
+  urlUpcoming = `${environment.apiConfig.url}upcoming?api_key=${environment.apiConfig.apikey}&language=${this.language}&page=1`;
   urlCountries = `${environment.apiConfig.urlConfig}countries?api_key=${environment.apiConfig.apikey}`;
   countries: Country[] = [];
   // orgenalCountries: Country[] = [

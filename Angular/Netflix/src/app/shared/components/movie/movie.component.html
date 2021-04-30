@@ -21,11 +21,10 @@
       class="production-countries d-flex justify-content-between"
       *ngIf="movie.production_countries as countries"
     >
-      <div class="production-countries-title">Production Countries:</div>
-      <div
-        class="d-block justify-content-start"
-        *ngFor="let country of countries"
-      >
+      <div class="d-flex  production-countries-title">
+        Production Countries:
+      </div>
+      <div class="d-flex " *ngFor="let country of countries">
         <span
           [ngClass]="
             country.iso_3166_1
