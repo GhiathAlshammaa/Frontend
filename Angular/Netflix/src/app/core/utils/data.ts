@@ -5,7 +5,7 @@ export const ExtractData = (res: any) => {
   // console.log(body);
   return body.results || {};
 };
-export const SubtractDates = (date) => {
+export const SubtractDates = (date): number => {
   const today = new Date();
   const movieDate = new Date(date as string);
 
@@ -13,8 +13,6 @@ export const SubtractDates = (date) => {
   const Days = Math.round(Time / (1000 * 3600 * 24));
 
   // Check the Result
-  // console.log(today);
-  // console.log(movieDate);
   // console.log(`Result: ${Days}`);
 
   return Days;

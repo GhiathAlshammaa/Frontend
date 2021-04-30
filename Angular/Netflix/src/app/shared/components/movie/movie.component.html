@@ -17,8 +17,25 @@
       <b>Release Date: </b>{{ movie.release_date }}
     </div>
 
-    <div class="production-countries">
+    <div
+      class="production-countries d-flex justify-content-between"
+      *ngIf="movie.production_countries as countries"
+    >
       <div class="production-countries-title">Production Countries:</div>
+      <div
+        class="d-block justify-content-start"
+        *ngFor="let country of countries"
+      >
+        <span
+          [ngClass]="
+            country.iso_3166_1
+              ? 'flag-icon flag-icon-' +
+                country.iso_3166_1 +
+                ' flag-icon-squared'
+              : ''
+          "
+        ></span>
+      </div>
     </div>
 
     <div>
