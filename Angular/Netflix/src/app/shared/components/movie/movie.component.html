@@ -18,19 +18,16 @@
     </div>
 
     <div
-      class="production-countries d-flex justify-content-between"
+      class="production-countries d-flex"
       *ngIf="movie.production_countries as countries"
     >
-      <div class="d-flex  production-countries-title">
-        Production Countries:
-      </div>
-      <div class="d-flex " *ngFor="let country of countries">
+      <div class="d-flex production-countries-title">Production Countries:</div>
+      <div class="ml-auto">
         <span
+          *ngFor="let country of countries"
           [ngClass]="
             country.iso_3166_1
-              ? 'flag-icon flag-icon-' +
-                country.iso_3166_1 +
-                ' flag-icon-squared'
+              ? 'flag-icon flag-icon-' + country.iso_3166_1 + ' mr-2'
               : ''
           "
         ></span>

@@ -13,7 +13,7 @@ import { Country } from '../models/country';
 export class MoviesService implements OnInit {
   language = 'en-US';
   today = moment.now();
-  urlUpcoming = `${environment.apiConfig.url}upcoming?api_key=${environment.apiConfig.apikey}&language=${this.language}&page=1`;
+  urlUpcoming = `${environment.apiConfig.url}upcoming?api_key=${environment.apiConfig.apikey}&language=${this.language}&page=2`;
   urlCountries = `${environment.apiConfig.urlConfig}countries?api_key=${environment.apiConfig.apikey}`;
   countries: Country[] = [];
   // orgenalCountries: Country[] = [
@@ -29,11 +29,8 @@ export class MoviesService implements OnInit {
       movies.map((movie) => {
         this.getProductionCountriesByMovieId(movie.id).subscribe({
           next(countries) {
-            this.countries?.push(...countries);
+            this.countries = [...countries];
             // console.log(this.countries);
-          },
-          complete() {
-            // console.log('done');
           },
         });
         return {
