@@ -36,7 +36,7 @@ export class MoviesService implements OnInit {
   getMovieById(movieId: number): Observable<Movie> {
     const urlMovieById = `${environment.apiConfig.url}${movieId}?api_key=${environment.apiConfig.apikey}&language=${this.language}`;
     return this.http.get<Movie>(urlMovieById).pipe(
-      tap((movies) => console.log(movies)),
+      // tap((movies) => console.log(movies)),
       catchError(HandleError)
     );
   }

@@ -29,10 +29,6 @@ export class MovieListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.moviesService.getMovieById(460465).subscribe({
-      next(movie) {
-        console.log(movie);
-      },
-    });
+
   }
 }
