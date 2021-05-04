@@ -26,91 +26,10 @@
 
 <div class="row m-5" *ngIf="movie$ | async as movie">
   <div class="col-md-4">
-    <img
-      src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}"
-      alt=""
-      class="thumbnail"
-    />
-    <div class="mt-2 d-flex justify-content-between">
-      <div>
-        <a href="{{ movie.homepage }}" target="_blank">
-          <small
-            class="badge badge-pill badge-warning mr-2"
-            *ngIf="movie.homepage"
-            tooltip="IMDB Rate"
-          >
-            Website
-            <i class="fa fa-external-link" aria-hidden="true"></i>
-          </small>
-        </a>
-
-        <a href="">
-          <small
-            class="badge badge-pill badge-warning mr-2"
-            *ngIf="movie.vote_average"
-            tooltip="IMDB Rate"
-          >
-            Trailer
-            <i class="fa fa-film" aria-hidden="true"></i>
-          </small>
-        </a>
-      </div>
-      <div>
-        <a
-          href="https://www.imdb.com/title/{{ movie.imdb_id }}"
-          target="_blank"
-          class=""
-        >
-          <small
-            class="badge badge-pill badge-warning"
-            *ngIf="movie.vote_average"
-            tooltip="IMDB Rate"
-          >
-            {{ movie.vote_average }}
-            <i class="fa fa-star"></i>
-          </small>
-        </a>
-      </div>
-    </div>
+    <app-movie-external-info [movie]="movie"></app-movie-external-info>
   </div>
   <div class="col-md-8">
-    <h2 class="text-danger">
-      {{ movie.title }}
-    </h2>
-    <p>{{ movie.tagline }}</p>
-    <div>
-      <a
-        routerLink="/genres/{{ genre.id }}/{{ genre.name }}"
-        *ngFor="let genre of movie.genres"
-        class="badge badge-danger m-r-md"
-      >
-        {{ genre.name }}
-      </a>
-    </div>
-    <h3 class="text-danger mt-4">Overview</h3>
-    <p>
-      {{ movie.overview }}
-    </p>
-    <!--Casts-->
-    <div class="row is-flex" *ngIf="cast && cast.length > 0">
-      <div class="col-md-12">
-        <h3 class="text-center">Cast</h3>
-      </div>
-      <div class="col-md-3" *ngFor="let actor of cast">
-        <div class="thumbnail">
-          <img
-            src="https://image.tmdb.org/t/p/w500/{{ actor.profile_path }}"
-            alt=""
-          />
-          <div class="caption">
-            <h6 class="text-center">
-              <a routerLink="/actor/{{ actor.id }}">{{ actor.name }}</a>
-            </h6>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--Casts-->
+    <app-movie-internal-info [movie]="movie"></app-movie-internal-info>
   </div>
 </div>
 

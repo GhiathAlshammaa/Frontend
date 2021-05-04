@@ -1,0 +1,48 @@
+<div class="container">
+  <img
+    src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}"
+    alt=""
+    class="thumbnail"
+  />
+  <div class="mt-2 d-flex justify-content-between">
+    <div>
+      <a href="{{ movie.homepage }}" target="_blank">
+        <small
+          class="badge badge-pill badge-warning mr-2"
+          *ngIf="movie.homepage"
+          tooltip="IMDB Rate"
+        >
+          Website
+          <i class="fa fa-external-link" aria-hidden="true"></i>
+        </small>
+      </a>
+
+      <a href="">
+        <small
+          class="badge badge-pill badge-warning mr-2"
+          *ngIf="movie.vote_average"
+          tooltip="IMDB Rate"
+        >
+          Trailer
+          <i class="fa fa-film" aria-hidden="true"></i>
+        </small>
+      </a>
+    </div>
+    <div>
+      <a
+        href="https://www.imdb.com/title/{{ movie.imdb_id }}"
+        target="_blank"
+        class=""
+      >
+        <small
+          class="badge badge-pill badge-warning"
+          *ngIf="movie.vote_average"
+          tooltip="IMDB Rate"
+        >
+          {{ movie.vote_average }}
+          <i class="fa fa-star"></i>
+        </small>
+      </a>
+    </div>
+  </div>
+</div>
