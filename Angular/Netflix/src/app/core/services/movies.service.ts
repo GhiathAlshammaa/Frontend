@@ -21,7 +21,7 @@ export class MoviesService implements OnInit {
   today;
   urlCountries = '';
   urlUpComing = '';
-  countries: Country[] = [];
+  // countries: Country[] = [];
 
   // Array contains all the Movies in "UpComing" Section
   movies$ = this.http.get<Movie[]>(this.urlUpComing).pipe(
@@ -32,7 +32,7 @@ export class MoviesService implements OnInit {
           ({
             ...movie,
             sinceHowManyDays: SubtractDates(movie.release_date),
-            production_countries: this.countries,
+            // production_countries: this.countries,
           } as Movie)
       )
     ),
