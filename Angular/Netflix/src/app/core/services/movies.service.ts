@@ -14,14 +14,24 @@ import { Country } from '../models/country';
   providedIn: 'root',
 })
 export class MoviesService implements OnInit {
-  // Url Properties for Url Generator
-  language = '';
-  pageNum;
-  restUrlValue = '';
-  today;
-  urlCountries = '';
-  urlUpComing = '';
+  // Url Params initialization
+  language = 'en-US';
+  pageNum = 1;
+  restUrlValue = `&language=${this.language}&page=${this.pageNum}`;
+
+  // Bringing a today date, in order to know since when the Movie released
+  today = moment.now();
+
+  // Generating Url
+  urlUpComing = UrlGenerator('normal', 'upcoming', this.restUrlValue);
+  urlCountries = UrlGenerator('config', 'countries');
   // countries: Country[] = [];
+
+  constructor(private http: HttpClient) {
+    // Test Section
+    // console.log(`urlUpComing: ${this.urlUpComing}`);
+    // console.log(`urlCountries: ${this.urlCountries}`);
+  }
 
   // Array contains all the Movies in "UpComing" Section
   movies$ = this.http.get<Movie[]>(this.urlUpComing).pipe(
@@ -36,32 +46,14 @@ export class MoviesService implements OnInit {
           } as Movie)
       )
     ),
-    tap((movies) => console.log(movies)),
+    // tap((movies) => console.log(movies)),
     catchError(HandleError)
   );
-
-  countries$ = this.http.get<Country[]>(this.urlCountries).pipe(
-    tap((country) => console.log(country)),
-    catchError(HandleError)
-  );
-
-  constructor(private http: HttpClient) {
-    // Url Params initialization
-    this.language = 'en-US';
-    this.pageNum = 1;
-    this.restUrlValue = `&language=${this.language}&page=${this.pageNum}`;
-
-    // Generating Url
-    this.urlCountries = UrlGenerator('config', 'countries');
-    this.urlUpComing = UrlGenerator('normal', 'upcoming', this.restUrlValue);
-
-    // Bringing a today date, in order to know since when the Movie released
-    this.today = moment.now();
-
-    // Test Section
-    // console.log(`urlUpComing: ${this.urlUpComing}`);
-    // console.log(`urlCountries: ${this.urlCountries}`);
-  }
 
   ngOnInit() {}
+
+  // countries$ = this.http.get<Country[]>(this.urlCountries).pipe(
+  //   tap((country) => console.log(country)),
+  //   catchError(HandleError)
+  // );
 }

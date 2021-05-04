@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Country } from '@app/core/models/country';
 import { Movie } from '@app/core/models/movie';
 import { MoviesService } from '@app/core/services';
@@ -12,23 +11,16 @@ import { catchError, tap } from 'rxjs/operators';
   styleUrls: ['movie-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MovieListComponent implements OnInit {
+export class MovieListComponent {
   errorMessage = '';
-  countries: Country[] = [];
 
   movies$ = this.moviesService.movies$.pipe(
     catchError((err) => {
       this.errorMessage = err;
+      console.log(`Error: ${this.errorMessage}`);
       return EMPTY;
     })
   );
 
-  constructor(
-    private route: ActivatedRoute,
-    private moviesService: MoviesService
-  ) {}
-
-  ngOnInit() {
-
-  }
+  constructor(private moviesService: MoviesService) {}
 }
