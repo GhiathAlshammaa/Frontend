@@ -17,7 +17,6 @@ export class MovieListComponent {
   movies$ = this.moviesService.movies$.pipe(
     catchError((err) => {
       this.errorMessage = err;
-      console.log(`Error: ${this.errorMessage}`);
       return EMPTY;
     })
   );

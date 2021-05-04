@@ -1,0 +1,149 @@
+<!-- <ul *ngIf="movie$ | async as movie">
+  <li>{{ movie.id }}</li>
+  <li>{{ movie.title }}</li>
+  <li>{{ movie.vote_average }}</li>
+  <li>{{ movie.tagline }}</li>
+  <li>{{ movie.genres | json }}</li>
+  <li>{{ movie.overview }}</li>
+
+  <li>{{ movie.poster_path }}</li>
+  <li>{{ movie.production_countries | json }}</li>
+  <li>{{ movie.original_language }}</li> -->
+<!-- ## Trailer -->
+<!-- Another Request "https://api.themoviedb.org/3/movie/587807/videos?api_key=6d63ff2905593d362cd65d9b4367d4d6&language=en-US"  -->
+<!-- need ExtractData -->
+<!-- <li>{{ movie.video }}</li> -->
+
+<!-- ## Cast -->
+<!-- Another Request "https://api.themoviedb.org/3/movie/587807/credits?api_key=6d63ff2905593d362cd65d9b4367d4d6&language=en-US" -->
+<!-- cast -> Actors & crew -> Director -->
+<!-- <li>{{ movie.cast }}</li> -->
+
+<!-- ## Smilar Movies -->
+<!-- Another Request "https://api.themoviedb.org/3/movie/587807/similar?api_key=6d63ff2905593d362cd65d9b4367d4d6&language=en-US&page=1" -->
+<!-- <li>{{ movie.smilarMovies }}</li> -->
+<!-- </ul> -->
+
+<div class="row m-5" *ngIf="movie$ | async as movie">
+  <div class="col-md-4">
+    <img
+      src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}"
+      alt=""
+      class="thumbnail"
+    />
+    <div class="mt-2 d-flex justify-content-between">
+      <div>
+        <a href="{{ movie.homepage }}" target="_blank">
+          <small
+            class="badge badge-pill badge-warning mr-2"
+            *ngIf="movie.homepage"
+            tooltip="IMDB Rate"
+          >
+            Website
+            <i class="fa fa-external-link" aria-hidden="true"></i>
+          </small>
+        </a>
+
+        <a href="">
+          <small
+            class="badge badge-pill badge-warning mr-2"
+            *ngIf="movie.vote_average"
+            tooltip="IMDB Rate"
+          >
+            Trailer
+            <i class="fa fa-film" aria-hidden="true"></i>
+          </small>
+        </a>
+      </div>
+      <div>
+        <a
+          href="https://www.imdb.com/title/{{ movie.imdb_id }}"
+          target="_blank"
+          class=""
+        >
+          <small
+            class="badge badge-pill badge-warning"
+            *ngIf="movie.vote_average"
+            tooltip="IMDB Rate"
+          >
+            {{ movie.vote_average }}
+            <i class="fa fa-star"></i>
+          </small>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <h2 class="text-danger">
+      {{ movie.title }}
+    </h2>
+    <p>{{ movie.tagline }}</p>
+    <div>
+      <a
+        routerLink="/genres/{{ genre.id }}/{{ genre.name }}"
+        *ngFor="let genre of movie.genres"
+        class="badge badge-danger m-r-md"
+      >
+        {{ genre.name }}
+      </a>
+    </div>
+    <h3 class="text-danger mt-4">Overview</h3>
+    <p>
+      {{ movie.overview }}
+    </p>
+    <!--Casts-->
+    <div class="row is-flex" *ngIf="cast && cast.length > 0">
+      <div class="col-md-12">
+        <h3 class="text-center">Cast</h3>
+      </div>
+      <div class="col-md-3" *ngFor="let actor of cast">
+        <div class="thumbnail">
+          <img
+            src="https://image.tmdb.org/t/p/w500/{{ actor.profile_path }}"
+            alt=""
+          />
+          <div class="caption">
+            <h6 class="text-center">
+              <a routerLink="/actor/{{ actor.id }}">{{ actor.name }}</a>
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Casts-->
+  </div>
+</div>
+
+<!--Trailer-->
+<!-- <div class="row" *ngIf="video">
+  <div class="col-md-8 col-md-offset-2">
+    <h2>{{video.name}}</h2>
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" [src]="video.url"></iframe>
+    </div>
+  </div>
+</div> -->
+<!--Trailer-->
+
+<!--Similar Movies-->
+<!-- <div class="row is-flex" *ngIf="similarMovies && similarMovies.length > 0">
+  <div class="col-md-12">
+    <h2>Similar Movies</h2>
+  </div>
+  <div class="col-md-2" *ngFor="let movie of similarMovies">
+    <movie-card [movie]="movie"></movie-card>
+  </div>
+</div> -->
+
+<!--Similar Movies-->
+<!-- <div class="row" *ngIf="reviews && reviews.length > 0">
+  <div class="col-md-12">
+    <h2>Reviews</h2>
+  </div>
+  <div class="col-md-6" *ngFor="let review of reviews">
+    <blockquote>
+      <p class="text-justify">{{review.content}}</p>
+      <footer><cite title="{{review.author}}"><a href="{{review.url}}" target="_blank">{{review.author}}</a></cite></footer>
+    </blockquote>
+  </div>
+</div> -->

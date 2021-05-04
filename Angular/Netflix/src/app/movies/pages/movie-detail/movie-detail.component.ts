@@ -1,27 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Movie } from '@app/core/models/movie';
-import { MoviesService } from '@app/core/services';
+import { MovieService } from '@app/core/services';
+import { EMPTY, Observable } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-movie-detail',
-  template: ` <p>movie-detail works!</p> `,
-  styles: [],
+  templateUrl: 'movie-detail.component.html',
+  styleUrls: ['movie-detail.component.scss'],
 })
 export class MovieDetailComponent implements OnInit {
-  movie: Movie;
+  errorMessage = '';
+
   constructor(
     private route: ActivatedRoute,
-    private moviesService: MoviesService
+    private movieService: MovieService
   ) {}
-
+  movie$: Observable<Movie>;
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    console.log(`id: ${id}`);
-    this.moviesService.getMovieById(id).subscribe({
-      next(movie) {
-        this.movie = movie;
-        // console.log(`MovieDetials: ${JSON.stringify(this.movie)}`);
+    // console.log(`id: ${id}`);
+
+    this.movie$ = this.movieService.movie$(id).pipe(
+      catchError((err) => {
+        this.errorMessage = err;
+        console.log(`Error: ${this.errorMessage}`);
+        return EMPTY;
+      })
+    );
+    // Test Section
+    this.movie$.subscribe({
+      next(data) {
+        console.log(data);
       },
     });
   }
