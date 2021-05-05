@@ -10,8 +10,15 @@
       <div class="card-body">
         <img
           width="100%"
-          src="https://image.tmdb.org/t/p/w500/{{ person.profile_path }}"
-          alt=""
+          src="{{ imgPath + person.profile_path }}"
+          alt="No Photo"
+          *ngIf="person.profile_path"
+        />
+        <img
+          width="100%"
+          [src]="noPhotoSrc"
+          alt="No Photo"
+          *ngIf="!person.profile_path"
         />
       </div>
       <div class="card-footer text-center">

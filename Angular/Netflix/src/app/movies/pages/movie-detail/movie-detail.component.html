@@ -1,29 +1,3 @@
-<!-- <ul *ngIf="movie$ | async as movie">
-  <li>{{ movie.id }}</li>
-  <li>{{ movie.title }}</li>
-  <li>{{ movie.vote_average }}</li>
-  <li>{{ movie.tagline }}</li>
-  <li>{{ movie.genres | json }}</li>
-  <li>{{ movie.overview }}</li>
-
-  <li>{{ movie.poster_path }}</li>
-  <li>{{ movie.production_countries | json }}</li>
-  <li>{{ movie.original_language }}</li> -->
-<!-- ## Trailer -->
-<!-- Another Request "https://api.themoviedb.org/3/movie/587807/videos?api_key=6d63ff2905593d362cd65d9b4367d4d6&language=en-US"  -->
-<!-- need ExtractData -->
-<!-- <li>{{ movie.video }}</li> -->
-
-<!-- ## Cast -->
-<!-- Another Request "https://api.themoviedb.org/3/movie/587807/credits?api_key=6d63ff2905593d362cd65d9b4367d4d6&language=en-US" -->
-<!-- cast -> Actors & crew -> Director -->
-<!-- <li>{{ movie.cast }}</li> -->
-
-<!-- ## Smilar Movies -->
-<!-- Another Request "https://api.themoviedb.org/3/movie/587807/similar?api_key=6d63ff2905593d362cd65d9b4367d4d6&language=en-US&page=1" -->
-<!-- <li>{{ movie.smilarMovies }}</li> -->
-<!-- </ul> -->
-
 <div class="row m-5" *ngIf="movie$ | async as movie">
   <div class="col-md-4">
     <app-movie-external-info [movie]="movie"></app-movie-external-info>
@@ -32,6 +6,18 @@
     <app-movie-internal-info [movie]="movie"></app-movie-internal-info>
   </div>
 </div>
+
+<!-- ## Smilar Movies -->
+<!--  Request "https://api.themoviedb.org/3/movie/587807/similar?api_key=6d63ff2905593d362cd65d9b4367d4d6&language=en-US&page=1" -->
+
+<!-- <div class="row is-flex" *ngIf="similarMovies && similarMovies.length > 0">
+  <div class="col-md-12">
+    <h2>Similar Movies</h2>
+  </div>
+  <div class="col-md-2" *ngFor="let movie of similarMovies">
+    <movie-card [movie]="movie"></movie-card>
+  </div>
+</div> -->
 
 <!--Trailer-->
 <!-- <div class="row" *ngIf="video">
@@ -43,26 +29,3 @@
   </div>
 </div> -->
 <!--Trailer-->
-
-<!--Similar Movies-->
-<!-- <div class="row is-flex" *ngIf="similarMovies && similarMovies.length > 0">
-  <div class="col-md-12">
-    <h2>Similar Movies</h2>
-  </div>
-  <div class="col-md-2" *ngFor="let movie of similarMovies">
-    <movie-card [movie]="movie"></movie-card>
-  </div>
-</div> -->
-
-<!--Similar Movies-->
-<!-- <div class="row" *ngIf="reviews && reviews.length > 0">
-  <div class="col-md-12">
-    <h2>Reviews</h2>
-  </div>
-  <div class="col-md-6" *ngFor="let review of reviews">
-    <blockquote>
-      <p class="text-justify">{{review.content}}</p>
-      <footer><cite title="{{review.author}}"><a href="{{review.url}}" target="_blank">{{review.author}}</a></cite></footer>
-    </blockquote>
-  </div>
-</div> -->

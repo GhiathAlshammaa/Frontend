@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Credit, Staff } from '../models';
+import { Staff } from '../models';
 import { HandleError, UrlGenerator } from '../utils';
 import { ExtractDataCredits } from '../utils/data';
 
@@ -23,8 +23,7 @@ export class StaffService {
       'credits',
       this.restUrlValue
     );
-    // console.log(`urlCredits: ${this.urlCredits}`);
-    
+
     return this.http.get<Staff[]>(this.urlCredits).pipe(
       map((credits) => ExtractDataCredits(credits)),
       // tap((staff)=> console.log(staff)),
