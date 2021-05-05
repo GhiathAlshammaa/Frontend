@@ -10,6 +10,8 @@ import {
 } from '../utils';
 import * as moment from 'moment';
 import { Country } from '../models/country';
+import { MovieService } from './movie.service';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
@@ -22,13 +24,16 @@ export class MoviesService implements OnInit {
   // Bringing a today date, in order to know since when the Movie released
   today = moment.now();
 
-  // Generating Url
+  // test temporary property
+  movieId = 0;
+
+  // ## Generating Url
   urlUpComing = UrlGenerator('normal', 'movie', 'upcoming', this.restUrlValue);
   urlCountries = UrlGenerator('config', '', 'countries');
-  // countries: Country[] = [];
+  // because of Id, this Url should to generate in MovieDetails
 
   constructor(private http: HttpClient) {
-    // Test Section
+    // Url Test Section
     // console.log(`urlUpComing: ${this.urlUpComing}`);
     // console.log(`urlCountries: ${this.urlCountries}`);
   }
@@ -52,8 +57,4 @@ export class MoviesService implements OnInit {
 
   ngOnInit() {}
 
-  // countries$ = this.http.get<Country[]>(this.urlCountries).pipe(
-  //   tap((country) => console.log(country)),
-  //   catchError(HandleError)
-  // );
 }

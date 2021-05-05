@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Movie } from '@app/core/models/movie';
-import { MovieService } from '@app/core/services';
+import { MovieService, MoviesService } from '@app/core/services';
+import { UrlGenerator } from '@app/core/utils';
 import { EMPTY, Observable } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-movie-detail',
@@ -13,26 +14,21 @@ import { catchError, tap } from 'rxjs/operators';
 export class MovieDetailComponent implements OnInit {
   errorMessage = '';
   movie$: Observable<Movie>;
-
+  movieSimilar$: Observable<Movie[]>;
+  id = 0;
   constructor(
     private route: ActivatedRoute,
     private movieService: MovieService
-  ) {}
+  ) {
+    this.id = +this.route.snapshot.paramMap.get('id');
+  }
   ngOnInit(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    // console.log(`id: ${id}`);
-
-    this.movie$ = this.movieService.movie$(id).pipe(
+    this.movie$ = this.movieService.movie$(this.id).pipe(
+      // tap((data) => console.log(data)),
       catchError((err) => {
         this.errorMessage = err;
         return EMPTY;
       })
     );
-    // Test Section
-    this.movie$.subscribe({
-      next(data) {
-        // console.log(data);
-      },
-    });
   }
 }

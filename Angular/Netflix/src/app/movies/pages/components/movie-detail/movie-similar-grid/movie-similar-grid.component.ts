@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from '@app/core/models';
-import { Observable } from 'rxjs';
+import { MovieService } from '@app/core/services';
+import { EMPTY, Observable } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-movie-similar-grid',
@@ -10,11 +12,19 @@ import { Observable } from 'rxjs';
 export class MovieSimilarGridComponent implements OnInit {
   @Input() movieId: number;
   errorMessage = '';
-  similarMovie$: Observable<Movie[]>;
-
-  constructor() {}
+  movieSimilar$: Observable<Movie[]>;
+  isMovieSimilar;
+  constructor(private movieService: MovieService) {}
 
   ngOnInit(): void {
-    console.log(`movieSimilarComponent: ${this.movieId}`);
+    this.movieSimilar$ = this.movieService.movieSimilar$(this.movieId).pipe(
+      // tap((data) => console.log(data)),
+
+      catchError((err) => {
+        this.errorMessage = err;
+        return EMPTY;
+      })
+    );
+    this.movieSimilar$.subscribe();
   }
 }

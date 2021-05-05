@@ -8,13 +8,16 @@
     <h4 class="text-ellipsis">
       <a
         class="title"
-        routerLink="/movies/{{ movie.id }}"
+        [routerLink]="['/movies', movie.id]"
         title="{{ movie.title }}"
         >{{ movie.title }}</a
       >
     </h4>
-    <div class="release-date">
-      <b>Release Date: </b>{{ movie.release_date }}
+    <div class="release-date d-flex">
+      <div><b>Release Date: </b></div>
+      <div class="ml-auto pr-2">
+        {{ releaseYearValue ? releaseYearValue : movie.release_date }}
+      </div>
     </div>
 
     <div
@@ -35,7 +38,7 @@
     </div>
 
     <div>
-      <a class="view" routerLink="/movies/{{ movie.id }}"
+      <a class="view" [routerLink]="['/movies', movie.id]"
         >View details &raquo;</a
       >
       <div class="float-right">

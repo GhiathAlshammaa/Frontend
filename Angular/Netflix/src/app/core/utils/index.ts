@@ -1,3 +1,4 @@
 export { HandleError } from './error';
-export { ExtractData, SubtractDates } from './data';
+export { ExtractData } from './data';
 export { UrlGenerator } from './url';
+export { SubtractDates, YearOfDate } from './date';
