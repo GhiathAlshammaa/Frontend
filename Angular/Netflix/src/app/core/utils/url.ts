@@ -1,10 +1,15 @@
 import { environment } from '@src/environments/environment';
 
-export const UrlGenerator = (urlKind, sectionName, restUrlValue = ''): string => {
+export const UrlGenerator = (
+  urlKind,
+  urlName = '',
+  sectionName,
+  restUrlValue = ''
+): string => {
   // # Todo
   // # collect the url's Material
   // Enviroment params
-  const urlBase = environment.apiConfig.url;
+  const urlBase = environment.apiConfig.urlBase;
   const urlConfigBase = environment.apiConfig.urlConfig;
   const apiKey = environment.apiConfig.apikey;
 
@@ -15,7 +20,7 @@ export const UrlGenerator = (urlKind, sectionName, restUrlValue = ''): string =>
   let url = '';
   switch (urlKind) {
     case 'normal':
-      url = `${urlBase}${sectionName}?api_key=${apiKey}${restUrlValue}`;
+      url = `${urlBase}${urlName}/${sectionName}?api_key=${apiKey}${restUrlValue}`;
       break;
     case 'config':
       url = `${urlConfigBase}${sectionName}?api_key=${apiKey}${restUrlValue}`;

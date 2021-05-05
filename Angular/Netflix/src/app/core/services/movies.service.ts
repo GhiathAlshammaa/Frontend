@@ -23,8 +23,8 @@ export class MoviesService implements OnInit {
   today = moment.now();
 
   // Generating Url
-  urlUpComing = UrlGenerator('normal', 'upcoming', this.restUrlValue);
-  urlCountries = UrlGenerator('config', 'countries');
+  urlUpComing = UrlGenerator('normal', 'movie', 'upcoming', this.restUrlValue);
+  urlCountries = UrlGenerator('config', '', 'countries');
   // countries: Country[] = [];
 
   constructor(private http: HttpClient) {
