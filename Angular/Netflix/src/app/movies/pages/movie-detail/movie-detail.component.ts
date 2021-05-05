@@ -12,12 +12,12 @@ import { catchError, tap } from 'rxjs/operators';
 })
 export class MovieDetailComponent implements OnInit {
   errorMessage = '';
+  movie$: Observable<Movie>;
 
   constructor(
     private route: ActivatedRoute,
     private movieService: MovieService
   ) {}
-  movie$: Observable<Movie>;
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     // console.log(`id: ${id}`);
@@ -25,14 +25,13 @@ export class MovieDetailComponent implements OnInit {
     this.movie$ = this.movieService.movie$(id).pipe(
       catchError((err) => {
         this.errorMessage = err;
-        console.log(`Error: ${this.errorMessage}`);
         return EMPTY;
       })
     );
     // Test Section
     this.movie$.subscribe({
       next(data) {
-        console.log(data);
+        // console.log(data);
       },
     });
   }
