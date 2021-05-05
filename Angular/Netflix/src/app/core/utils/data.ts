@@ -3,18 +3,14 @@ import { Staff } from '../models';
 export const ExtractData = (res: any) => {
   let body = res;
 
-  // Check the Movies Array in the Console
-  // console.log(body);
   return body.results || {};
 };
 export const ExtractDataCredits = (res: any): Staff[] => {
   let body = res;
   let staff: Staff[];
 
-  // Check the Movies Array in the Console
-  staff = body.cast;
-  staff.push(...staff, ...body.crew);
-  // console.log(`Staff: ${JSON.stringify(staff)}`);
+  staff = body.cast.slice(0, 7);
+  staff.unshift(...body.crew.filter((x) => x.job === 'Director'));
 
   return staff;
 };
@@ -24,9 +20,6 @@ export const SubtractDates = (date): number => {
 
   const Time = today.getTime() - movieDate.getTime();
   const Days = Math.round(Time / (1000 * 3600 * 24));
-
-  // Check the Result
-  // console.log(`Result: ${Days}`);
 
   return Days;
 };
