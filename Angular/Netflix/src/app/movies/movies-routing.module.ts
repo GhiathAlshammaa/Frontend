@@ -6,7 +6,8 @@ import {
   MovieDetailComponent,
   MovieExternalInfoComponent,
   MovieInternalInfoComponent,
-  MovieStaffComponent
+  MovieStaffComponent,
+  MovieSimilarGridComponent,
 } from './pages';
 import { SharedModule } from '@app/shared';
 
@@ -30,6 +31,7 @@ const routes: Routes = [
     MovieExternalInfoComponent,
     MovieInternalInfoComponent,
     MovieStaffComponent,
+    MovieSimilarGridComponent,
   ],
   imports: [SharedModule, CommonModule, RouterModule.forChild(routes)],
   exports: [RouterModule, MovieListComponent, MovieDetailComponent],

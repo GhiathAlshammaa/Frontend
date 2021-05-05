@@ -13,8 +13,10 @@ export class MovieStaffComponent implements OnInit {
   @Input() movieId: number;
   errorMessage = '';
   staff$: Observable<Staff[]>;
-  noPhotoSrc = '../../../../../../assets/noPhoto.jpg';
+
+  // Photo Properties 
   imgPath = 'https://image.tmdb.org/t/p/w500/';
+  noPhotoSrc = '../../../../../../assets/noPhoto.jpg';
 
   constructor(private staffService: StaffService) {}
 
