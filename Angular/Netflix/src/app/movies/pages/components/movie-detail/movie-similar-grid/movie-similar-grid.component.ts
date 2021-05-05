@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Movie } from '@app/core/models';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-movie-similar-grid',
@@ -7,6 +9,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class MovieSimilarGridComponent implements OnInit {
   @Input() movieId: number;
+  errorMessage = '';
+  similarMovie$: Observable<Movie[]>;
+
   constructor() {}
 
   ngOnInit(): void {
