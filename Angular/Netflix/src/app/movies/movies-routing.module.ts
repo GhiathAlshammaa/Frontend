@@ -22,6 +22,12 @@ const routes: Routes = [
     component: MovieDetailComponent,
     data: { pageTitle: 'Movie' },
   },
+  {
+    // When User clicks on a Movie of SimilarMovies in MovieDetail
+    path: 'm/:id',
+    component: MovieDetailComponent,
+    data: { pageTitle: 'MovieDetail' },
+  },
 ];
 
 @NgModule({

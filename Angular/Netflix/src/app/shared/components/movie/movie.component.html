@@ -10,6 +10,14 @@
         class="title"
         [routerLink]="['/movies', movie.id]"
         title="{{ movie.title }}"
+        *ngIf="!pageTitle"
+        >{{ movie.title }}</a
+      >
+      <a
+        class="title"
+        [routerLink]="['/movies/m', movie.id]"
+        title="{{ movie.title }}"
+        *ngIf="pageTitle"
         >{{ movie.title }}</a
       >
     </h4>
@@ -38,7 +46,10 @@
     </div>
 
     <div>
-      <a class="view" [routerLink]="['/movies', movie.id]"
+      <a class="view" *ngIf="!pageTitle" [routerLink]="['/movies', movie.id]"
+        >View details &raquo;</a
+      >
+      <a class="view" *ngIf="pageTitle" [routerLink]="['/movies/m', movie.id]"
         >View details &raquo;</a
       >
       <div class="float-right">
