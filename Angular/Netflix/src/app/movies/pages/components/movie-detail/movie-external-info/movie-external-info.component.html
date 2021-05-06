@@ -45,4 +45,26 @@
       </a>
     </div>
   </div>
+  <div
+    class="mt-2 d-flex justify-content-between"
+    *ngIf="movie.production_countries as countries"
+  >
+    <div>Production Countries:</div>
+    <ul class="d-flex list-unstyled mb-0">
+      <li *ngFor="let country of countries">
+        <span class="flag-icon flag-icon-{{ country.iso_3166_1 }} mr-1"></span>
+      </li>
+    </ul>
+  </div>
+  <div
+    class="mt-2 d-flex justify-content-between"
+    *ngIf="movie.original_language"
+  >
+    <div>Original Language:</div>
+    <ul class="d-flex list-unstyled">
+      <li>
+        <span class="flag-icon flag-icon-{{ langFlag }} mr-1"></span>
+      </li>
+    </ul>
+  </div>
 </div>

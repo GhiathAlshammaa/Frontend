@@ -1,4 +1,5 @@
 import { Country } from './country';
+import { Language } from './language';
 
 export interface Movie {
   adult?: boolean;
@@ -26,7 +27,7 @@ export interface Movie {
   format?: Date;
   revenue?: number;
   runtime?: number | null;
-  spoken_languages?: Object[];
+  spoken_languages?: Language[];
   status?: string;
   tagline?: string | null;
 }

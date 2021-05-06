@@ -22,16 +22,11 @@ export class MovieComponent implements OnInit {
     private moviesService: MoviesService,
     private route: ActivatedRoute
   ) {}
-  updateCountryValue() {
-    return this.movie.production_countries.map((country) => {
-      country.iso_3166_1 = country.iso_3166_1.toLocaleLowerCase();
-    });
-  }
+
   ngOnInit(): void {
     this.releaseYearValue = this.releaseYear
       ? YearOfDate(this.movie?.release_date)
       : null;
-    // this.updateCountryValue();
-    // console.log(this.movie);
+
   }
 }

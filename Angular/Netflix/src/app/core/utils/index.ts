@@ -1,3 +1,4 @@
+export { LangFlag } from './langFlag';
 export { HandleError } from './error';
 export { ExtractData } from './data';
 export { UrlGenerator } from './url';

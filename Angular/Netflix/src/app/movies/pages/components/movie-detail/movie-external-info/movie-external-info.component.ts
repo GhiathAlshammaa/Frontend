@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from '@app/core/models/movie';
+import { LangFlag } from '@app/core/utils';
 
 @Component({
   selector: 'app-movie-external-info',
@@ -8,7 +9,19 @@ import { Movie } from '@app/core/models/movie';
 })
 export class MovieExternalInfoComponent implements OnInit {
   @Input() movie: Movie;
+  langFlag;
   constructor() {}
 
-  ngOnInit(): void {}
+  updateCountryToLowerCase() {
+    return this.movie.production_countries.map((country) => {
+      country.iso_3166_1 = country.iso_3166_1.toLocaleLowerCase();
+    });
+  }
+
+  ngOnInit(): void {
+    this.updateCountryToLowerCase();
+    this.langFlag = LangFlag(this.movie.original_language);
+    console.log(this.movie);
+    console.log(LangFlag(this.movie.original_language));
+  }
 }
