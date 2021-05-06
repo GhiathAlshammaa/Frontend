@@ -8,6 +8,12 @@ export const LangFlag = (lang): string => {
       return 'jp';
     case 'zh':
       return 'cn';
+    case 'ko':
+      return 'kr';
+    case 'ko':
+      return 'kr';
+    case 'hi':
+      return 'in';
     default:
       return lang;
   }
