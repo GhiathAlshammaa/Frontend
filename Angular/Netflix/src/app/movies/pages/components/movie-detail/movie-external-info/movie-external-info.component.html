@@ -37,10 +37,12 @@
     </div>
   </div>
   <div
-    class="mt-2 d-flex justify-content-between"
+    class="d-flex justify-content-between mt-2"
     *ngIf="movie.production_countries as countries"
   >
-    <div>Production Countries:</div>
+    <small class="badge badge-warning p-1 pr-2"
+      ><i class="fa fa-suitcase"></i> Production Countries</small
+    >
     <ul class="d-flex list-unstyled mb-0">
       <li *ngFor="let country of countries">
         <span class="flag-icon flag-icon-{{ country.iso_3166_1 }} mr-1"></span>
@@ -48,14 +50,12 @@
     </ul>
   </div>
   <div
-    class="mt-2 d-flex justify-content-between"
+    class="d-flex justify-content-between mt-2"
     *ngIf="movie.original_language"
   >
-    <div>Original Language:</div>
-    <ul class="d-flex list-unstyled">
-      <li>
-        <span class="flag-icon flag-icon-{{ langFlag }} mr-1"></span>
-      </li>
-    </ul>
+    <small class="badge badge-warning p-1 pr-4"
+      ><i class="fa fa-globe"></i> Original Language</small
+    >
+    <span class="flag-icon flag-icon-{{ langFlag }} mr-1"></span>
   </div>
 </div>
