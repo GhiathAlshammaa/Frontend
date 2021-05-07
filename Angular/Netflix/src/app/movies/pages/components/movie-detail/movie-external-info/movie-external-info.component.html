@@ -17,16 +17,7 @@
         </small>
       </a>
 
-      <a href="">
-        <small
-          class="badge badge-pill badge-warning mr-2"
-          *ngIf="movie.vote_average"
-          tooltip="IMDB Rate"
-        >
-          Trailer
-          <i class="fa fa-film" aria-hidden="true"></i>
-        </small>
-      </a>
+      <app-trailer-modal [movie]="movie"></app-trailer-modal>
     </div>
     <div>
       <a

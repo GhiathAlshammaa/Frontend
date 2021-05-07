@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Movie } from '../models/movie';
+import { Movie, Video } from '../models';
 import { catchError, tap, map } from 'rxjs/operators';
 import { ExtractData, HandleError, UrlGenerator } from '../utils';
 import { YearOfDate } from '../utils/date';
@@ -15,6 +15,7 @@ export class MovieService {
   restUrlValue = `&language=${this.language}`;
   urlMovie = '';
   urlMovieSimilar = '';
+  urlMovieVideo = '';
   // Variable contains a required Movie
   movie$ = (movieId: number): Observable<Movie> => {
     this.urlMovie = UrlGenerator('normal', 'movie', movieId, this.restUrlValue);
@@ -25,13 +26,21 @@ export class MovieService {
     );
   };
 
+  movieVideo$ = (movieId: number): Observable<Video> => {
+    this.urlMovieVideo = UrlGenerator('normal', 'movie/' + movieId, 'videos');
+
+    return this.http.get<Video>(this.urlMovieVideo).pipe(
+      map((video) => ExtractData(video)),
+      catchError(HandleError)
+    );
+  };
+
   movieSimilar$ = (movieId: number): Observable<Movie[]> => {
     this.urlMovieSimilar = UrlGenerator(
       'normal',
       'movie/' + movieId,
       'similar'
     );
-    // console.log(`urlMovieSimilar: ${this.urlMovieSimilar}`);
 
     return this.http.get<Movie[]>(this.urlMovieSimilar).pipe(
       map((data) => ExtractData(data)),

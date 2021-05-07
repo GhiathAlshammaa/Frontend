@@ -21,7 +21,5 @@ export class MovieExternalInfoComponent implements OnInit {
   ngOnInit(): void {
     this.updateCountryToLowerCase();
     this.langFlag = LangFlag(this.movie.original_language);
-    console.log(this.movie);
-    console.log(LangFlag(this.movie.original_language));
   }
 }

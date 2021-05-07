@@ -14,9 +14,3 @@ export interface Staff {
   order?: number;
   job?: string;
 }
-
-export interface Credit {
-  id: number;
-  cast: Staff[];
-  crew: Staff[];
-}

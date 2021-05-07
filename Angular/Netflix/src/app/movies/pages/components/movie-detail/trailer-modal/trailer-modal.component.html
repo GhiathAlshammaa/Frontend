@@ -1,0 +1,41 @@
+<a href="" data-toggle="modal" data-target=".bd-example-modal-lg">
+  <small
+    class="badge badge-pill badge-warning mr-2"
+    *ngIf="movie.vote_average"
+    tooltip="IMDB Rate"
+  >
+    Trailer
+    <i class="fa fa-film" aria-hidden="true"></i>
+  </small>
+</a>
+
+<div
+  class="modal fade bd-example-modal-lg"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myLargeModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content text-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          {{ movie.title }} Movie's Trailer
+        </h5>
+      </div>
+      <div class="modal-body" *ngIf="video">
+        <div
+          class="embed-responsive embed-responsive-16by9"
+          *ngIf="video.site === 'YouTube'"
+        >
+          <iframe
+            *ngIf="video.key"
+            class="embed-responsive-item"
+            [src]="videoPathSrc | safe"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

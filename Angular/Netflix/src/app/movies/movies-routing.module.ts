@@ -8,6 +8,7 @@ import {
   MovieInternalInfoComponent,
   MovieStaffComponent,
   MovieSimilarGridComponent,
+  TrailerModalComponent
 } from './pages';
 import { SharedModule } from '@app/shared';
 
@@ -38,6 +39,7 @@ const routes: Routes = [
     MovieInternalInfoComponent,
     MovieStaffComponent,
     MovieSimilarGridComponent,
+    TrailerModalComponent,
   ],
   imports: [SharedModule, CommonModule, RouterModule.forChild(routes)],
   exports: [RouterModule, MovieListComponent, MovieDetailComponent],
