@@ -1,4 +1,4 @@
-<a href="" data-toggle="modal" data-target=".bd-example-modal-lg">
+<a href="" data-toggle="modal" data-target="#trailer-modal">
   <small
     class="badge badge-pill badge-warning mr-2"
     *ngIf="movie.vote_average"
@@ -10,16 +10,25 @@
 </a>
 
 <div
-  class="modal fade bd-example-modal-lg"
+  class="modal fade bd-trailer-modal"
+  id="trailer-modal"
   tabindex="-1"
   role="dialog"
-  aria-labelledby="myLargeModalLabel"
+  aria-labelledby="trailer-modal"
   aria-hidden="true"
 >
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
     <div class="modal-content text-dark">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">
+        <button
+          type="button"
+          class="close order-1"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+        <h5 class="modal-title" id="TrailerModal">
           {{ movie.title }} Movie's Trailer
         </h5>
       </div>
