@@ -9,6 +9,12 @@ import { SafePipe } from '@app/core/utils/safe.pipe';
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, MovieComponent, SafePipe],
   imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule],
-  exports: [HeaderComponent, FooterComponent, MovieComponent, SafePipe],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    MovieComponent,
+    SafePipe,
+    RouterModule,
+  ],
 })
 export class SharedModule {}

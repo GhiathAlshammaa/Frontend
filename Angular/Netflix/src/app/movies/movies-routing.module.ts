@@ -12,12 +12,29 @@ import {
   MovieGenresBarComponent,
 } from './pages';
 import { SharedModule } from '@app/shared';
+import { GenreMoviesListComponent } from './pages/components';
+import { GenresHomeComponent } from './pages/components/movie-list/genres-home/genres-home.component';
 
 const routes: Routes = [
   {
     path: '',
     component: MovieListComponent,
     data: { pageTitle: 'Movie List' },
+    children: [
+      {
+        path: '',
+        redirectTo: 'genres',
+        pathMatch: 'full',
+      },
+      {
+        path: 'genres',
+        component: GenresHomeComponent,
+      },
+      {
+        path: 'genres/:id',
+        component: GenreMoviesListComponent,
+      },
+    ],
   },
   {
     path: ':id',
@@ -42,6 +59,8 @@ const routes: Routes = [
     MovieSimilarGridComponent,
     TrailerModalComponent,
     MovieGenresBarComponent,
+    GenreMoviesListComponent,
+    GenresHomeComponent,
   ],
   imports: [SharedModule, CommonModule, RouterModule.forChild(routes)],
   exports: [RouterModule, MovieListComponent, MovieDetailComponent],

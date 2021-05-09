@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MoviesService } from '@app/core/services';
 import { EMPTY } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -15,10 +16,37 @@ export class MovieGenresBarComponent implements OnInit {
       return EMPTY;
     })
   );
+  moviesGenreById$;
+  genreId = 99;
+  pageTitle = this.route.snapshot.data['pageTitle'] === 'g' ? 1 : 0;
+
   errorMsg = '';
-  constructor(private moviesService: MoviesService) {}
+  constructor(
+    private moviesService: MoviesService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
+    // this is for routerLink on same component when only queryParameter changes
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
+      return false;
+    };
+  }
 
   ngOnInit(): void {
+    this.genreId = +this.route.snapshot.paramMap.get(':id');
+    // console.log(`genreId: ${this.genreId}`);
+    console.log(`pageTitle: ${this.pageTitle}`);
 
+    // const pageTitle = this.route.snapshot.data['pageTitle'];
+    // console.log(`pageTitle: ${pageTitle}`);
+
+    // this.moviesGenreById$ = this.moviesService
+    //   .moviesGenreById$(this.genreId)
+    //   .pipe(
+    //     catchError((err) => {
+    //       this.errorMsg = err;
+    //       return EMPTY;
+    //     })
+    //   );
   }
 }

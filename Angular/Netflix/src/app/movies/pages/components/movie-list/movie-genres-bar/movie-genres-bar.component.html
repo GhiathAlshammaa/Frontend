@@ -1,10 +1,20 @@
 <div class="genres mb-4">
   <h3 class="text-danger">Genres:</h3>
-  <a
-    routerLink="/genres/{{ genre.id }}/{{ genre.name }}"
-    *ngFor="let genre of genres$ | async"
-    class="badge badge-danger m-r-md mr-2"
-  >
-    {{ genre.name }}
-  </a>
+  <div class="d-flex flex-row flex-wrap col-lg-12 col-md-6 col-xs-3">
+    <div class="m-r-md mr-2" *ngFor="let genre of genres$ | async">
+      <a [routerLink]="['genres', genre.id]" class="badge badge-danger">
+        {{ genre.name }}
+      </a>
+      <!-- <a
+        *ngIf="pageTitle"
+        [routerLink]="['g2/', genre.id]"
+        class="badge badge-danger m-r-md mr-2"
+      >
+        {{ genre.name }}
+      </a> -->
+    </div>
+  </div>
+
+  <!-- [routerLink]="['genres/', genre.id, { outlets: { genres: ['genres'] } }]" -->
+  <!-- routerLink="genres/{{ genre.id }}/{{ genre.name }}" -->
 </div>
