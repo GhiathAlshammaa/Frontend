@@ -12,6 +12,7 @@ import * as moment from 'moment';
 import { Country } from '../models/country';
 import { MovieService } from './movie.service';
 import { Observable } from 'rxjs';
+import { Genres } from '../models';
 @Injectable({
   providedIn: 'root',
 })
@@ -30,12 +31,14 @@ export class MoviesService implements OnInit {
   // ## Generating Url
   urlUpComing = UrlGenerator('normal', 'movie', 'upcoming', this.restUrlValue);
   urlCountries = UrlGenerator('config', '', 'countries');
+  urlGenres = UrlGenerator('normal', 'genre', 'movie/list');
   // because of Id, this Url should to generate in MovieDetails
 
   constructor(private http: HttpClient) {
     // Url Test Section
     // console.log(`urlUpComing: ${this.urlUpComing}`);
     // console.log(`urlCountries: ${this.urlCountries}`);
+    // console.log(`urlGenres: ${this.urlGenres}`);
   }
 
   // Array contains all the Movies in "UpComing" Section
@@ -55,6 +58,11 @@ export class MoviesService implements OnInit {
     catchError(HandleError)
   );
 
-  ngOnInit() {}
+  genres$ = this.http.get<Genres>(this.urlGenres).pipe(
+    map((genres) => genres.genres),
+    // tap((genres) => console.log(genres))
+    catchError(HandleError)
+  );
 
+  ngOnInit() {}
 }

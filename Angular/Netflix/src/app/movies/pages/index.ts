@@ -6,4 +6,5 @@ export {
   MovieStaffComponent,
   MovieSimilarGridComponent,
   TrailerModalComponent,
-} from './components/movie-detail/';
+  MovieGenresBarComponent,
+} from './components/';

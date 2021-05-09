@@ -4,7 +4,7 @@
   </h3>
 
   <p>{{ movie.tagline }}</p>
-  <div>
+  <div class="genres">
     <a
       routerLink="/genres/{{ genre.id }}/{{ genre.name }}"
       *ngFor="let genre of movie.genres"
