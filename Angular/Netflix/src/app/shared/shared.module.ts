@@ -4,15 +4,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent, FooterComponent } from './layout';
 import { RouterModule } from '@angular/router';
 import { MovieComponent } from './components/movie/movie.component';
+import { SafePipe } from '@app/core/utils/safe.pipe';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, MovieComponent],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    RouterModule,
-  ],
-  exports: [HeaderComponent, FooterComponent, MovieComponent],
+  declarations: [HeaderComponent, FooterComponent, MovieComponent, SafePipe],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule],
+  exports: [HeaderComponent, FooterComponent, MovieComponent, SafePipe],
 })
 export class SharedModule {}

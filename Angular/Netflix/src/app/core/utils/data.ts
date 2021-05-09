@@ -1,19 +1,18 @@
+import { Staff } from '../models';
+
 export const ExtractData = (res: any) => {
   let body = res;
-
-  // Check the Movies Array in the Console
-  // console.log(body);
+  // console.log(`Body: ${JSON.stringify(body)}`);
   return body.results || {};
 };
-export const SubtractDates = (date): number => {
-  const today = new Date();
-  const movieDate = new Date(date as string);
+export const ExtractDataCredits = (res: any): Staff[] => {
+  let body = res;
+  let staff: Staff[];
 
-  const Time = today.getTime() - movieDate.getTime();
-  const Days = Math.round(Time / (1000 * 3600 * 24));
+  staff = body.cast.slice(0, 7);
+  staff.unshift(...body.crew.filter((x) => x.job === 'Director'));
 
-  // Check the Result
-  // console.log(`Result: ${Days}`);
-
-  return Days;
+  return staff;
 };
+
+
