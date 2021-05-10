@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Movie } from '@app/core/models';
 import { MovieService } from '@app/core/services';
 import { EMPTY, Observable } from 'rxjs';
@@ -14,7 +15,11 @@ export class MovieSimilarGridComponent implements OnInit {
   errorMessage = '';
   movieSimilar$: Observable<Movie[]>;
   isMovieSimilar;
-  constructor(private movieService: MovieService) {}
+  constructor(private movieService: MovieService, private router: Router) {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => {
+      return false;
+    };
+  }
 
   ngOnInit(): void {
     this.movieSimilar$ = this.movieService.movieSimilar$(this.movieId).pipe(
