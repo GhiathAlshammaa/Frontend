@@ -34,11 +34,9 @@ export class MovieGenresBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.genreId = +this.route.snapshot.paramMap.get(':id');
-    // console.log(`genreId: ${this.genreId}`);
-    console.log(`pageTitle: ${this.pageTitle}`);
+    console.log(`genreId: ${this.genreId}`);
 
-    // const pageTitle = this.route.snapshot.data['pageTitle'];
-    // console.log(`pageTitle: ${pageTitle}`);
+    // GenreId always appear 0 !!!
 
     // this.moviesGenreById$ = this.moviesService
     //   .moviesGenreById$(this.genreId)

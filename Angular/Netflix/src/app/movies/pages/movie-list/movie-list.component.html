@@ -1,3 +1,16 @@
+<div class="mt-4 ml-4 mr-4 w-100">
+  <div class="row">
+    <div class="col-md-12">
+      <app-movie-genres-bar></app-movie-genres-bar>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
 <!-- <div *ngIf="moviesUpcoming$ | async as movies" class="mr-4 ml-4 mt-4">
   <h2 class="mb-4">Up Coming Movies</h2>
   <div class="row is-flex">
@@ -9,8 +22,3 @@
   </div>
 </div>
 </div> -->
-
-<div class="mr-4 ml-4 mt-4">
-  <app-movie-genres-bar></app-movie-genres-bar>
-  <router-outlet></router-outlet>
-</div>
