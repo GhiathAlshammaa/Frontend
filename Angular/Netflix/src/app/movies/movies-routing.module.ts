@@ -31,7 +31,7 @@ const routes: Routes = [
         component: GenresHomeComponent,
       },
       {
-        path: 'genres/:id',
+        path: 'genres/:id/:name',
         component: GenreMoviesListComponent,
       },
     ],
@@ -40,12 +40,6 @@ const routes: Routes = [
     path: ':id',
     component: MovieDetailComponent,
     data: { pageTitle: 'Movie' },
-  },
-  {
-    // When User clicks on a Movie of SimilarMovies in MovieDetail
-    path: 'm/:id',
-    component: MovieDetailComponent,
-    data: { pageTitle: 'MovieDetail' },
   },
 ];
 
