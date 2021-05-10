@@ -2,19 +2,11 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-genres-home',
-  template: `
-    <p>
-      genres-home works!
-    </p>
-  `,
-  styles: [
-  ]
+  templateUrl: 'genres-home.component.html',
+  styleUrls: ['genres-home.component.scss'],
 })
 export class GenresHomeComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
