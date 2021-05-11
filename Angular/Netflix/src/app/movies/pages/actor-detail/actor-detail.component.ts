@@ -11,7 +11,13 @@ import { catchError } from 'rxjs/operators';
   styleUrls: ['actor-detail.component.scss'],
 })
 export class ActorDetailComponent implements OnInit {
-  actorById$;
+  actor$;
+  cast$;
+
+  // Photo Properties
+  noPhotoSrc = '../../../../../../assets/noPhoto.jpg';
+  imgPath = 'https://image.tmdb.org/t/p/w500/';
+
   actorId = 0;
   errorMsg: any;
   constructor(
@@ -23,12 +29,24 @@ export class ActorDetailComponent implements OnInit {
     this.actorId = +this.route.snapshot.paramMap.get('id');
     // console.log(`actorId: ${this.actorId}`);
 
-    this.actorById$ = this.staffService.actorById$(this.actorId).pipe(
+    this.actor$ = this.staffService.actorById$(this.actorId).pipe(
       catchError((err) => {
         this.errorMsg = err;
         return EMPTY;
       })
     );
-    this.actorById$.subscribe();
+    this.actor$.subscribe();
+
+    this.cast$ = this.staffService.castByActorId$(this.actorId).pipe(
+      catchError((err) => {
+        this.errorMsg = err;
+        return EMPTY;
+      })
+    );
+    this.cast$.subscribe({
+      next(data) {
+        console.log(data);
+      },
+    });
   }
 }

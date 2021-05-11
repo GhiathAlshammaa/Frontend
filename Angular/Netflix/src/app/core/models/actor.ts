@@ -1,6 +1,6 @@
 export interface Actor {
   birthday?: string | null;
-  known_for_department?: string;
+  known_for_department?: string ;
   deathday?: string | null;
   id?: number;
   name?: string;

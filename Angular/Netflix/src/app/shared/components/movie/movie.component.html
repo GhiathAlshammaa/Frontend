@@ -5,10 +5,18 @@
     </a>
   </div>
   <img
-    src="https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}"
+    width="100%"
+    src="{{ imgPath + movie.poster_path }}"
+    alt="No Photo"
     *ngIf="movie.poster_path"
   />
-  <img src="assets/img/abstract-image.jpg" *ngIf="!movie.poster_path" />
+  <img
+    width="100%"
+    [src]="noPhotoSrc"
+    alt="No Photo"
+    *ngIf="!movie.poster_path"
+  />
+
   <div class="caption pt-3">
     <div class="release-date d-flex">
       <div><b>Release Date: </b></div>

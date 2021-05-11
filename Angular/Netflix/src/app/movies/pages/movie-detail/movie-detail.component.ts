@@ -16,6 +16,7 @@ export class MovieDetailComponent implements OnInit {
   movie$: Observable<Movie>;
   movieSimilar$: Observable<Movie[]>;
   id = 0;
+
   constructor(
     private route: ActivatedRoute,
     private movieService: MovieService

@@ -14,5 +14,8 @@ export const ExtractDataCredits = (res: any): Staff[] => {
 
   return staff;
 };
+export const ExtractMovieCredits = (res: any) => {
+  let body = res;
 
-
+  return body.cast || {};
+};
