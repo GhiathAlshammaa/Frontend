@@ -68,11 +68,10 @@ export class MoviesService implements OnInit {
 
   moviesGenreById$ = (id: number) => {
     this.urlGenresById = UrlGenerator('normal', 'genre/' + id, 'movies');
-    console.log(`urlGenresById: ${this.urlGenresById} `);
 
     return this.http.get<Movie[]>(this.urlGenresById).pipe(
       map((data) => ExtractData(data)),
-      tap((data) => console.log(data)),
+      // tap((data) => console.log(data)),
       catchError(HandleError)
     );
   };

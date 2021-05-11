@@ -1,12 +1,9 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-
 import { MoviesRoutingModule } from './movies-routing.module';
-import { MovieGenresBarComponent, MovieListComponent } from './pages';
+import { MoviesPagesModule } from './pages/movies-pages.module';
 
 @NgModule({
-  imports: [MoviesRoutingModule],
+  imports: [ MoviesRoutingModule],
   exports: [MoviesRoutingModule],
-
 })
 export class MoviesModule {}

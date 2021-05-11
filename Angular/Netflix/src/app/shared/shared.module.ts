@@ -10,10 +10,11 @@ import { SafePipe } from '@app/core/utils/safe.pipe';
   declarations: [HeaderComponent, FooterComponent, MovieComponent, SafePipe],
   imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule],
   exports: [
+    CommonModule,
     HeaderComponent,
     FooterComponent,
-    MovieComponent,
     SafePipe,
+    MovieComponent,
     RouterModule,
   ],
 })
