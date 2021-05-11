@@ -8,6 +8,7 @@ import {
   MovieGenresBarComponent,
   MovieDetailComponent,
   MovieListComponent,
+  ActorDetailComponent,
 } from '.';
 import { GenreMoviesListComponent, GenresHomeComponent } from './components';
 import { SharedModule } from '@app/shared';
@@ -24,6 +25,7 @@ import { SharedModule } from '@app/shared';
     MovieGenresBarComponent,
     GenreMoviesListComponent,
     GenresHomeComponent,
+    ActorDetailComponent,
   ],
   imports: [SharedModule],
   exports: [
@@ -37,6 +39,7 @@ import { SharedModule } from '@app/shared';
     MovieGenresBarComponent,
     GenreMoviesListComponent,
     GenresHomeComponent,
+    ActorDetailComponent,
   ],
 })
 export class MoviesPagesModule {}

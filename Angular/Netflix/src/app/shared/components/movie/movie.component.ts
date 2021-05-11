@@ -15,6 +15,10 @@ export class MovieComponent implements OnInit {
   @Input() releaseYear: boolean;
   releaseYearValue;
 
+  // Photo Properties
+  imgPath = 'https://image.tmdb.org/t/p/w500/';
+  noPhotoSrc = '../../../../../../assets/noPhoto.jpg';
+
   constructor(
     private moviesService: MoviesService,
     private route: ActivatedRoute

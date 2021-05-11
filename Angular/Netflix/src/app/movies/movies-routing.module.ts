@@ -3,7 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '@app/shared';
 import { MoviesPagesModule } from './pages/movies-pages.module';
 
-import { MovieListComponent, MovieDetailComponent } from './pages';
+import {
+  MovieListComponent,
+  MovieDetailComponent,
+  ActorDetailComponent,
+} from './pages';
 import {
   GenresHomeComponent,
   GenreMoviesListComponent,
@@ -34,6 +38,11 @@ const routes: Routes = [
     path: ':id',
     component: MovieDetailComponent,
     data: { pageTitle: 'Movie' },
+  },
+  {
+    path: 'actor/:id',
+    component: ActorDetailComponent,
+    data: { pageTitle: 'Actor' },
   },
 ];
 

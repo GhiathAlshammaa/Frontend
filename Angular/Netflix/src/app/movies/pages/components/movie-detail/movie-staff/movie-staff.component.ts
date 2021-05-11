@@ -21,7 +21,7 @@ export class MovieStaffComponent implements OnInit {
   constructor(private staffService: StaffService) {}
 
   ngOnInit(): void {
-    this.staff$ = this.staffService.credits$(this.movieId).pipe(
+    this.staff$ = this.staffService.staff$(this.movieId).pipe(
       // tap((data) => console.log(data)),
       catchError((err) => {
         this.errorMessage = err;

@@ -1,9 +1,17 @@
 <div class="container">
   <img
-    src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}"
-    alt=""
-    class="thumbnail"
+    width="100%"
+    src="{{ imgPath + movie.poster_path }}"
+    alt="No Photo"
+    *ngIf="movie.poster_path"
   />
+  <img
+    width="100%"
+    [src]="noPhotoSrc"
+    alt="No Photo"
+    *ngIf="!movie.poster_path"
+  />
+
   <div class="mt-2 d-flex justify-content-between">
     <div>
       <a href="{{ movie.homepage }}" target="_blank">

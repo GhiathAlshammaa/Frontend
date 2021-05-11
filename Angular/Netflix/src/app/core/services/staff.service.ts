@@ -1,30 +1,61 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Staff } from '../models';
+import { Actor, Movie, Staff } from '../models';
 import { HandleError, UrlGenerator } from '../utils';
-import { ExtractDataCredits } from '../utils/data';
+import { ExtractDataCredits, ExtractMovieCredits } from '../utils/data';
 
 @Injectable({
   providedIn: 'root',
 })
-export class StaffService {
+export class StaffService implements OnInit {
   // Url Params initialization
   language = 'en-US';
   restUrlValue = `&language=${this.language}`;
-  urlCredits = '';
+  urlStaff = '';
+  urlActor = '';
+  urlCast = '';
+
+  castByActorId$ = (actorId: number): Observable<Movie[]> => {
+    this.urlCast = UrlGenerator(
+      'normal',
+      'person/' + actorId,
+      'movie_credits',
+      this.restUrlValue
+    );
+    // console.log(`urlCast:${this.urlCast}`);
+    return this.http.get<Movie[]>(this.urlCast).pipe(
+      map((data) => ExtractMovieCredits(data)),
+      // tap((movies) => console.log(movies)),
+      catchError(HandleError)
+    );
+  };
+
+  actorById$ = (actorId: number): Observable<Actor> => {
+    this.urlActor = UrlGenerator(
+      'normal',
+      'person',
+      actorId,
+      this.restUrlValue
+    );
+    // console.log(`urlActor: ${this.urlActor}`);
+    return this.http.get<Actor>(this.urlActor).pipe(
+      // tap((actor) => console.log(actor)),
+      catchError(HandleError)
+    );
+  };
 
   // Variable contains a required Credits
-  credits$ = (movieId: number): Observable<Staff[]> => {
-    this.urlCredits = UrlGenerator(
+  staff$ = (movieId: number): Observable<Staff[]> => {
+    this.urlStaff = UrlGenerator(
       'normal',
       'movie/' + movieId,
       'credits',
       this.restUrlValue
     );
 
-    return this.http.get<Staff[]>(this.urlCredits).pipe(
+    return this.http.get<Staff[]>(this.urlStaff).pipe(
       map((credits) => ExtractDataCredits(credits)),
       // tap((staff)=> console.log(staff)),
       catchError(HandleError)
@@ -32,4 +63,5 @@ export class StaffService {
   };
 
   constructor(private http: HttpClient) {}
+  ngOnInit(): void {}
 }

@@ -10,6 +10,11 @@ import { LangFlag } from '@app/core/utils';
 export class MovieExternalInfoComponent implements OnInit {
   @Input() movie: Movie;
   langFlag;
+
+  // Photo Properties
+  imgPath = 'https://image.tmdb.org/t/p/w500/';
+  noPhotoSrc = '../../../../../../assets/noPhoto.jpg';
+  
   constructor() {}
 
   updateCountryToLowerCase() {
