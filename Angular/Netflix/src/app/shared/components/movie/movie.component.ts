@@ -15,9 +15,6 @@ export class MovieComponent implements OnInit {
   @Input() releaseYear: boolean;
   releaseYearValue;
 
-  // this Property to switch between the router, inside MovieDetail
-  pageTitle = this.route.snapshot.data['pageTitle'] === 'Movie' ? 1 : 0;
-
   constructor(
     private moviesService: MoviesService,
     private route: ActivatedRoute
@@ -27,6 +24,5 @@ export class MovieComponent implements OnInit {
     this.releaseYearValue = this.releaseYear
       ? YearOfDate(this.movie?.release_date)
       : null;
-
   }
 }

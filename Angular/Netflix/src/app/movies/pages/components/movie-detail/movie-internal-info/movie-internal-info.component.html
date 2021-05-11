@@ -6,7 +6,7 @@
   <p>{{ movie.tagline }}</p>
   <div class="genres">
     <a
-      routerLink="/genres/{{ genre.id }}/{{ genre.name }}"
+      [routerLink]="['/movies/genres', genre.id, genre.name]"
       *ngFor="let genre of movie.genres"
       class="badge badge-danger m-r-md mr-2"
     >

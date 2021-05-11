@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MoviesService } from '@app/core/services';
 import { EMPTY } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -9,16 +10,21 @@ import { catchError } from 'rxjs/operators';
   styleUrls: ['movie-genres-bar.component.scss'],
 })
 export class MovieGenresBarComponent implements OnInit {
+  errorMsg = '';
+
   genres$ = this.moviesService.genres$.pipe(
     catchError((err) => {
       this.errorMsg = err;
       return EMPTY;
     })
   );
-  errorMsg = '';
-  constructor(private moviesService: MoviesService) {}
 
-  ngOnInit(): void {
-
+  constructor(private moviesService: MoviesService, private router: Router) {
+    // this is for routerLink on same component when only queryParameter changes
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
+      return false;
+    };
   }
+
+  ngOnInit(): void {}
 }

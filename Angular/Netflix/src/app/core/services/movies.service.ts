@@ -27,22 +27,24 @@ export class MoviesService implements OnInit {
 
   // test temporary property
   movieId = 0;
+  genreId = 35;
 
   // ## Generating Url
-  urlUpComing = UrlGenerator('normal', 'movie', 'upcoming', this.restUrlValue);
+  urlUpcoming = UrlGenerator('normal', 'movie', 'upcoming', this.restUrlValue);
   urlCountries = UrlGenerator('config', '', 'countries');
   urlGenres = UrlGenerator('normal', 'genre', 'movie/list');
-  // because of Id, this Url should to generate in MovieDetails
+  urlGenresById = '';
 
   constructor(private http: HttpClient) {
     // Url Test Section
     // console.log(`urlUpComing: ${this.urlUpComing}`);
     // console.log(`urlCountries: ${this.urlCountries}`);
     // console.log(`urlGenres: ${this.urlGenres}`);
+    // console.log(`urlGenres: ${this.urlGenresById}`);
   }
 
   // Array contains all the Movies in "UpComing" Section
-  movies$ = this.http.get<Movie[]>(this.urlUpComing).pipe(
+  moviesUpcoming$ = this.http.get<Movie[]>(this.urlUpcoming).pipe(
     map((data) => ExtractData(data)),
     map((movies) =>
       movies.map(
@@ -63,6 +65,17 @@ export class MoviesService implements OnInit {
     // tap((genres) => console.log(genres))
     catchError(HandleError)
   );
+
+  moviesGenreById$ = (id: number) => {
+    this.urlGenresById = UrlGenerator('normal', 'genre/' + id, 'movies');
+    console.log(`urlGenresById: ${this.urlGenresById} `);
+
+    return this.http.get<Movie[]>(this.urlGenresById).pipe(
+      map((data) => ExtractData(data)),
+      tap((data) => console.log(data)),
+      catchError(HandleError)
+    );
+  };
 
   ngOnInit() {}
 }
