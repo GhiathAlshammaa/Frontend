@@ -22,7 +22,7 @@
         />
       </div>
       <div class="card-footer text-center">
-        <a routerLink="/actor/{{ person.id }}">{{ person.name }}</a>
+        <a [routerLink]="['/movies/actor/', person.id]">{{ person.name }}</a>
       </div>
     </div>
   </div>
