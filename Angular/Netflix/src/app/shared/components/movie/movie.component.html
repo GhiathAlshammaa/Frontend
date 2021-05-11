@@ -1,19 +1,24 @@
 <div class="card p-2" *ngIf="movie">
+  <div class="card-header text-danger text-center font-weight-bold">
+    <a [routerLink]="['/movies', movie.id]" >
+    {{ movie.title }}
+    </a>
+  </div>
   <img
     src="https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}"
     *ngIf="movie.poster_path"
   />
   <img src="assets/img/abstract-image.jpg" *ngIf="!movie.poster_path" />
   <div class="caption pt-3">
-    <h4 class="text-ellipsis">
+    <!-- <h4 class="text-ellipsis">
       <a
         class="title"
         [routerLink]="['/movies', movie.id]"
         title="{{ movie.title }}"
-        *ngIf="pageTitle"
-        >{{ movie.title }}</a
+        >
+        {{ movie.title }}</a
       >
-    </h4>
+    </h4> -->
     <div class="release-date d-flex">
       <div><b>Release Date: </b></div>
       <div class="ml-auto pr-2">
@@ -39,7 +44,7 @@
     </div>
 
     <div>
-      <a class="view" *ngIf="pageTitle" [routerLink]="['/movies', movie.id]"
+      <a class="view" [routerLink]="['/movies', movie.id]"
         >View details &raquo;</a
       >
       <div class="float-right">
