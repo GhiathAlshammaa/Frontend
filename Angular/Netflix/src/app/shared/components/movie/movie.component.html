@@ -1,7 +1,7 @@
 <div class="card p-2" *ngIf="movie">
   <div class="card-header text-danger text-center font-weight-bold">
-    <a [routerLink]="['/movies', movie.id]" >
-    {{ movie.title }}
+    <a [routerLink]="['/movies', movie.id]">
+      {{ movie.title }}
     </a>
   </div>
   <img
@@ -10,15 +10,6 @@
   />
   <img src="assets/img/abstract-image.jpg" *ngIf="!movie.poster_path" />
   <div class="caption pt-3">
-    <!-- <h4 class="text-ellipsis">
-      <a
-        class="title"
-        [routerLink]="['/movies', movie.id]"
-        title="{{ movie.title }}"
-        >
-        {{ movie.title }}</a
-      >
-    </h4> -->
     <div class="release-date d-flex">
       <div><b>Release Date: </b></div>
       <div class="ml-auto pr-2">
