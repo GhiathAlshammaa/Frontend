@@ -13,18 +13,18 @@ export class StaffService {
   // Url Params initialization
   language = 'en-US';
   restUrlValue = `&language=${this.language}`;
-  urlCredits = '';
+  urlStaff = '';
 
   // Variable contains a required Credits
-  credits$ = (movieId: number): Observable<Staff[]> => {
-    this.urlCredits = UrlGenerator(
+  staff$ = (movieId: number): Observable<Staff[]> => {
+    this.urlStaff = UrlGenerator(
       'normal',
       'movie/' + movieId,
       'credits',
       this.restUrlValue
     );
 
-    return this.http.get<Staff[]>(this.urlCredits).pipe(
+    return this.http.get<Staff[]>(this.urlStaff).pipe(
       map((credits) => ExtractDataCredits(credits)),
       // tap((staff)=> console.log(staff)),
       catchError(HandleError)
