@@ -1,9 +1,12 @@
 import { Staff } from '../models';
 
-export const ExtractData = (res: any) => {
+export const ExtractData = (res: any, countryCode?: string) => {
   let body = res;
-  // console.log(`Body: ${JSON.stringify(body)}`);
-  return body.results || {};
+  if (countryCode) {
+    return body.results[countryCode] || {};
+  } else {
+    return body.results || {};
+  }
 };
 export const ExtractDataCredits = (res: any): Staff[] => {
   let body = res;
