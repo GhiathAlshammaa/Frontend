@@ -1,9 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Country } from '@app/core/models/country';
-import { Movie } from '@app/core/models/movie';
 import { MoviesService } from '@app/core/services';
-import { EMPTY, Observable, pipe } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { EMPTY, pipe } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-movie-list',
@@ -11,11 +9,9 @@ import { catchError, tap } from 'rxjs/operators';
   styleUrls: ['movie-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MovieListComponent implements OnInit{
-  moviesGenreById$;
+export class MovieListComponent implements OnInit {
   genreId = 99;
   errorMessage = '';
-
   // moviesUpcoming$ = this.moviesService.moviesUpcoming$.pipe(
   //   catchError((err) => {
   //     this.errorMessage = err;
@@ -25,5 +21,5 @@ export class MovieListComponent implements OnInit{
 
   constructor(private moviesService: MoviesService) {}
 
-  ngOnInit(): void {}
+  async ngOnInit() {}
 }
