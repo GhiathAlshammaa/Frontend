@@ -4,14 +4,15 @@ import { Observable } from 'rxjs';
 import { catchError, filter, map, tap } from 'rxjs/operators';
 import { CountryCode, Streaming, StreamingStatus } from '../models/streaming';
 import { ExtractData, HandleError, UrlGenerator } from '../utils';
-import { CurrentCountryCode } from '../utils/country';
+import { CountryName, CurrentCountryCode } from '../utils/country';
 
 @Injectable({
   providedIn: 'root',
 })
 export class StreamingService implements OnInit {
+  countryCode;
+  countryName;
   streamingUrl = UrlGenerator('normal', 'watch/providers', 'movie');
-  // https://api.themoviedb.org/3/movie/501929/watch/providers
   streamingByMovieIdUrl = '';
 
   streaming$ = this.http.get<Streaming[]>(this.streamingUrl).pipe(
@@ -53,6 +54,13 @@ export class StreamingService implements OnInit {
       catchError(HandleError)
     );
   };
+
+  async getUserCountry(): Promise<void> {
+    // Move them to a Streaming Service
+    this.countryCode = await CurrentCountryCode();
+    this.countryName = await CountryName(this.countryCode);
+  }
+
 
   constructor(private http: HttpClient) {
     // this.streaming$.subscribe();
