@@ -9,9 +9,6 @@ import {
   UrlGenerator,
 } from '../utils';
 import * as moment from 'moment';
-import { Country } from '../models/country';
-import { MovieService } from './movie.service';
-import { Observable } from 'rxjs';
 import { Genres } from '../models';
 @Injectable({
   providedIn: 'root',
@@ -52,7 +49,6 @@ export class MoviesService implements OnInit {
           ({
             ...movie,
             sinceHowManyDays: SubtractDates(movie.release_date),
-            // production_countries: this.countries,
           } as Movie)
       )
     ),

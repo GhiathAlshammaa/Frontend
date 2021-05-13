@@ -29,10 +29,22 @@ export const UrlGenerator = (
       return '';
   }
 
-  // # output as String
   return url;
-  // Check the Result
-  // console.log(`Result: ${Days}`);
+};
 
-  return;
+export const StreamUrl = (streamName: string) => {
+  switch (streamName) {
+    case 'Netflix':
+      return `https://www.netflix.com/`;
+    case 'Hulu':
+      return `https://www.hulu.com/`;
+    case 'Disney Plus':
+      return `https://www.disneyplus.com/`;
+    case 'Amazon Prime Video':
+      return `https://www.amazon.de/gp/video`;
+    case 'Apple TV Plus':
+      return `https://www.apple.com/apple-tv-plus/`;
+    default:
+      return '';
+  }
 };

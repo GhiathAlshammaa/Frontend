@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Movie } from '@app/core/models/movie';
 import { MovieService, MoviesService } from '@app/core/services';
+import { StreamingService } from '@app/core/services/streaming.service';
 import { UrlGenerator } from '@app/core/utils';
 import { EMPTY, Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -23,9 +24,8 @@ export class MovieDetailComponent implements OnInit {
   ) {
     this.id = +this.route.snapshot.paramMap.get('id');
   }
-  ngOnInit(): void {
-    this.movie$ = this.movieService.movie$(this.id).pipe(
-      // tap((data) => console.log(data)),
+  async ngOnInit() {
+    this.movie$ = await this.movieService.movie$(this.id).pipe(
       catchError((err) => {
         this.errorMessage = err;
         return EMPTY;
