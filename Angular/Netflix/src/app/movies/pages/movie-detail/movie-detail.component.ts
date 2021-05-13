@@ -16,35 +16,20 @@ export class MovieDetailComponent implements OnInit {
   errorMessage = '';
   movie$: Observable<Movie>;
   movieSimilar$: Observable<Movie[]>;
-  streaming$;
   id = 0;
 
   constructor(
     private route: ActivatedRoute,
-    private movieService: MovieService,
-    private streamingService: StreamingService
+    private movieService: MovieService
   ) {
     this.id = +this.route.snapshot.paramMap.get('id');
   }
   async ngOnInit() {
-    this.movie$ = this.movieService.movie$(this.id).pipe(
-      // tap((data) => console.log(data)),
+    this.movie$ = await this.movieService.movie$(this.id).pipe(
       catchError((err) => {
         this.errorMessage = err;
         return EMPTY;
       })
     );
-
-    await this.streamingService.getUserCountry();
-
-    this.streaming$ = this.streamingService
-      .streamingByMovieId$(501929, this.streamingService.countryCode)
-      .pipe(
-        catchError((err) => {
-          this.errorMessage = err;
-          return EMPTY;
-        })
-      );
-    this.streaming$.subscribe();
   }
 }
