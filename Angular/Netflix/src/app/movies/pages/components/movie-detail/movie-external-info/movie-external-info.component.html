@@ -20,8 +20,8 @@
           *ngIf="movie.homepage"
           tooltip="IMDB Rate"
         >
+          <i class="fa fa-external-link mr-1" aria-hidden="true"></i>
           Website
-          <i class="fa fa-external-link" aria-hidden="true"></i>
         </small>
       </a>
 
@@ -49,7 +49,7 @@
     *ngIf="movie.production_countries as countries"
   >
     <small class="badge badge-warning p-1 text-left info-box"
-      ><i class="fa fa-suitcase"></i> Production Countries</small
+      ><i class="fa fa-suitcase mr-1"></i>Production Countries</small
     >
     <ul class="d-flex list-unstyled mb-0">
       <li *ngFor="let country of countries">
@@ -62,7 +62,7 @@
     *ngIf="movie.original_language"
   >
     <small class="badge badge-warning p-1 text-left info-box"
-      ><i class="fa fa-globe"></i> Original Language
+      ><i class="fa fa-globe mr-1"></i>Original Language
     </small>
     <span class="flag-icon flag-icon-{{ langFlag }} mr-1"></span>
   </div>
@@ -70,8 +70,9 @@
     class="d-flex justify-content-between mt-2"
     *ngIf="streams$ | async as streams"
   >
-    <small class="badge badge-warning p-1 text-left info-box"
-      ><i class="fa fa-eye"></i> Watch On
+    <small
+      class="d-flex align-items-center badge badge-warning p-1 text-left info-box"
+      ><i class="fa fa-eye mr-1"></i> Watch On
     </small>
     <div class="d-flex">
       <div *ngFor="let stream of streams" class="ml-1 mr-1">
