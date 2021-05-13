@@ -1,10 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { catchError, filter, map, tap } from 'rxjs/operators';
-import { CountryCode, Streaming, StreamingStatus } from '../models/streaming';
-import { ExtractData, HandleError, UrlGenerator } from '../utils';
-import { CountryName, CurrentCountryCode } from '../utils/country';
+import { catchError, map, tap } from 'rxjs/operators';
+import { Stream, StreamCountry, StreamStatus } from '../models';
+import {
+  ExtractData,
+  HandleError,
+  UrlGenerator,
+  CountryName,
+  CurrentCountryCode,
+  StreamUrl,
+} from '../utils';
 
 @Injectable({
   providedIn: 'root',
@@ -15,12 +21,11 @@ export class StreamingService implements OnInit {
   streamingUrl = UrlGenerator('normal', 'watch/providers', 'movie');
   streamingByMovieIdUrl = '';
 
-  streaming$ = this.http.get<Streaming[]>(this.streamingUrl).pipe(
-    map((streamings) => ExtractData(streamings)),
+  streams$ = this.http.get<Stream[]>(this.streamingUrl).pipe(
+    map((streams) => ExtractData(streams)),
     map((streamingArray) =>
-      // streamingArray.filter((x: Streaming) => console.log(x.provider_name))
       streamingArray.filter(
-        (x: Streaming) =>
+        (x: Stream) =>
           x.provider_id === 390 ||
           x.provider_id === 119 ||
           x.provider_id === 350 ||
@@ -33,7 +38,17 @@ export class StreamingService implements OnInit {
         // 15   =>  Hulu
       )
     ),
-    // tap((streamings) => console.log(streamings)),
+    map((streams) =>
+      streams.map(
+        (stream) =>
+          ({
+            ...stream,
+            url: StreamUrl(stream.provider_name),
+          } as Stream)
+      )
+    ),
+
+    tap((streams) => console.log(streams)),
     catchError(HandleError)
   );
 
@@ -46,10 +61,20 @@ export class StreamingService implements OnInit {
       'movie/' + movieId,
       'watch/providers'
     );
-    return this.http.get<StreamingStatus>(this.streamingByMovieIdUrl).pipe(
+    return this.http.get<StreamStatus>(this.streamingByMovieIdUrl).pipe(
       // tap((streamings) => console.log(streamings)),
       map((streamings) => ExtractData(streamings, countryCode)),
-      tap((streamings) => console.log(streamings)),
+      map((data: StreamCountry) => data.flatrate.map((stream) => stream)),
+      map((streams) =>
+        streams.map(
+          (stream) =>
+            ({
+              ...stream,
+              url: StreamUrl(stream.provider_name),
+            } as Stream)
+        )
+      ),
+      // tap((streamings) => console.log(streamings)),
       // tap((streamings) => console.log(Object.keys(streamings))),
       catchError(HandleError)
     );
@@ -61,9 +86,9 @@ export class StreamingService implements OnInit {
     this.countryName = await CountryName(this.countryCode);
   }
 
-
   constructor(private http: HttpClient) {
-    // this.streaming$.subscribe();
+    // Test Section
+    // this.streams$.subscribe();
   }
 
   ngOnInit(): void {}
