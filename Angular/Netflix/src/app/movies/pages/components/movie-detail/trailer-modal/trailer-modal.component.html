@@ -1,8 +1,8 @@
 <a href="" data-toggle="modal" data-target="#trailer-modal">
   <small
     class="badge badge-pill badge-warning mr-2"
-    *ngIf="movie.vote_average"
-    tooltip="IMDB Rate"
+    tooltip="Trailer"
+    (click)="openDialog()"
   >
     <i class="fa fa-film mr-1" aria-hidden="true"></i>
     Trailer
@@ -10,6 +10,7 @@
 </a>
 
 <div
+  (click)="closeDialog()"
   class="modal fade bd-trailer-modal"
   id="trailer-modal"
   tabindex="-1"

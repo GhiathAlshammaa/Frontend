@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from '@app/core/models/movie';
 import { StreamingService } from '@app/core/services/streaming.service';
-import { LangFlag } from '@app/core/utils';
 import { EMPTY, Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
@@ -19,6 +18,7 @@ export class MovieExternalInfoComponent implements OnInit {
   imgPath = 'https://image.tmdb.org/t/p/w500/';
   noPhotoSrc = '../../../../../../assets/noPhoto.jpg';
   errorMessage = '';
+  langName: any;
 
   constructor(private streamingService: StreamingService) {}
 
@@ -30,7 +30,11 @@ export class MovieExternalInfoComponent implements OnInit {
 
   async ngOnInit() {
     this.updateCountryToLowerCase();
-    this.langFlag = LangFlag(this.movie.original_language);
+    this.langFlag = this.movie.spoken_languages.filter(
+      (lang) => lang.iso_639_1 === this.movie.original_language
+    );
+    this.langName = this.langFlag[0].english_name;
+    this.langFlag = this.langFlag[0].iso_639_1;
 
     await this.streamingService.getUserCountry();
     this.streams$ = this.streamingService

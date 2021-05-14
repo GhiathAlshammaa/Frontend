@@ -15,8 +15,17 @@ export class TrailerModalComponent implements OnInit {
   errorMessage = '';
   video: Video = undefined;
   videoPathSrc;
+  videoPathSrcTemp;
+  isClose = false;
 
   constructor(private movieService: MovieService) {}
+
+  openDialog() {
+    this.videoPathSrc = this.videoPathSrcTemp;
+  }
+  closeDialog() {
+    this.videoPathSrc = '';
+  }
 
   ngOnInit(): void {
     this.movieVideo$ = this.movieService.movieVideo$(this.movie.id).pipe(
@@ -25,6 +34,7 @@ export class TrailerModalComponent implements OnInit {
         this.videoPathSrc = this.video
           ? `https://www.youtube.com/embed/${this.video?.key}`
           : null;
+        this.videoPathSrcTemp = this.videoPathSrc;
       }),
       catchError((err) => {
         this.errorMessage = err;
