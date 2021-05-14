@@ -10,6 +10,7 @@ import {
 } from '.';
 import { ActorDetailModule } from './actor-detail/actor-detail.module';
 import { MovieListModule } from './movie-list/movie-list.module';
+import { MovieDetailModule } from './movie-detail/movie-detail.module';
 
 @NgModule({
   declarations: [
@@ -18,18 +19,17 @@ import { MovieListModule } from './movie-list/movie-list.module';
     MovieStaffComponent,
     MovieSimilarGridComponent,
     TrailerModalComponent,
-    MoviesSliderComponent,
   ],
-  imports: [SharedModule, ActorDetailModule, MovieListModule],
+  imports: [SharedModule, ActorDetailModule, MovieListModule, MovieDetailModule],
   exports: [
     MovieExternalInfoComponent,
     MovieInternalInfoComponent,
     MovieStaffComponent,
     MovieSimilarGridComponent,
     TrailerModalComponent,
-    MoviesSliderComponent,
     ActorDetailModule,
     MovieListModule,
+    MovieDetailModule
   ],
 })
 export class MoviesComponentsModule {}

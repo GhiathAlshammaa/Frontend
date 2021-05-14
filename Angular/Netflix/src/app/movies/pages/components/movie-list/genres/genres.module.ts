@@ -6,6 +6,8 @@ import {
   MovieGenresBarComponent,
 } from '.';
 import { SharedModule } from '@app/shared';
+import { MoviesSliderComponent } from '..';
+import { MoviesSliderModule } from '../movies-slider/movies-slider.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,7 @@ import { SharedModule } from '@app/shared';
     GenreMoviesListComponent,
     GenresHomeComponent,
   ],
-  imports: [SharedModule],
+  imports: [SharedModule, MoviesSliderModule],
   exports: [
     MovieGenresBarComponent,
     GenreMoviesListComponent,
