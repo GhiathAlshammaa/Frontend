@@ -57,6 +57,7 @@
       </li>
     </ul>
   </div>
+
   <div
     class="d-flex justify-content-between mt-2"
     *ngIf="movie.original_language"
@@ -64,8 +65,13 @@
     <small class="badge badge-warning p-1 text-left info-box"
       ><i class="fa fa-globe mr-1"></i>Original Language
     </small>
-    <span class="flag-icon flag-icon-{{ langFlag }} mr-1"></span>
+    <img
+      class="langImg ml-1 mr-1"
+      alt="{{ langName }}"
+      src="https://unpkg.com/language-icons/icons/{{ langFlag }}.svg"
+    />
   </div>
+
   <div
     class="d-flex justify-content-between mt-2"
     *ngIf="streams$ | async as streams"
