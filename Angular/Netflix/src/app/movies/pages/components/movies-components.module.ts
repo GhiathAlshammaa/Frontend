@@ -15,7 +15,6 @@ import { MovieDetailModule } from './movie-detail/movie-detail.module';
   ],
   exports: [
     MovieExternalInfoComponent,
-
     TrailerModalComponent,
     ActorDetailModule,
     MovieListModule,
