@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from '@app/core/models/movie';
 import { StreamingService } from '@app/core/services/streaming.service';
 import { EMPTY, Observable } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-movie-external-info',
@@ -40,7 +40,6 @@ export class MovieExternalInfoComponent implements OnInit {
     this.streams$ = this.streamingService
       .streamingByMovieId$(this.movie.id, this.streamingService.countryCode)
       .pipe(
-        // tap((data) => console.log(data)),
         catchError((err) => {
           this.errorMessage = err;
           return EMPTY;

@@ -43,10 +43,5 @@ export class ActorDetailComponent implements OnInit {
         return EMPTY;
       })
     );
-    this.cast$.subscribe({
-      next(data) {
-        console.log(data);
-      },
-    });
   }
 }

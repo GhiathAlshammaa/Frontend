@@ -9,9 +9,9 @@ import {
   ActorDetailComponent,
 } from './pages';
 import {
-  GenresHomeComponent,
   GenreMoviesListComponent,
-} from './pages/components';
+  GenresHomeComponent,
+} from './pages/components/';
 
 const routes: Routes = [
   {

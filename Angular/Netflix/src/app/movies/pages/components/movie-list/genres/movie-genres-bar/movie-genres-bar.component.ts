@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { MoviesService } from '@app/core/services';
 import { EMPTY } from 'rxjs';
 import { catchError } from 'rxjs/operators';

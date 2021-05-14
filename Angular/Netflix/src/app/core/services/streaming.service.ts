@@ -48,7 +48,7 @@ export class StreamingService implements OnInit {
       )
     ),
 
-    tap((streams) => console.log(streams)),
+    // tap((streams) => console.log(streams)),
     catchError(HandleError)
   );
 
@@ -62,7 +62,6 @@ export class StreamingService implements OnInit {
       'watch/providers'
     );
     return this.http.get<StreamStatus>(this.streamingByMovieIdUrl).pipe(
-      // tap((streamings) => console.log(streamings)),
       map((streamings) => ExtractData(streamings, countryCode)),
       map((data: StreamCountry) => data.flatrate.map((stream) => stream)),
       map((streams) =>
@@ -74,8 +73,6 @@ export class StreamingService implements OnInit {
             } as Stream)
         )
       ),
-      // tap((streamings) => console.log(streamings)),
-      // tap((streamings) => console.log(Object.keys(streamings))),
       catchError(HandleError)
     );
   };
