@@ -53,6 +53,7 @@
     >
     <ul class="d-flex list-unstyled mb-0">
       <li *ngFor="let country of countries">
+        <!-- <span class="mr-1">{{ country.iso_3166_1 }}</span> -->
         <span class="flag-icon flag-icon-{{ country.iso_3166_1 }} mr-1"></span>
       </li>
     </ul>
@@ -77,7 +78,14 @@
     *ngIf="streams$ | async as streams"
   >
     <small
-      class="d-flex align-items-center badge badge-warning p-1 text-left info-box"
+      class="
+        d-flex
+        align-items-center
+        badge badge-warning
+        p-1
+        text-left
+        info-box
+      "
       ><i class="fa fa-eye mr-1"></i> Watch On
     </small>
     <div class="d-flex">

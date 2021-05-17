@@ -1,3 +1,7 @@
-Genres-home Component!
-
-<app-movies-slider></app-movies-slider>
+<div class="genresHomeWrapper" *ngIf="genres$ | async as genres">
+  <div *ngFor="let genre of genres">
+    <h2>{{ genre.name }}</h2>
+    <br />
+    <app-movies-slider [genreId]="genre.id"></app-movies-slider>
+  </div>
+</div>
