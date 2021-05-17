@@ -44,7 +44,7 @@ export class MoviesSliderComponent implements OnInit {
   }
 
   lazyLoading = true;
-  imageSize = { width: 450, height: 250, space: 5 };
+  imageSize = { width: 266, height: 400, space: 5 };
   slideImage = 3;
   animationSpeed = 0.5;
 
