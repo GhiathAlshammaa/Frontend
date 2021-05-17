@@ -1,22 +1,26 @@
-<div class="card p-2" *ngIf="movie">
-  <div class="card-header text-danger text-center font-weight-bold content">
-    <a class="truncate" [routerLink]="['/movies', movie.id]">
-      {{ movie.title }}
-    </a>
+<div
+  class="d-flex card p-2 h-100 flex-column justify-content-between"
+  *ngIf="movie"
+>
+  <div>
+    <div class="card-header text-danger text-center font-weight-bold content">
+      <a class="truncate" [routerLink]="['/movies', movie.id]">
+        {{ movie.title }}
+      </a>
+    </div>
+    <img
+      width="100%"
+      src="{{ imgPath + movie.poster_path }}"
+      alt="{{ movie.title }}"
+      *ngIf="movie.poster_path"
+    />
+    <img
+      width="100%"
+      [src]="noPhotoSrc"
+      alt="No Photo"
+      *ngIf="!movie.poster_path"
+    />
   </div>
-  <img
-    width="100%"
-    src="{{ imgPath + movie.poster_path }}"
-    alt="No Photo"
-    *ngIf="movie.poster_path"
-  />
-  <img
-    width="100%"
-    [src]="noPhotoSrc"
-    alt="No Photo"
-    *ngIf="!movie.poster_path"
-  />
-
   <div class="caption pt-3">
     <div class="release-date d-flex">
       <div><b>Release Date: </b></div>
