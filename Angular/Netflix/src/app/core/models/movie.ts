@@ -34,3 +34,22 @@ export interface Movie {
   status?: string;
   tagline?: string | null;
 }
+
+export interface SliderMovie {
+  genreId: number;
+  movieId?: string;
+  video?: string;
+  image?: string;
+  thumbImage?: string;
+  alt?: string;
+  title?: string;
+  posterImage?: string;
+  // order?: number;
+}
+
+export const SliderMovieInit = {
+  movieId: '',
+  video: '',
+  posterImage: '',
+  title: '',
+};

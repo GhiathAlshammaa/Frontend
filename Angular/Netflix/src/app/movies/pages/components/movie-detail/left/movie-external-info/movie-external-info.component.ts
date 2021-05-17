@@ -23,7 +23,7 @@ export class MovieExternalInfoComponent implements OnInit {
   constructor(private streamingService: StreamingService) {}
 
   updateCountryToLowerCase() {
-    return this.movie.production_countries.map((country) => {
+    return this.movie?.production_countries?.map((country) => {
       country.iso_3166_1 = country.iso_3166_1.toLocaleLowerCase();
     });
   }

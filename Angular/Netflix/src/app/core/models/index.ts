@@ -1,4 +1,4 @@
-export { Movie } from './movie';
+export { Movie, SliderMovie } from './movie';
 export { Country } from './country';
 export { Language } from './language';
 export { Staff } from './staff';

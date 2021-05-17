@@ -1,7 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators';
-import { Movie } from '../models/movie';
+import { catchError, map, take, tap } from 'rxjs/operators';
+import { Movie, SliderMovie } from '../models/movie';
 import {
   ExtractData,
   HandleError,
@@ -24,7 +24,12 @@ export class MoviesService implements OnInit {
 
   // test temporary property
   movieId = 0;
-  genreId = 35;
+  genreId = 0;
+  sliderMoviesAll: SliderMovie[] = [];
+  sliderMoviesTemp: SliderMovie[] = [];
+  sliderMovies: SliderMovie[] = [];
+  imgPath = 'https://image.tmdb.org/t/p/w500/';
+  noPhotoSrc = '../../../../../../assets/noPhoto.jpg';
 
   // ## Generating Url
   urlUpcoming = UrlGenerator('normal', 'movie', 'upcoming', this.restUrlValue);
@@ -58,7 +63,7 @@ export class MoviesService implements OnInit {
 
   genres$ = this.http.get<Genres>(this.urlGenres).pipe(
     map((genres) => genres.genres),
-    // tap((genres) => console.log(genres))
+    // tap((genres) => console.log(genres)),
     catchError(HandleError)
   );
 
@@ -67,6 +72,55 @@ export class MoviesService implements OnInit {
 
     return this.http.get<Movie[]>(this.urlGenresById).pipe(
       map((data) => ExtractData(data)),
+      // tap((data) => console.log(data)),
+      catchError(HandleError)
+    );
+  };
+
+  sliderMovies$ = (id: number) => {
+    // console.log(`id: ${id}`);
+    this.urlGenresById = UrlGenerator('normal', 'genre/' + id, 'movies');
+    // console.log(`url: ${this.urlGenresById}`);
+
+    return this.http.get<Movie[]>(this.urlGenresById).pipe(
+      map((data) => ExtractData(data)),
+      // tap((data) => console.log(data)),
+
+      map((movies) => {
+        movies.map((movie) => {
+          const slideMovie: SliderMovie = {
+            genreId: id,
+            movieId: movie.id,
+            image: this.imgPath + movie.poster_path,
+            thumbImage: this.imgPath + movie.poster_path,
+            alt: movie.title,
+            title: movie.title,
+          };
+
+          const checkMovieDuplicateInAll = this.sliderMoviesAll.find(
+            (m) => m.movieId === movie.id
+          );
+          const checkMovieDuplicateInSliderMovies = this.sliderMoviesAll.find(
+            (m) => m.movieId === movie.id
+          );
+
+          if (!checkMovieDuplicateInAll) {
+            this.sliderMoviesAll = [...this.sliderMovies, slideMovie];
+          }
+          if (!checkMovieDuplicateInSliderMovies) {
+            this.sliderMovies = [...this.sliderMovies, slideMovie];
+          }
+        });
+        // this.sliderMoviesTemp = this.sliderMoviesAll.filter(
+        //   (x) =>
+        //     !this.sliderMovies.some(
+        //       (y) => x.movieId === y.movieId
+        //     )
+        // );
+        this.sliderMoviesTemp = this.sliderMovies;
+        this.sliderMovies = [];
+        return this.sliderMoviesTemp;
+      }),
       // tap((data) => console.log(data)),
       catchError(HandleError)
     );
